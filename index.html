@@ -1,131 +1,28 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-
-
-
-  
-  
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-
-
-
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-  
-  
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
   <meta name="google-site-verification" content="Vfus_iRip6Is5Qtgla_q-ayMJFDjWnExgKp-GBsqdbk">
-
-
-
-
-
-
-
-
   <meta name="baidu-site-verification" content="7ufhi0r6bt">
 
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-big-counter.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=6.4.2">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=6.4.2">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=6.4.2">
-
-
-  <link rel="mask-icon" href="/images/favicon.png?v=6.4.2" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '6.4.2',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"michaelin1208.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="Programming notes including iOS, Python and so on.">
 <meta name="keywords" content="iOS, Python">
@@ -139,41 +36,33 @@
 <meta name="twitter:title" content="Michaelin&#39;s Blog">
 <meta name="twitter:description" content="Programming notes including iOS, Python and so on.">
 
+<link rel="canonical" href="https://michaelin1208.github.io/">
 
 
-  <link rel="alternate" href="/atom.xml" title="Michaelin's Blog" type="application/atom+xml">
-
-
-
-
-  <link rel="canonical" href="https://michaelin1208.github.io/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'default'
   };
 </script>
 
   <title>Michaelin's Blog</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127413290-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-127413290-1');
+      }
+    </script>
 
 
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127413290-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-127413290-1');
-</script>
-
-
-
-  <script type="text/javascript">
+  <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -186,2076 +75,1037 @@
 
 
 
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Michaelin's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Michaelin's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home menu-item-active">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">53</span></a>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">4</span></a>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">17</span></a>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-            
 
-          
-          <div id="content" class="content">
+          <div class="content index posts-expand">
             
-  <section id="posts" class="posts-expand">
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2020/02/25/iOS/CDN-trunk-Repo-update-failed/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/25/iOS/CDN-trunk-Repo-update-failed/" itemprop="url">
-                  CocoaPods 1.8.X pod install/update提示“[!] CDN: trunk Repo update failed”
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/25/iOS/CDN-trunk-Repo-update-failed/" class="post-title-link" itemprop="url">CocoaPods 1.8.X pod install/update提示“[!] CDN: trunk Repo update failed”</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
+              <span class="post-meta-item-text">Posted on</span>
               
 
               <time title="Created: 2020-02-25 14:25:32 / Modified: 15:10:01" itemprop="dateCreated datePublished" datetime="2020-02-25T14:25:32+08:00">2020-02-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/02/25/iOS/CDN-trunk-Repo-update-failed/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/25/iOS/CDN-trunk-Repo-update-failed/" itemprop="commentCount"></span>
-                </a>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
-            
-          
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2020/02/25/iOS/CDN-trunk-Repo-update-failed/" class="leancloud_visitors" data-flag-title="CocoaPods 1.8.X pod install/update提示“[!] CDN: trunk Repo update failed”">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2020/02/25/iOS/CDN-trunk-Repo-update-failed/" class="post-meta-item leancloud_visitors" data-flag-title="CocoaPods 1.8.X pod install/update提示“[!] CDN: trunk Repo update failed”" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在升级CocoaPods到1.8.X后，CocoaPods添加了CDN为默认的Spec repo源，而非原来以<a href="https://github.com/CocoaPods/Specs.git" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs.git</a>为默认source，来缓解git上的specs过大带来的效率下降问题。这个改动造成了我在家中<code>pod install/update</code>的时候无法正常运行。</p>
+<p>提示错误：<code>[!] CDN: trunk Repo update failed</code>以及失败的pods列表</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>网上关于这个问题的出现原因多半都是因为在中国大陆GFW的CDN拦截/访问控制等造成的Pods更新中遇到未知错误导致的。解决办法都是强制Podfile使用原来位于git的source地址(<a href="https://github.com/CocoaPods/Specs.git" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs.git</a>)。</p>
+<p>1.方法是在Podfile中添加代码，<code>source &#39;https://github.com/CocoaPods/Specs.git</code></p>
+<p>2.在命令行中运行<code>pod repo remove master</code>来删除Pod中的CDN源。</p>
+<p><strong>但是这样我们将无法享受到CDN带来的<code>pod install/update</code>速度变快的优势。</strong></p>
+<p><strong>此外家里电脑具有“科学上网”能力，理论上不应该会导致该问题的出现。</strong></p>
+<p>####我电脑上该问题的出现原因和解决办法</p>
+<p>原因是我的本地系统的网络配置被之前安装的“科学上网”软件修改了，导致proxy异常而无法正确访问CocoaPods的CDN地址。</p>
+<p>方法是关闭网络配置中当前连接的高级设置中的代理设置。如下图：</p>
+<img src="/2020/02/25/iOS/CDN-trunk-Repo-update-failed/network-preferences.png" title="network preferences">
+<img src="/2020/02/25/iOS/CDN-trunk-Repo-update-failed/network-advanced-preferences.png" title="network advanced preferences">
+<p>关闭完代理设置后，就可以正常访问CocoaPods的CDN地址，正常使用<code>pod install/update</code>了。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://www.jianshu.com/p/bf1cbe49cb5d" target="_blank" rel="noopener">[!] CDN: trunk Repo update failed</a></p>
 
-      
-        
-          
-          问题描述在升级CocoaPods到1.8.X后，CocoaPods添加了CDN为默认的Spec repo源，而非原来以https://github.com/CocoaPods/Specs.git为默认source，来缓解git上的specs过大带来的效率下降问题。这个改动造成了我在家中pod install/update的时候无法正常运行。
-提示错误：[!] CDN: trunk Repo upd
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2019/09/30/iOS/iOS13Lame压缩录音文件为MP3格式闪退/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/30/iOS/iOS13Lame压缩录音文件为MP3格式闪退/" itemprop="url">
-                  iOS13Lame压缩录音文件为MP3格式闪退
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/30/iOS/iOS13Lame压缩录音文件为MP3格式闪退/" class="post-title-link" itemprop="url">iOS13Lame压缩录音文件为MP3格式闪退</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
+              <span class="post-meta-item-text">Posted on</span>
               
 
               <time title="Created: 2019-09-30 14:49:53 / Modified: 15:23:38" itemprop="dateCreated datePublished" datetime="2019-09-30T14:49:53+08:00">2019-09-30</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/30/iOS/iOS13Lame压缩录音文件为MP3格式闪退/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/30/iOS/iOS13Lame压缩录音文件为MP3格式闪退/" itemprop="commentCount"></span>
-                </a>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
-            
-          
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2019/09/30/iOS/iOS13Lame压缩录音文件为MP3格式闪退/" class="leancloud_visitors" data-flag-title="iOS13Lame压缩录音文件为MP3格式闪退">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2019/09/30/iOS/iOS13Lame压缩录音文件为MP3格式闪退/" class="post-meta-item leancloud_visitors" data-flag-title="iOS13Lame压缩录音文件为MP3格式闪退" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>我们项目在语音发送用户评语时，使用了Lame三方库对客户端的pcm录音文件进行压缩，输出MP3文件。具体的Lame接入方法可以参考该文章 “<a href="https://github.com/CivelXu/iOS-Lame-Audio-transcoding" target="_blank" rel="noopener">iOS-Lame-Audio-transcoding</a>“.</p>
+<p>在iOS13的iPhoneX/iPhoneXS等iPhone机中出现录音边录边压缩时闪退的问题。</p>
+<p>问题类型<code>EXC_BAD_ACCESS</code>野指正，对象过早被释放导致。</p>
+<p>异常出现的位置在<code>lame_encode_buffer_interleaved</code>方法调用中，该方法为Lame提供的方法，且输入的参数也没有发现野指针存在。Zombie调试没有发现有用的信息。刚开始考虑是Lame库太老了（我们还在使用4年前的库😅），更新了Lame库没有解决问题。</p>
+<p>尝试运行<a href="https://github.com/CivelXu/iOS-Lame-Audio-transcoding" target="_blank" rel="noopener">iOS-Lame-Audio-transcoding</a>中提供的Demo，在我的设备中没有出现闪退现象。基本排除了Lame三方库的问题。</p>
+<h2 id="问题根源和解决办法"><a href="#问题根源和解决办法" class="headerlink" title="问题根源和解决办法"></a>问题根源和解决办法</h2><p>对比demo和项目中对Lame库的使用，意外发现了我们在<strong><code>AVAudioRecorder</code></strong>初始化的<strong><code>setting</code></strong>参数有一句差异，项目中多了一句</p>
+<p><strong><code>[settingDictionary setObject:@(YES) forKey:AVLinearPCMIsFloatKey];</code></strong></p>
+<p>用于设置是否使用浮点数采样。</p>
+<p>由于打开了浮点数采样导致了Lame压缩转换MP3时出现闪退。具体Lame中为何会出现浮点数采样转换Crash原因不明。怀疑是浮点数位数或者其他一些区别，导致Lame不适配。</p>
+<p>记录下问题解决方式，方便新手排坑，欢迎大神指点。感谢🙏</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/CivelXu/iOS-Lame-Audio-transcoding" target="_blank" rel="noopener">iOS-Lame-Audio-transcoding</a></p>
 
-      
-        
-          
-          问题描述我们项目在语音发送用户评语时，使用了Lame三方库对客户端的pcm录音文件进行压缩，输出MP3文件。具体的Lame接入方法可以参考该文章 “iOS-Lame-Audio-transcoding“.
-在iOS13的iPhoneX/iPhoneXS等iPhone机中出现录音边录边压缩时闪退的问题。
-问题类型EXC_BAD_ACCESS野指正，对象过早被释放导致。
-异常出现的位置在lame_en
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2019/06/19/iOS/SourceTree和GitLab配合使用的问题/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/19/iOS/SourceTree和GitLab配合使用的问题/" itemprop="url">
-                  SourceTree和GitLab配合使用的问题
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/19/iOS/SourceTree和GitLab配合使用的问题/" class="post-title-link" itemprop="url">SourceTree和GitLab配合使用的问题</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
+              <span class="post-meta-item-text">Posted on</span>
               
 
               <time title="Created: 2019-06-19 14:41:46 / Modified: 15:04:19" itemprop="dateCreated datePublished" datetime="2019-06-19T14:41:46+08:00">2019-06-19</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/06/19/iOS/SourceTree和GitLab配合使用的问题/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/19/iOS/SourceTree和GitLab配合使用的问题/" itemprop="commentCount"></span>
-                </a>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
-            
-          
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2019/06/19/iOS/SourceTree和GitLab配合使用的问题/" class="leancloud_visitors" data-flag-title="SourceTree和GitLab配合使用的问题">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2019/06/19/iOS/SourceTree和GitLab配合使用的问题/" class="post-meta-item leancloud_visitors" data-flag-title="SourceTree和GitLab配合使用的问题" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用SourceTree管理GitLab的时候出现了<strong>无法添加Repository</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is not a valid source path / URL</span><br></pre></td></tr></table></figure>
+<p>或者<strong>无法Pull or Push</strong>的情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">remote: HTTP Basic: Access denied</span><br><span class="line">fatal: Authentication failed for &apos;https://gitlab.xxx/xxx.git/&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>首先在添加或者pull/push的时候需要使用对应的<strong>Clone with SHH</strong>的地址如：“<a href="mailto:git@gitlab.xxx" target="_blank" rel="noopener">git@gitlab.xxx</a>/xxx.git”，而不是<strong>Clone with HTTPS</strong>的地址。</p>
+<p>如图：<img src="/2019/06/19/iOS/SourceTree和GitLab配合使用的问题/ssh.jpg" title="ssh"></p>
+<p>其次，在MacOS中，SourceTree的Preference中并不提供指定公私钥的配置。我们需要在生成公私钥的时候对私钥进行<strong>ssh-add</strong>，如：<code>ssh-add id_rsa</code></p>
+<p>同时在公司gitlab页面上设置好SSH使用的私钥对应的公钥。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://blog.csdn.net/lele9096_bk/article/details/54950391" target="_blank" rel="noopener">Mac 下source tree 与 gitlab 添加 ssh 密钥</a></p>
 
-      
-        
-          
-          问题描述在使用SourceTree管理GitLab的时候出现了无法添加Repository
-1This is not a valid source path / URL
-或者无法Pull or Push的情况。
-12remote: HTTP Basic: Access deniedfatal: Authentication failed for &apos;https://gitlab.xxx/x
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2019/04/25/iOS/WKWebView的坑之iOS9以下版本设置scrollView-delegate带来的退出闪退/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/25/iOS/WKWebView的坑之iOS9以下版本设置scrollView-delegate带来的退出闪退/" itemprop="url">
-                  WKWebView的坑之iOS9以下版本退出闪退
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/04/25/iOS/WKWebView的坑之iOS9以下版本设置scrollView-delegate带来的退出闪退/" class="post-title-link" itemprop="url">WKWebView的坑之iOS9以下版本退出闪退</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
+              <span class="post-meta-item-text">Posted on</span>
               
 
               <time title="Created: 2019-04-25 17:00:46 / Modified: 17:59:48" itemprop="dateCreated datePublished" datetime="2019-04-25T17:00:46+08:00">2019-04-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/25/iOS/WKWebView的坑之iOS9以下版本设置scrollView-delegate带来的退出闪退/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/25/iOS/WKWebView的坑之iOS9以下版本设置scrollView-delegate带来的退出闪退/" itemprop="commentCount"></span>
-                </a>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
-            
-          
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2019/04/25/iOS/WKWebView的坑之iOS9以下版本设置scrollView-delegate带来的退出闪退/" class="leancloud_visitors" data-flag-title="WKWebView的坑之iOS9以下版本退出闪退">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2019/04/25/iOS/WKWebView的坑之iOS9以下版本设置scrollView-delegate带来的退出闪退/" class="post-meta-item leancloud_visitors" data-flag-title="WKWebView的坑之iOS9以下版本退出闪退" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在iOS9及以下版本中，<code>WKWebView</code>在自定义了他的<code>scrollView.delegate</code>为当前<code>ViewController</code>时，如果退出当前<code>ViewController</code>会闪退。提醒<code>EXC_BAD_ACCESS</code>错误并且闪退，</p>
+<p>错误堆栈是<code>-[UIScrollView(AdhocVisualEdit) adhoc_scrollViewSetDelegate:]</code></p>
+<p>上一级是<code>-[WKScrollView _updateDelegate]</code>。</p>
+<h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><p>考虑是在iOS9及以下版本中，苹果对于<code>delegate</code>的<code>weak</code>的处理没有如预期。导致在退出当前<code>ViewController</code>的时候更新<code>scrollView</code>的<code>delegate</code>还是使用了已经释放的<code>ViewController</code>，从而导致<code>EXC_BAD_ACCESS</code>错误而闪退。</p>
+<p>这个问题在iOS10及以上版本中已经修复，不再闪退。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在当前<code>ViewController</code>释放的时候，设置<code>WKWebView</code>的<code>scrollView.delegate</code>为nil。</p>
+<p>代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// Objective-C</span><br><span class="line">- (void)dealloc</span><br><span class="line">&#123;</span><br><span class="line">    _webView.scrollView.delegate = nil;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Swift</span><br><span class="line">deinit &#123;</span><br><span class="line">    webView.scrollView.delegate = nil</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Reference-List"><a href="#Reference-List" class="headerlink" title="Reference List"></a>Reference List</h3><p><a href="https://stackoverflow.com/questions/38733634/ios-wkwebview-scrollview-delegate-cause-bad-access" target="_blank" rel="noopener">iOS WKWebView.scrollView delegate cause BAD_ACCESS</a></p>
 
-      
-        
-          
-          问题描述在iOS9及以下版本中，WKWebView在自定义了他的scrollView.delegate为当前ViewController时，如果退出当前ViewController会闪退。提醒EXC_BAD_ACCESS错误并且闪退，
-错误堆栈是-[UIScrollView(AdhocVisualEdit) adhoc_scrollViewSetDelegate:]
-上一级是-[WKScrollV
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2019/04/23/iOS/iOS开发实用工具/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/23/iOS/iOS开发实用工具/" itemprop="url">
-                  iOS开发实用工具
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/04/23/iOS/iOS开发实用工具/" class="post-title-link" itemprop="url">iOS开发实用工具</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
+              <span class="post-meta-item-text">Posted on</span>
               
 
               <time title="Created: 2019-04-23 15:14:35 / Modified: 15:38:25" itemprop="dateCreated datePublished" datetime="2019-04-23T15:14:35+08:00">2019-04-23</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/23/iOS/iOS开发实用工具/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/23/iOS/iOS开发实用工具/" itemprop="commentCount"></span>
-                </a>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
-            
-          
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2019/04/23/iOS/iOS开发实用工具/" class="leancloud_visitors" data-flag-title="iOS开发实用工具">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2019/04/23/iOS/iOS开发实用工具/" class="post-meta-item leancloud_visitors" data-flag-title="iOS开发实用工具" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h3 id="iOS开发实用工具"><a href="#iOS开发实用工具" class="headerlink" title="iOS开发实用工具"></a>iOS开发实用工具</h3><h4 id="Chisel"><a href="#Chisel" class="headerlink" title="Chisel"></a>Chisel</h4><p>一款由Facebook分享的丰富LLDB命令的开源工具，<a href="https://github.com/facebook/chisel" target="_blank" rel="noopener">具体的安装方法和介绍参考官方github。</a></p>
+<p>通过该工具我们可以快速定位当前显示的图层层级，展示任意<code>UIImage</code> /<code>CGImageRef</code> /<code>UIView</code>等对象的内容，显示某个对象的响应链等各种功能。大大提高我们在debug时的效率。尤其对于视图相关的问题，相比Xcode提供的<code>Debug View Hierarchy</code>功能，Chisel能提供更快速的响应和更加直观和针对性的显示。而<code>Debug View Hierarchy</code>则更加的形象。</p>
 
-      
-        
-          
-          iOS开发实用工具Chisel一款由Facebook分享的丰富LLDB命令的开源工具，具体的安装方法和介绍参考官方github。
-通过该工具我们可以快速定位当前显示的图层层级，展示任意UIImage /CGImageRef /UIView等对象的内容，显示某个对象的响应链等各种功能。大大提高我们在debug时的效率。尤其对于视图相关的问题，相比Xcode提供的Debug View Hierarch
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/" itemprop="url">
-                  让App在iOS12中支持Siri Shortcuts(捷径)功能 和 “设置和捷径App内未列出自己App的Shortcut” 的解决办法
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/" class="post-title-link" itemprop="url">让App在iOS12中支持Siri Shortcuts(捷径)功能 和 “设置和捷径App内未列出自己App的Shortcut” 的解决办法</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-10-10 18:33:46" itemprop="dateCreated datePublished" datetime="2018-10-10T18:33:46+08:00">2018-10-10</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
               </span>
-            
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/" class="leancloud_visitors" data-flag-title="让App在iOS12中支持Siri Shortcuts(捷径)功能 和 “设置和捷径App内未列出自己App的Shortcut” 的解决办法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/" class="post-meta-item leancloud_visitors" data-flag-title="让App在iOS12中支持Siri Shortcuts(捷径)功能 和 “设置和捷径App内未列出自己App的Shortcut” 的解决办法" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <p><strong>最近发现的问题 “设置和捷径App内未列出自己App的Shortcut” 的解决办法在文章末尾</strong></p>
+<h3 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h3><p>WWDC 2018 苹果更新了Siri使其支持Shortcuts功能，中文名“捷径”。支持用户通过自定义把一系列操作合并到一个Shortcut内。苹果官方应用提供了一些接口供Shortcut调用，如Map应用的“获取行程时间”，“显示路线”等。如果我们的应用需要支持，需要自己在App中开放可以被Shortcuts访问的接口。同时苹果正在大力推广这个Siri新功能，支持软件可在<a href="https://itunes.apple.com/cn/story/id1436260234" target="_blank" rel="noopener">苹果App Store榜单“用 Siri，走捷径”</a>中列出，有一定推广作用。该功能也有利于增加用户粘度和活跃人数。</p>
+<p>Apple提供了官方关于Shortcuts的<a href="https://developer.apple.com/documentation/sirikit/soup_chef_accelerating_app_interactions_with_shortcuts?language=objc" target="_blank" rel="noopener">demo</a>，但是在苹果大力推广Swift的浪潮下，demo的语言也是Swift版的，无奈公司现在还在使用Objc，下面介绍下Objc下的接入过程。</p>
+<h3 id="创建Custom-Intent"><a href="#创建Custom-Intent" class="headerlink" title="创建Custom Intent"></a>创建Custom Intent</h3><p>在项目中通过“New File…”创建一个<code>Intents.intentdefinition</code>文件。这个文件用来定义自定义<code>intent</code>类型。</p>
+<img src="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/SiriKitIntentDefinitionFile.png" title="新建SiriKit Intent Definition File">
+<img src="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/CustomIntents.png" title="设置Custom Intents">
+<p>同时会自动在项目的<code>Info.plist</code>文件中添加<code>NSUserActivityTypes</code></p>
+<img src="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/InfoPlist.png" title="Info.plist">
+<h3 id="添加Frameworks"><a href="#添加Frameworks" class="headerlink" title="添加Frameworks"></a>添加Frameworks</h3><p>在项目的<strong>Build Phases</strong>中的<strong>Link Binary With Libraries</strong>中添加<code>Intents.framework</code>和<code>IntentsUI.framework</code>。</p>
+<img src="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/Frameworks.png" title="Frameworks">
+<h3 id="添加Shortcut按钮"><a href="#添加Shortcut按钮" class="headerlink" title="添加Shortcut按钮"></a>添加Shortcut按钮</h3><p>在项目中需要调用添加Shortcut按钮的.m文件中，</p>
+<h4 id="增加import"><a href="#增加import" class="headerlink" title="增加import"></a>增加import</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;Intents/Intents.h&gt;</span></span></span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;IntentsUI/IntentsUI.h&gt;</span></span></span><br><span class="line"><span class="meta">#import <span class="meta-string">"HWTakePhotoIntent.h"</span>	//上方“设置Custom Intents”图中右边箭头指的“Class Name”</span></span><br></pre></td></tr></table></figure>
+<h4 id="添加Delegate"><a href="#添加Delegate" class="headerlink" title="添加Delegate"></a>添加Delegate</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;INUIAddVoiceShortcutButtonDelegate,</span><br><span class="line">INUIAddVoiceShortcutViewControllerDelegate,</span><br><span class="line">INUIEditVoiceShortcutViewControllerDelegate&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="添加Property"><a href="#添加Property" class="headerlink" title="添加Property"></a>添加Property</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) HWTakePhotoIntent API_AVAILABLE(ios(<span class="number">12.0</span>)) *intent;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) INUIAddVoiceShortcutButton API_AVAILABLE(ios(<span class="number">12.0</span>)) *shortcutButton;</span><br></pre></td></tr></table></figure>
+<h4 id="添加shortcutButton按钮"><a href="#添加shortcutButton按钮" class="headerlink" title="添加shortcutButton按钮"></a>添加shortcutButton按钮</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (@available(iOS <span class="number">12.0</span>, *)) &#123;</span><br><span class="line">    _shortcutButton = [[INUIAddVoiceShortcutButton alloc] initWithStyle:INUIAddVoiceShortcutButtonStyleWhiteOutline];</span><br><span class="line">    _shortcutButton.shortcut = [[INShortcut alloc] initWithIntent:<span class="keyword">self</span>.intent];</span><br><span class="line">    _shortcutButton.translatesAutoresizingMaskIntoConstraints = <span class="literal">false</span>;</span><br><span class="line">    _shortcutButton.delegate = <span class="keyword">self</span>;</span><br><span class="line">    [<span class="keyword">self</span>.view addSubview:_shortcutButton];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="设置intent属性"><a href="#设置intent属性" class="headerlink" title="设置intent属性"></a>设置intent属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (HWTakePhotoIntent *)intent API_AVAILABLE(ios(<span class="number">12.0</span>))&#123;</span><br><span class="line">    <span class="keyword">if</span> (!_intent) &#123;</span><br><span class="line">        _intent = [[HWTakePhotoIntent alloc] init];</span><br><span class="line">        _intent.suggestedInvocationPhrase = <span class="string">@"开始改作业"</span>;	<span class="comment">//在Siri语音设置时显示的建议设置唤起文字</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _intent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="设置对应delegate方法"><a href="#设置对应delegate方法" class="headerlink" title="设置对应delegate方法"></a>设置对应delegate方法</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#pragma mark - INUIAddVoiceShortcutButtonDelegate</span></span><br><span class="line">- (<span class="keyword">void</span>)presentAddVoiceShortcutViewController:(INUIAddVoiceShortcutViewController *)addVoiceShortcutViewController forAddVoiceShortcutButton:(INUIAddVoiceShortcutButton *)addVoiceShortcutButton API_AVAILABLE(ios(<span class="number">12.0</span>))&#123;</span><br><span class="line">    addVoiceShortcutViewController.delegate = <span class="keyword">self</span>;</span><br><span class="line">    [<span class="keyword">self</span> presentViewController:addVoiceShortcutViewController animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)presentEditVoiceShortcutViewController:(INUIEditVoiceShortcutViewController *)editVoiceShortcutViewController forAddVoiceShortcutButton:(INUIAddVoiceShortcutButton *)addVoiceShortcutButton API_AVAILABLE(ios(<span class="number">12.0</span>))&#123;</span><br><span class="line">    editVoiceShortcutViewController.delegate = <span class="keyword">self</span>;</span><br><span class="line">    [<span class="keyword">self</span> presentViewController:editVoiceShortcutViewController animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#pragma mark - INUIAddVoiceShortcutViewControllerDelegate</span></span><br><span class="line">- (<span class="keyword">void</span>)addVoiceShortcutViewController:(INUIAddVoiceShortcutViewController *)controller didFinishWithVoiceShortcut:(INVoiceShortcut *)voiceShortcut error:(<span class="built_in">NSError</span> *)error</span><br><span class="line">API_AVAILABLE(ios(<span class="number">12.0</span>))&#123;</span><br><span class="line">    [controller dismissViewControllerAnimated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)addVoiceShortcutViewControllerDidCancel:(INUIAddVoiceShortcutViewController *)controller API_AVAILABLE(ios(<span class="number">12.0</span>))&#123;</span><br><span class="line">    [controller dismissViewControllerAnimated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#pragma mark - INUIEditVoiceShortcutViewControllerDelegate</span></span><br><span class="line">- (<span class="keyword">void</span>)editVoiceShortcutViewControllerDidCancel:(INUIEditVoiceShortcutViewController *)controller API_AVAILABLE(ios(<span class="number">12.0</span>))&#123;</span><br><span class="line">    [controller dismissViewControllerAnimated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)editVoiceShortcutViewController:(INUIEditVoiceShortcutViewController *)controller didUpdateVoiceShortcut:(INVoiceShortcut *)voiceShortcut error:(<span class="built_in">NSError</span> *)error API_AVAILABLE(ios(<span class="number">12.0</span>))&#123;</span><br><span class="line">    [controller dismissViewControllerAnimated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)editVoiceShortcutViewController:(INUIEditVoiceShortcutViewController *)controller didDeleteVoiceShortcutWithIdentifier:(<span class="built_in">NSUUID</span> *)deletedVoiceShortcutIdentifier API_AVAILABLE(ios(<span class="number">12.0</span>))&#123;</span><br><span class="line">    [controller dismissViewControllerAnimated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="AppDelegate-m文件中添加方法"><a href="#AppDelegate-m文件中添加方法" class="headerlink" title="AppDelegate.m文件中添加方法"></a>AppDelegate.m文件中添加方法</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application continueUserActivity:(<span class="built_in">NSUserActivity</span> *)userActivity restorationHandler:(<span class="keyword">void</span> (^)(<span class="built_in">NSArray</span>&lt;<span class="keyword">id</span>&lt;<span class="built_in">UIUserActivityRestoring</span>&gt;&gt; * _Nullable))restorationHandler</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// activityType 和 Info.plist中的NSUserActivityTypes内容对应</span></span><br><span class="line">    <span class="keyword">if</span> ([userActivity.activityType isEqualToString:<span class="string">@"HWTakePhotoIntent"</span>]) &#123;</span><br><span class="line">        [HWNotificationCenter postNotificationName:kNotificationOpenCamera object:<span class="literal">nil</span>];	<span class="comment">// 通过通知找到对应class处理activity</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用于在Siri中通过设定语音调起应用时处理Siri的请求。我们的项目中是打开摄像头拍照批改作业。</p>
+<h3 id="iOS12-Siri-Known-Issues"><a href="#iOS12-Siri-Known-Issues" class="headerlink" title="iOS12 Siri Known Issues"></a>iOS12 Siri Known Issues</h3><img src="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/iOS12SiriKnownIssues.png" title="iOS12 Siri Known Issues">
+<p>如上图红框所示，<a href="https://developer.apple.com/documentation/ios_release_notes/ios_12_release_notes?language=objc" target="_blank" rel="noopener">iOS12发布后已知问题</a>之一是系统的<code>INUIAddVoiceShortcutButton</code>只支持默认的标题“Add to Siri”和“Added to Siri”，没有做本地化支持😂。此外按钮的样式也很死，无法自由自在的自定义，所以灰溜溜的只能自己来写自定义按钮了。</p>
+<h4 id="需求一：判断是否添加过该shortcut来区别跳转INUIAddVoiceShortcutViewController还是INUIEditVoiceShortcutViewController"><a href="#需求一：判断是否添加过该shortcut来区别跳转INUIAddVoiceShortcutViewController还是INUIEditVoiceShortcutViewController" class="headerlink" title="需求一：判断是否添加过该shortcut来区别跳转INUIAddVoiceShortcutViewController还是INUIEditVoiceShortcutViewController"></a>需求一：判断是否添加过该shortcut来区别跳转<code>INUIAddVoiceShortcutViewController</code>还是<code>INUIEditVoiceShortcutViewController</code></h4><p>当然苹果为我们提供了<code>INVoiceShortcutCenter</code> 的<code>- (void)getAllVoiceShortcutsWithCompletion:(void(^)(NSArray&lt;INVoiceShortcut *&gt; * _Nullable voiceShortcuts, NSError * _Nullable error))completionHandler;</code>方法来获得所有添加的Shortcuts或者<code>- (void)getVoiceShortcutWithIdentifier:(NSUUID *)identifier completion:(void(^)(INVoiceShortcut * _Nullable voiceShortcut, NSError * _Nullable error))completionHandler NS_SWIFT_NAME(getVoiceShortcut(with:completion:));</code>通过identifier查找对应的Shortcut。</p>
+<p>我在项目中的按钮点击事件代码如下：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)shortcutButtonClicked:(<span class="built_in">UIButton</span> *)sender</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (@available(iOS <span class="number">12.0</span>, *)) &#123;</span><br><span class="line">        [[INVoiceShortcutCenter sharedCenter] getAllVoiceShortcutsWithCompletion:^(<span class="built_in">NSArray</span>&lt;INVoiceShortcut *&gt; * _Nullable voiceShortcuts, <span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="built_in">BOOL</span> tempAddedShortcut = <span class="literal">NO</span>;</span><br><span class="line">                <span class="keyword">for</span> (INVoiceShortcut *voiceShortcut <span class="keyword">in</span> voiceShortcuts) &#123;</span><br><span class="line">                    <span class="keyword">if</span> ([voiceShortcut.shortcut.intent isKindOfClass:[HWTakePhotoIntent <span class="keyword">class</span>]]) &#123;</span><br><span class="line">                        tempAddedShortcut = <span class="literal">YES</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">self</span>.addedShortcut = tempAddedShortcut;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">self</span>.addedShortcut) &#123;</span><br><span class="line">                    INUIEditVoiceShortcutViewController *editVoiceShortcutViewController = [[INUIEditVoiceShortcutViewController alloc] initWithVoiceShortcut:voiceShortcuts[<span class="number">0</span>]];</span><br><span class="line">                    editVoiceShortcutViewController.delegate = <span class="keyword">self</span>;</span><br><span class="line">                    [<span class="keyword">self</span> presentViewController:editVoiceShortcutViewController animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    INShortcut *shortcut = [[INShortcut alloc] initWithIntent:<span class="keyword">self</span>.intent];</span><br><span class="line">                    INUIAddVoiceShortcutViewController *addVoiceShortcutViewController = [[INUIAddVoiceShortcutViewController alloc] initWithShortcut:shortcut];</span><br><span class="line">                    addVoiceShortcutViewController.delegate = <span class="keyword">self</span>;</span><br><span class="line">                    [<span class="keyword">self</span> presentViewController:addVoiceShortcutViewController animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="需求二：通过INUIAddVoiceShortcutViewController和INUIEditVoiceShortcutViewController的Delegates更新自定义Shortcut按钮状态"><a href="#需求二：通过INUIAddVoiceShortcutViewController和INUIEditVoiceShortcutViewController的Delegates更新自定义Shortcut按钮状态" class="headerlink" title="需求二：通过INUIAddVoiceShortcutViewController和INUIEditVoiceShortcutViewController的Delegates更新自定义Shortcut按钮状态"></a>需求二：通过<code>INUIAddVoiceShortcutViewController</code>和<code>INUIEditVoiceShortcutViewController</code>的Delegates更新自定义Shortcut按钮状态</h4><p>同样也需要用到需求一中提到的判断是否添加过当前Shortcut来更新对应的自定义Shortcut按钮样式。</p>
+<h3 id="“设置和捷径App内未列出自己App的Shortcut”-的解决办法"><a href="#“设置和捷径App内未列出自己App的Shortcut”-的解决办法" class="headerlink" title="“设置和捷径App内未列出自己App的Shortcut” 的解决办法"></a>“设置和捷径App内未列出自己App的Shortcut” 的解决办法</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>按照上文介绍，一步步在自己的App中添加Shortcut功能成功后，我们并不能在系统的<code>设置</code>应用的<code>Siri 与 搜索</code>中看到我们刚刚添加的Shortcut，或者在<code>捷径</code>应用中找到。如下图：</p>
+<img src="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/SettingMenuWithoutShortcuts.PNG" title="Setting Menu Without Shortcuts">
+<p>如果我们通过上文中定义的App内的<code>Add to Siri</code>按钮添加用户的Shortcut到Siri成功后，我们依然可以在<code>设置</code>和<code>捷径</code>应用中看到。但是如果删除添加的Shortcut，有都会消失。这显然不是我们需要的效果。</p>
+<p>预期效果是不管用户是否在App内添加Shortcut到Siri，都应在<code>设置</code>和<code>捷径</code>应用中看到。</p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>我们需要自己手动更新我们应用的Shortcut Suggestions的内容，这样才能在<code>设置</code>和<code>捷径</code>应用中列出。</p>
+<p>更新Shortcut Suggestions内容的代码如下。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addMenuItemShortcuts</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">AVAILABLE</span>(<span class="number">12.0</span>)) &#123;</span><br><span class="line">        HWTakePhotoIntent *intent = [[HWTakePhotoIntent alloc] init];</span><br><span class="line">        intent.suggestedInvocationPhrase = <span class="built_in">NSLocalizedString</span>(<span class="string">@"SIRI_SHORTCUT_CORRECT_WORK"</span>, <span class="literal">nil</span>);</span><br><span class="line">        [[INVoiceShortcutCenter sharedCenter] setShortcutSuggestions:@[[[INShortcut alloc] initWithIntent:intent]]];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我是在<code>AppDelegate</code>的<code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</code>里做了初始化。</p>
+<p>更新Shortcut Suggestions内容后，即使不在应用内添加Shortcut到Siri，在<code>设置</code>和<code>捷径</code>应用中仍能找到应用提供的Shortcut建议。</p>
+<p><code>设置</code>中的界面如下</p>
+<img src="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/SettingMenuWithShortcuts.PNG" title="Setting Menu With Shortcuts">
+<p>点击<code>捷径</code>进入后如下</p>
+<img src="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/SettingMenuWithShortcutsContent.PNG" title="Setting Menu With Shortcuts Content">
+<p>如果你需要，也可以在其他需要的时候更新Shortcut Suggestions内容。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Siri Shortcut大功告成</p>
+<h3 id="References"><a href="#References" class="headerlink" title="References:"></a>References:</h3><p><a href="https://www.jianshu.com/p/19b248333b18" target="_blank" rel="noopener">iOS12 Siri Shortcuts初探</a></p>
+<p><a href="https://developer.apple.com/design/human-interface-guidelines/sirikit/overview/" target="_blank" rel="noopener">Human Interface Guidelines - SiriKit</a></p>
+<p><a href="https://developer.apple.com/documentation/sirikit?language=objc" target="_blank" rel="noopener">Documentation - SiriKit</a></p>
 
-      
-        
-          
-          最近发现的问题 “设置和捷径App内未列出自己App的Shortcut” 的解决办法在文章末尾
-背景介绍WWDC 2018 苹果更新了Siri使其支持Shortcuts功能，中文名“捷径”。支持用户通过自定义把一系列操作合并到一个Shortcut内。苹果官方应用提供了一些接口供Shortcut调用，如Map应用的“获取行程时间”，“显示路线”等。如果我们的应用需要支持，需要自己在App中开放可以被
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2018/08/20/iOS/WKWebView的坑之图片显示不完全/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/20/iOS/WKWebView的坑之图片显示不完全/" itemprop="url">
-                  WKWebView的坑之图片显示不完全
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/20/iOS/WKWebView的坑之图片显示不完全/" class="post-title-link" itemprop="url">WKWebView的坑之图片显示不完全</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-08-20 19:33:46" itemprop="dateCreated datePublished" datetime="2018-08-20T19:33:46+08:00">2018-08-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-11-05 17:17:31" itemprop="dateModified" datetime="2018-11-05T17:17:31+08:00">2018-11-05</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2018/08/20/iOS/WKWebView的坑之图片显示不完全/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/20/iOS/WKWebView的坑之图片显示不完全/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-11-05 17:17:31" itemprop="dateModified" datetime="2018-11-05T17:17:31+08:00">2018-11-05</time>
               </span>
-            
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2018/08/20/iOS/WKWebView的坑之图片显示不完全/" class="leancloud_visitors" data-flag-title="WKWebView的坑之图片显示不完全">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2018/08/20/iOS/WKWebView的坑之图片显示不完全/" class="post-meta-item leancloud_visitors" data-flag-title="WKWebView的坑之图片显示不完全" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h3 id="最近在做iPad-Pro适配时遇到了WKWebView图片显示不完全的坑"><a href="#最近在做iPad-Pro适配时遇到了WKWebView图片显示不完全的坑" class="headerlink" title="最近在做iPad Pro适配时遇到了WKWebView图片显示不完全的坑"></a>最近在做iPad Pro适配时遇到了WKWebView图片显示不完全的坑</h3><p>在显示网页中的大尺寸图片时，图片显示不完整，有些是下方不显示，有些是下方和右侧都不显示。流程如下</p>
+<h5 id="第一类情况"><a href="#第一类情况" class="headerlink" title="第一类情况"></a>第一类情况</h5><p><img src="https://upload-images.jianshu.io/upload_images/2312364-5a6e47876e988237.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="1. APP下方题目卡片初始状态"><br>在卡片出现时，显示了<code>WKWebView</code>上部内容。<br><img src="https://upload-images.jianshu.io/upload_images/2312364-58e01f9d020b7ab4.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="2. APP下方题目卡片展开状态"><br>点击卡片下方展开按钮或者上划手势，展开卡片，可以看到更多网页内容，但是下方图片无内容成白色。滑动图片后网页内容图片刷新，显示正常，如下<br><img src="https://upload-images.jianshu.io/upload_images/2312364-d70c883c7f0cf985.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="3. APP下方题目卡片拖动后显示"></p>
+<h5 id="第二类情况"><a href="#第二类情况" class="headerlink" title="第二类情况"></a>第二类情况</h5><p>如果<code>WKWebView</code>的初始状态为不可见时，如下<br><img src="https://upload-images.jianshu.io/upload_images/2312364-083090e32636521a.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="4. APP下方题目卡片初始状态"><br>点击展开卡片，显示的图片只有左上角一小条，其他内容缺失，如下<br><img src="https://upload-images.jianshu.io/upload_images/2312364-288e0a0459020401.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="5. APP下方题目卡片展开状态"><br>同样滑动后页面会刷新，图片显示恢复正常。<br><img src="https://upload-images.jianshu.io/upload_images/2312364-615209bc1fb73fc7.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="6. APP下方题目卡片拖动后显示"></p>
+<h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><p><code>WKWebView</code>相比<code>UIWebView</code>提高了页面渲染载入速度，其中也包括只对展示给用户可见的内容进行渲染，这样可以大大提高载入速度。如我遇到的图片问题，<code>WKWebView</code>会把图片分割成多块，如下图A-F六块区域。<br><img src="https://upload-images.jianshu.io/upload_images/2312364-ee5da42980f501a9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="WKWebView对图片分割成多块渲染"><br>在第一类情况，由于A/B/C块都是用户可见区域，所以<code>WKWebView</code>对这三块区域进行了渲染，而D/E/F块都没有渲染。所以展开卡片时，他也呈现空白状态，图片缺失。<br>第二类情况则是所有区域都不在用户可视范围内，所以他仅对A块渲染，展开后B/C/D/E/F都为空白，图片缺失。这个可以在<code>XCode</code>的<code>Debug View Hierarchy</code>中得到验证，完整渲染的有六个区域，第一种情况三个区域，第二种状况只有一种区域。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>填坑办法就是强制让<code>WKWebView</code>重新渲染一次，代码如下</p>
+<p><code>[_webView setNeedsLayout];</code></p>
+<p>我是在展开卡片时增加了<code>WKWebView</code>强制重新渲染的代码实现。而对于网上提到比较多的，在<code>UITableView</code>中添加<code>WKWebView</code>图片载入不全的情况可以在<code>- (void)scrollViewDidScroll:(UIScrollView *)scrollView</code>中增加强制重新渲染的代码来解决。声称这个坑在iOS11中得到了修复，但是我的11.3的iPad Pro还是遇到了这个问题😂，可能是我们的WKWebView操作没有触发重新渲染吧。</p>
+<p>———————————————– 编辑于20180821 ——————————————————-<br>最近出现了在iOS 8.2系统下图片显示过大，超出屏幕的问题。可以通过<code>addUserScript</code>解决，如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">NSString *jScript = @&quot;var meta = document.createElement(&apos;meta&apos;); meta.setAttribute(&apos;name&apos;, &apos;viewport&apos;); meta.setAttribute(&apos;content&apos;, &apos;width=device-width&apos;); document.getElementsByTagName(&apos;head&apos;)[0].appendChild(meta);&quot;;</span><br><span class="line">WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];</span><br><span class="line">WKUserContentController *wkUController = [[WKUserContentController alloc] init];</span><br><span class="line">[wkUController addUserScript:wkUScript];</span><br><span class="line">[[_webView configuration].userContentController addUserScript:wkUScript];</span><br></pre></td></tr></table></figure></p>
+<h3 id="Reference-List"><a href="#Reference-List" class="headerlink" title="Reference List"></a>Reference List</h3><p><a href="https://stackoverflow.com/questions/39549103/wkwebview-not-rendering-correctly-in-ios-10" target="_blank" rel="noopener">WKWebView not rendering correctly in iOS 10</a><br><a href="https://www.jianshu.com/p/2338775fd256" target="_blank" rel="noopener">使用WKWebView 适应屏幕尺寸</a></p>
 
-      
-        
-          
-          最近在做iPad Pro适配时遇到了WKWebView图片显示不完全的坑在显示网页中的大尺寸图片时，图片显示不完整，有些是下方不显示，有些是下方和右侧都不显示。流程如下
-第一类情况在卡片出现时，显示了WKWebView上部内容。点击卡片下方展开按钮或者上划手势，展开卡片，可以看到更多网页内容，但是下方图片无内容成白色。滑动图片后网页内容图片刷新，显示正常，如下
-第二类情况如果WKWebView的初
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2018/07/24/iOS/iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/24/iOS/iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能/" itemprop="url">
-                  iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/24/iOS/iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能/" class="post-title-link" itemprop="url">iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-07-24 10:33:46" itemprop="dateCreated datePublished" datetime="2018-07-24T10:33:46+08:00">2018-07-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2018/07/24/iOS/iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/24/iOS/iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
               </span>
-            
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2018/07/24/iOS/iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能/" class="leancloud_visitors" data-flag-title="iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2018/07/24/iOS/iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能/" class="post-meta-item leancloud_visitors" data-flag-title="iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>需要围绕任意点旋转若干角度返回和原始图片大小相同的图片。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>代码如下：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">UIImage</span> *)getRotationImage:(<span class="built_in">UIImage</span> *)image rotation:(<span class="built_in">CGFloat</span>)rotation point:(<span class="built_in">CGPoint</span>)point &#123;</span><br><span class="line">    <span class="built_in">NSInteger</span> num = (<span class="built_in">NSInteger</span>)(floor(rotation));</span><br><span class="line">    <span class="keyword">if</span> (num == rotation &amp;&amp; num % <span class="number">360</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> image;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> radius = rotation * M_PI / <span class="number">180</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">CGSize</span> rotatedSize = image.size;</span><br><span class="line">    <span class="comment">// Create the bitmap context</span></span><br><span class="line">    <span class="built_in">UIGraphicsBeginImageContext</span>(rotatedSize);</span><br><span class="line">    <span class="built_in">CGContextRef</span> bitmap = <span class="built_in">UIGraphicsGetCurrentContext</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// rotated image view</span></span><br><span class="line">    <span class="built_in">CGContextScaleCTM</span>(bitmap, <span class="number">1.0</span>, <span class="number">-1.0</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// move to the rotation relative point</span></span><br><span class="line">    <span class="built_in">CGContextTranslateCTM</span>(bitmap, point.x, -point.y);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Rotate the image context</span></span><br><span class="line">    <span class="built_in">CGContextRotateCTM</span>(bitmap, radius);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Now, draw the rotated/scaled image into the context</span></span><br><span class="line">    <span class="built_in">CGContextDrawImage</span>(bitmap, <span class="built_in">CGRectMake</span>(-point.x, -image.size.height+point.y, image.size.width, image.size.height), [image <span class="built_in">CGImage</span>]);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">UIImage</span> *newImage = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">    <span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line">    <span class="keyword">return</span> newImage;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>输入：</strong>需要旋转的图片，旋转的角度，和旋转围绕的点。<br><strong>返回：</strong>旋转后同样大小的结果图片。</p>
+<p>调试<code>CGContext</code>的时候需要注意几点，设置的<code>CGContextScaleCTM</code>, <code>CGContextTranslateCTM</code>, <code>CGContextRotateCTM</code>等方法改变的是上下文的坐标系参数；不同的设置顺序返回的最终自定义的坐标系结果也是不尽相同。<br>在调适的时候，由于设计的坐标系调整相对复杂，对已有的方法做调整可能牵一发而动全身，无法知道之间的必然联系。建议先思考自己需要的图片调整结果的理想步骤，再逐步实现并测试每步步骤，一步步达到最终效果。😂不过应该是我不太熟悉，调了好久，期间都快挠破头皮，最终才实现需要的效果。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.jianshu.com/p/ad8eed568ff4" target="_blank" rel="noopener">CGContext图形上下文详解</a><br><a href="https://www.jianshu.com/p/c32f6a931232" target="_blank" rel="noopener">CGContext-上下文（画布）的应用</a></p>
 
-      
-        
-          
-          需求需要围绕任意点旋转若干角度返回和原始图片大小相同的图片。
-实现代码如下：12345678910111213141516171819202122232425262728+ (UIImage *)getRotationImage:(UIImage *)image rotation:(CGFloat)rotation point:(CGPoint)point &#123;    NSInteger 
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2018/07/19/iOS/WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/19/iOS/WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081/" itemprop="url">
-                  WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/19/iOS/WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081/" class="post-title-link" itemprop="url">WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-07-19 21:33:46" itemprop="dateCreated datePublished" datetime="2018-07-19T21:33:46+08:00">2018-07-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2018/07/19/iOS/WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/19/iOS/WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
               </span>
-            
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2018/07/19/iOS/WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081/" class="leancloud_visitors" data-flag-title="WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2018/07/19/iOS/WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081/" class="post-meta-item leancloud_visitors" data-flag-title="WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>最近眼红WKWebView相对UIWebView的高可配置和高效。在最近的代码中选择使用WKWebView来加载JS动态页面。但是需要把WebView嵌入到另一个ScrollView中显示，所以需要拉伸到内容长度且不能被用户拖动。原始代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation &#123;</span><br><span class="line">    [webView evaluateJavaScript:@&quot;document.body.scrollHeight&quot; completionHandler:^(NSNumber *height, NSError * _Nullable error) &#123;</span><br><span class="line">        float htmlHeight =[height floatValue];</span><br><span class="line">        CGRect webFrame = webView.frame;</span><br><span class="line">        webFrame.size.height = htmlHeight;</span><br><span class="line">        webView.frame = webFrame;</span><br><span class="line">        [self addFeedBackBtn];</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过JS代码得到页面的高度。<br><strong>但是这样的方法对于非静态页面无效，高度并非正确的高度。</strong></p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><hr>
+<p><strong>编辑于20180813</strong><br>下面的分割线后是最初始的解决办法，但是在部分极端情况下还有用户反应会出现高度持续增长的问题。<br><strong>最终找到的原因</strong>是<code>WKWebView</code>的<code>frame</code>宽度带有小数，而不是整数。猜测<code>WKWebView</code>在计算<code>contentSize</code>的时候是依照<code>frame.width</code>向下取整的宽度来计算最终的<code>contentSize</code>的<code>height</code>的，然后导致KVO观察的contentSize高度在更新frame高度后持续增加。<br><strong>更新的解决办法是</strong>对WKWebView的frame宽度求整。</p>
+<p><strong>代码如下<code>_webView.frame = CGRectMake(HWFrame_IPhonePadX(20, 30), height, (NSInteger)(ScreenWidth - HWFrame_IPhonePadX(60, 80)), 0);</code>。</strong></p>
+<p>BTW. 之所以我们的<code>WKWebView</code>的<code>frame</code>宽度会带小数是因为我们的<code>HWFrame_IPhonePadX</code>宏会自适应屏幕宽高生成输入数值对应的实际显示数值（这个数字是比例计算而来，会带有小数位）。所以就尴尬了，产生了<code>WKWebView</code>高度持续增加的bug。</p>
+<hr>
+<p><strong>初始解决方案</strong><br>为了监控JS动态页面的当前高度，选择使用KVO监听<code>WKWebView.scrollView</code>的contentSize变化。在收到变化通知是，通过当前的contentSize更新webView的frame。代码如下：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)observeValueForKeyPath:(<span class="built_in">NSString</span> *)keyPath ofObject:(<span class="keyword">id</span>)object change:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSKeyValueChangeKey</span>,<span class="keyword">id</span>&gt; *)change context:(<span class="keyword">void</span> *)context &#123;</span><br><span class="line">    <span class="keyword">if</span> (object == _webView.scrollView &amp;&amp; [keyPath isEqualToString:<span class="string">@"contentSize"</span>]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"_webView.scrollView.contentSize %f %f"</span>, <span class="keyword">self</span>.webView.scrollView.contentSize.width, <span class="keyword">self</span>.webView.scrollView.contentSize.height);</span><br><span class="line">        <span class="built_in">CGRect</span> webFrame = <span class="keyword">self</span>.webView.frame;</span><br><span class="line">        webFrame.size.height = <span class="keyword">self</span>.webView.scrollView.contentSize.height;</span><br><span class="line">        <span class="keyword">self</span>.webView.frame = webFrame;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该方法可以基本解决访问动态页面，实时更新页面高度的问题。</p>
+<p><strong>使用KVO记得移除Observer，同时避免过度移除的crash。</strong>可以使用下方代码解决<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeWebViewObserver &#123;</span><br><span class="line">    <span class="keyword">@try</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (_webView) &#123;</span><br><span class="line">            [_webView.scrollView removeObserver:<span class="keyword">self</span> forKeyPath:<span class="string">@"contentSize"</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">@catch</span> (<span class="built_in">NSException</span> *exception) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"多次删除kvo 报错了"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="偶发问题"><a href="#偶发问题" class="headerlink" title="偶发问题"></a>偶发问题</h4><p>上方方法小概率下会出现监听持续被触发，<code>contentSize.height</code>持续不断增加，从而使得设置的<code>frame</code>的高度也在不断增加，无限循环增高。<br>我当时工程内的表现为高度每次加一。</p>
+<h5 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h5><p>通过<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)observeValueForKeyPath:(<span class="built_in">NSString</span> *)keyPath ofObject:(<span class="keyword">id</span>)object change:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSKeyValueChangeKey</span>,<span class="keyword">id</span>&gt; *)change context:(<span class="keyword">void</span> *)context &#123;</span><br><span class="line">    <span class="keyword">if</span> (object == _webView.scrollView &amp;&amp; [keyPath isEqualToString:<span class="string">@"contentSize"</span>]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"_webView.scrollView.contentSize %f %f"</span>, <span class="keyword">self</span>.webView.scrollView.contentSize.width, <span class="keyword">self</span>.webView.scrollView.contentSize.height);</span><br><span class="line">        <span class="built_in">CGRect</span> webFrame = <span class="keyword">self</span>.webView.frame;</span><br><span class="line">        webFrame.size.height = <span class="keyword">self</span>.webView.scrollView.contentSize.height - <span class="number">1</span>;    <span class="comment">// 每次减一可以结局死循环，持续增加高度。</span></span><br><span class="line">        <span class="keyword">self</span>.webView.frame = webFrame;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>该办法可以解决持续增加高度的问题。但是没有找到根本原因，无法确定所有页面都是每次加一，还是有其他可能的情况。<strong>所以该方法放弃。</strong></p>
+<h5 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h5><p>把WKWebView更换为UIWebView，同样也通过监听<code>contentSize</code>来动态更新webView高度，没有出现上方的偶发问题，高度不会持续增加。<br>但是WKWebView比UIWebView更加高效和苹果更加推荐，<strong>所以也放弃。</strong></p>
+<h5 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h5><p>测试代码，发现如果不仅仅更新frame的height，取而代之的通过contentSize同时更新webView的frame的宽高，就不会出现高度的持续增高。但是页面内容宽度会失去限制，超过webView页面范围。</p>
+<p><strong>最终解决方案是通过JS代码限制webView的内容宽度。</strong><br>方案是不更改监听代码，也不对监听得到的高度减一。更新WKNavigationDelegate的<code>- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation</code>如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation &#123;</span><br><span class="line">    if (webView == _webView) &#123;</span><br><span class="line">        NSString *meta = [NSString stringWithFormat:@&quot;document.getElementsByName(\&quot;viewport\&quot;)[0].content = \&quot;width=self.webView.frame.size.width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\&quot;&quot;];</span><br><span class="line">        [_webView evaluateJavaScript:meta completionHandler:^(id _Nullable complete, NSError * _Nullable error) &#123;</span><br><span class="line">            if (complete != nil) &#123;</span><br><span class="line">                NSLog(@&quot;complete %@&quot;, complete);</span><br><span class="line">            &#125; else if (error) &#123;</span><br><span class="line">                NSLog(@&quot;error %@&quot;, error);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过强制设置页面的宽度为我们当前的webView的宽度。解决偶尔出现的高度持续增加的Bug。</p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="https://stackoverflow.com/questions/3936041/how-to-determine-the-content-size-of-a-uiwebview" target="_blank" rel="noopener">How to determine the content size of a UIWebView?</a><br><a href="https://blog.csdn.net/yibuyibulai/article/details/43795095" target="_blank" rel="noopener">iOS 修改webView字体大小,设置宽度及缩放效果</a></p>
 
-      
-        
-          
-          问题描述最近眼红WKWebView相对UIWebView的高可配置和高效。在最近的代码中选择使用WKWebView来加载JS动态页面。但是需要把WebView嵌入到另一个ScrollView中显示，所以需要拉伸到内容长度且不能被用户拖动。原始代码如下：123456789- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavig
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2018/05/02/Python/Error-1053--The-service-did-not-respond-to-the-start-or-control-reques/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/02/Python/Error-1053--The-service-did-not-respond-to-the-start-or-control-reques/" itemprop="url">
-                  Error-1053--The-service-did-not-respond-to-the-start-or-control-reques
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/05/02/Python/Error-1053--The-service-did-not-respond-to-the-start-or-control-reques/" class="post-title-link" itemprop="url">Error-1053--The-service-did-not-respond-to-the-start-or-control-reques</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-05-02 10:33:46" itemprop="dateCreated datePublished" datetime="2018-05-02T10:33:46+08:00">2018-05-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2018/05/02/Python/Error-1053--The-service-did-not-respond-to-the-start-or-control-reques/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/02/Python/Error-1053--The-service-did-not-respond-to-the-start-or-control-reques/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
               </span>
-            
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2018/05/02/Python/Error-1053--The-service-did-not-respond-to-the-start-or-control-reques/" class="leancloud_visitors" data-flag-title="Error-1053--The-service-did-not-respond-to-the-start-or-control-reques">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2018/05/02/Python/Error-1053--The-service-did-not-respond-to-the-start-or-control-reques/" class="post-meta-item leancloud_visitors" data-flag-title="Error-1053--The-service-did-not-respond-to-the-start-or-control-reques" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <p>最近在把Python的定时程序放进Windows服务时遇到了上述的问题‘错误1053：服务没有及时响应启动或控制请求’ 或者 ‘Error 1053: The service did not respond to the start or control request in a timely fashion’。<br>可以正常安装<code>python PythonFileName.py install</code>，<br>不能正常启动<code>python PythonFileName.py start</code>。<br>尝试使用<code>python PythonFileName.py debug</code>检查代码，没有发现代码问题，考虑应该是环境问题。</p>
+<p>最终在StackOverflow的 <a href="https://stackoverflow.com/questions/8943371/cant-start-windows-service-written-in-python-win32serviceutil" target="_blank" rel="noopener">Can’t start Windows service written in Python (win32serviceutil)</a> 中找到了 <a href="https://stackoverflow.com/users/3220983/buvinj" title="2,840 reputation" target="_blank" rel="noopener">BuvinJ</a> 的回答：“It might prove useful in this case to also add these directories to your system path: C:\Python27\Lib\site-packages\win32 and C:\Python27\Lib\site-packages\pywin32_system32. That will let you use pythonservice more easily.  ”</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在cmd中输入<br><code>setx /M PATH &quot;%PATH%;C:\Python27;C:\Users\Administrator\Anaconda2\Scripts;C:\Users\Administrator\Anaconda2\Lib\site-packages\pywin32_system32;C:\Users\Administrator\Anaconda2\Lib\site-packages\win32&quot;</code><br>回车，增加两个路径的引用。然后就能启动服务了。</p>
+<p>具体的Windows服务Python代码：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">import win32serviceutil</span><br><span class="line">import win32service</span><br><span class="line">import win32event</span><br><span class="line">import servicemanager</span><br><span class="line">import winerror</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> StockRecommendRunLoop(win32serviceutil.ServiceFramework):</span><br><span class="line">    _svc_name_ = <span class="string">"StockRecommendRunLoop"</span></span><br><span class="line">    _svc_display_name_ = <span class="string">"Stock Recommend Run Loop"</span></span><br><span class="line"></span><br><span class="line">    def __init__(<span class="keyword">self</span>, args):</span><br><span class="line">        win32serviceutil.ServiceFramework.__init__(<span class="keyword">self</span>, args)</span><br><span class="line">        <span class="keyword">self</span>.hWaitStop = win32event.CreateEvent(None, <span class="number">0</span>, <span class="number">0</span>, None)</span><br><span class="line"></span><br><span class="line">    def SvcStop(<span class="keyword">self</span>):</span><br><span class="line">        <span class="keyword">self</span>.ReportServiceStatus(win32service.SERVICE_STOP_PENDING)</span><br><span class="line">        win32event.SetEvent(<span class="keyword">self</span>.hWaitStop)</span><br><span class="line"></span><br><span class="line">    def SvcDoRun(<span class="keyword">self</span>):</span><br><span class="line">        <span class="keyword">self</span>.ReportServiceStatus(win32service.SERVICE_RUNNING)</span><br><span class="line">        <span class="keyword">self</span>.start_task()</span><br><span class="line">        win32event.WaitForSingleObject(<span class="keyword">self</span>.hWaitStop, win32event.INFINITE)</span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    <span class="keyword">if</span> len(sys.argv) == <span class="number">1</span>:</span><br><span class="line">        try:</span><br><span class="line">            servicemanager.Initialize()</span><br><span class="line">            servicemanager.PrepareToHostSingle(StockRecommendRunLoop)</span><br><span class="line">            servicemanager.StartServiceCtrlDispatcher()</span><br><span class="line">        except win32service.error, details:</span><br><span class="line">            <span class="keyword">if</span> details[<span class="number">0</span>] == winerror.ERROR_FAILED_SERVICE_CONTROLLER_CONNECT:</span><br><span class="line">                win32serviceutil.usage()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        win32serviceutil.HandleCommandLine(StockRecommendRunLoop)</span><br></pre></td></tr></table></figure></p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h3><p><a href="https://stackoverflow.com/questions/8943371/cant-start-windows-service-written-in-python-win32serviceutil" target="_blank" rel="noopener">Can’t start Windows service written in Python (win32serviceutil)</a><br><a href="https://blog.csdn.net/zhou191954/article/details/8290010" target="_blank" rel="noopener">Python Windows Service的方式运行</a></p>
 
-      
-        
-          
-          最近在把Python的定时程序放进Windows服务时遇到了上述的问题‘错误1053：服务没有及时响应启动或控制请求’ 或者 ‘Error 1053: The service did not respond to the start or control request in a timely fashion’。可以正常安装python PythonFileName.py install，不能正常
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
-  </section>
 
   
   <nav class="pagination">
@@ -2267,868 +1117,289 @@
           </div>
           
 
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.JPG" alt="Michael LIN">
-            
-              <p class="site-author-name" itemprop="name">Michael LIN</p>
-              <p class="site-description motion-element" itemprop="description">Programming notes including iOS, Python and so on.</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">17</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">53</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/Michaelin1208" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i></a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:michaelin1208@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i></a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://twitter.com/Michaelin1208" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i></a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.facebook.com/michaelin1208" target="_blank" title="FB Page"><i class="fa fa-fw fa-facebook"></i></a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.jianshu.com/u/91cf4504636a" target="_blank" title="简书"><i class="fa fa-fw fa-book"></i></a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright"> &copy; <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Michael LIN</span>
-
-  
-
-  
-</div>
-
-
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.4.2</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-    
-      
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Michael LIN"
+      src="/images/avatar.JPG">
+  <p class="site-author-name" itemprop="name">Michael LIN</p>
+  <div class="site-description" itemprop="description">Programming notes including iOS, Python and so on.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Michaelin1208" title="GitHub → https://github.com/Michaelin1208" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:michaelin1208@gmail.com" title="E-Mail → mailto:michaelin1208@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Michaelin1208" title="Twitter → https://twitter.com/Michaelin1208" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/michaelin1208" title="FB Page → https://www.facebook.com/michaelin1208" rel="noopener" target="_blank"><i class="facebook fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/91cf4504636a" title="简书 → https://www.jianshu.com/u/91cf4504636a" rel="noopener" target="_blank"><i class="book fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
   
-  <script type="text/javascript" color="0,0,0" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael LIN</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
 
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
-
-
-
-  
-
-  
-    <script id="dsq-count-scr" src="https://michaelin1208.disqus.com/count.js" async></script>
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
     }
 
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
 
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
               });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
           } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-  <script>
-    
-    function showTime(Counter) {
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
-        .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
         });
     }
-    
 
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + "L9uPf3Q0ogQ0AEy30vrlEUEl-gzGzoHsz")
-        .done(function ({ api_server }) {
-          var Counter = function (method, url, data) {
-            return $.ajax({
-              method: method,
-              url: `https://${api_server}/1.1${url}`,
-              headers: {
-                'X-LC-Id': "L9uPf3Q0ogQ0AEy30vrlEUEl-gzGzoHsz",
-                'X-LC-Key': "qR7WlQ64uRSBmFfBAGHxqvwJ",
-                'Content-Type': 'application/json',
-              },
-              data: data,
-            });
-          };
-          
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
           }
-          
         })
-    });
-  </script>
-
-
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
     }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"L9uPf3Q0ogQ0AEy30vrlEUEl-gzGzoHsz","app_key":"qR7WlQ64uRSBmFfBAGHxqvwJ","server_url":null,"security":true,"betterPerformance":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
     }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
 </script>
 
 
-  
+      </div>
+    </footer>
+  </div>
 
   
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
 
   
-  
-  
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
-
   <script>
-    
-      pbOptions = {};
-      
-          pbOptions.iconStyle = "box";
-      
-          pbOptions.boxForm = "horizontal";
-      
-          pbOptions.position = "middleCenter";
-      
-          pbOptions.networks = "Weibo,Wechat,Linkedin,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-    
-    
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
   </script>
 
-  
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
 
   
 
   
 
-  
-
-  
-
-  
 
 </body>
 </html>

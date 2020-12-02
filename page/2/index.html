@@ -1,131 +1,28 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-
-
-
-  
-  
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-
-
-
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-  
-  
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
   <meta name="google-site-verification" content="Vfus_iRip6Is5Qtgla_q-ayMJFDjWnExgKp-GBsqdbk">
-
-
-
-
-
-
-
-
   <meta name="baidu-site-verification" content="7ufhi0r6bt">
 
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-big-counter.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=6.4.2">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=6.4.2">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=6.4.2">
-
-
-  <link rel="mask-icon" href="/images/favicon.png?v=6.4.2" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '6.4.2',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"michaelin1208.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="Programming notes including iOS, Python and so on.">
 <meta name="keywords" content="iOS, Python">
@@ -139,41 +36,33 @@
 <meta name="twitter:title" content="Michaelin&#39;s Blog">
 <meta name="twitter:description" content="Programming notes including iOS, Python and so on.">
 
+<link rel="canonical" href="https://michaelin1208.github.io/page/2/">
 
 
-  <link rel="alternate" href="/atom.xml" title="Michaelin's Blog" type="application/atom+xml">
-
-
-
-
-  <link rel="canonical" href="https://michaelin1208.github.io/page/2/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'default'
   };
 </script>
 
   <title>Michaelin's Blog</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127413290-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-127413290-1');
+      }
+    </script>
 
 
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127413290-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-127413290-1');
-</script>
-
-
-
-  <script type="text/javascript">
+  <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -186,1545 +75,790 @@
 
 
 
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Michaelin's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Michaelin's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">53</span></a>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">4</span></a>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">17</span></a>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-            
 
-          
-          <div id="content" class="content">
+          <div class="content index posts-expand">
             
-  <section id="posts" class="posts-expand">
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/09/19/Apple/Apple-Watch-“密码错误”-问题解决-和-还原初始化方式/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/19/Apple/Apple-Watch-“密码错误”-问题解决-和-还原初始化方式/" itemprop="url">
-                  Apple-Watch-“密码错误”-问题解决-和-还原初始化方式
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/09/19/Apple/Apple-Watch-“密码错误”-问题解决-和-还原初始化方式/" class="post-title-link" itemprop="url">Apple-Watch-“密码错误”-问题解决-和-还原初始化方式</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2017-09-19 10:33:46" itemprop="dateCreated datePublished" datetime="2017-09-19T10:33:46+08:00">2017-09-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-25 18:02:07" itemprop="dateModified" datetime="2019-04-25T18:02:07+08:00">2019-04-25</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Apple/" itemprop="url" rel="index"><span itemprop="name">Apple</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2017/09/19/Apple/Apple-Watch-“密码错误”-问题解决-和-还原初始化方式/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/19/Apple/Apple-Watch-“密码错误”-问题解决-和-还原初始化方式/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-25 18:02:07" itemprop="dateModified" datetime="2019-04-25T18:02:07+08:00">2019-04-25</time>
               </span>
-            
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Apple/" itemprop="url" rel="index"><span itemprop="name">Apple</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2017/09/19/Apple/Apple-Watch-“密码错误”-问题解决-和-还原初始化方式/" class="leancloud_visitors" data-flag-title="Apple-Watch-“密码错误”-问题解决-和-还原初始化方式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2017/09/19/Apple/Apple-Watch-“密码错误”-问题解决-和-还原初始化方式/" class="post-meta-item leancloud_visitors" data-flag-title="Apple-Watch-“密码错误”-问题解决-和-还原初始化方式" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h3 id="最近莫名其妙遇到的Apple-Watch无法解锁的问题"><a href="#最近莫名其妙遇到的Apple-Watch无法解锁的问题" class="headerlink" title="最近莫名其妙遇到的Apple Watch无法解锁的问题"></a>最近莫名其妙遇到的Apple Watch无法解锁的问题</h3><p>这个问题几乎是一个死循环。首先手机的蓝牙无法正常的连接到曾经配对过的Apple Watch，同时手表提示“密码错误 请在 iPhone 打开Apple Watch 应用，前往Passcode，轻按“重启密码”再试。”。<br><img src="http://upload-images.jianshu.io/upload_images/2312364-0bbfab50b8310e78.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="借用下网友的错误图片"><br>很尴尬，手机连不上手表，无法重启密码。手表所有按键都提示这段话。</p>
+<h3 id="晚上搜索了还原办法，多数说的是按住边上的电源键和表冠健，直到出现白苹果，再松开。但是尝试后并没有还原，依然还是这一段提示。"><a href="#晚上搜索了还原办法，多数说的是按住边上的电源键和表冠健，直到出现白苹果，再松开。但是尝试后并没有还原，依然还是这一段提示。" class="headerlink" title="晚上搜索了还原办法，多数说的是按住边上的电源键和表冠健，直到出现白苹果，再松开。但是尝试后并没有还原，依然还是这一段提示。"></a>晚上搜索了还原办法，多数说的是按住边上的电源键和表冠健，直到出现白苹果，再松开。但是尝试后并没有还原，依然还是这一段提示。</h3><p>之后联系了客服，才得知有另一种还原的办法：就是<strong>“长按电源键直到出现关机滑动条，此时不要滑动关机键，而是用力点击（force touch）关机条中间，之后便会出现‘抹掉内容并恢复出厂设置’按钮。”</strong>之后再用手机和手表配对，然后恢复备份就能搞定这个问题了。</p>
+<p><strong><a href="http://bbs.feng.com/forum.php?mod=forumdisplay&amp;fid=573&amp;filter=typeid&amp;typeid=742" target="_blank" rel="noopener">[求助已解决]这是什么鬼？求解—————-已解决</a></strong><br>感谢楼主的图，原来楼下高人已经提供了这个还原办法，白和客服妹子聊了一小时天了<br>$x + y = z$</p>
 
-      
-        
-          
-          最近莫名其妙遇到的Apple Watch无法解锁的问题这个问题几乎是一个死循环。首先手机的蓝牙无法正常的连接到曾经配对过的Apple Watch，同时手表提示“密码错误 请在 iPhone 打开Apple Watch 应用，前往Passcode，轻按“重启密码”再试。”。很尴尬，手机连不上手表，无法重启密码。手表所有按键都提示这段话。
-晚上搜索了还原办法，多数说的是按住边上的电源键和表冠健，直到出
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/27/iOS/MMDraggableTagView实现排坑/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/27/iOS/MMDraggableTagView实现排坑/" itemprop="url">
-                  MMDraggableTagView实现排坑
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/27/iOS/MMDraggableTagView实现排坑/" class="post-title-link" itemprop="url">MMDraggableTagView实现排坑</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2017-03-27 10:33:46" itemprop="dateCreated datePublished" datetime="2017-03-27T10:33:46+08:00">2017-03-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2017/03/27/iOS/MMDraggableTagView实现排坑/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/27/iOS/MMDraggableTagView实现排坑/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
               </span>
-            
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2017/03/27/iOS/MMDraggableTagView实现排坑/" class="leancloud_visitors" data-flag-title="MMDraggableTagView实现排坑">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2017/03/27/iOS/MMDraggableTagView实现排坑/" class="post-meta-item leancloud_visitors" data-flag-title="MMDraggableTagView实现排坑" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          最近需要实现个MMDraggableTagView来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 SnapKit 来管理autolayout的constraints，这个三方库和 Masonry 类似，只是 one for ObjC, one for Swift. 
-问题列表（Swift菜鸟问题，熟练工略过）1. 通过
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
+          <p>最近需要实现个<a href="https://github.com/michaelin1208/ChargeApp/tree/MMDraggableTagView" target="_blank" rel="noopener">MMDraggableTagView</a>来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 <a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="noopener">SnapKit</a> 来管理autolayout的constraints，这个三方库和 <a href="https://github.com/SnapKit/Masonry" target="_blank" rel="noopener">Masonry</a> 类似，只是 one for ObjC, one for Swift. </p>
+<h3 id="问题列表（Swift菜鸟问题，熟练工略过）"><a href="#问题列表（Swift菜鸟问题，熟练工略过）" class="headerlink" title="问题列表（Swift菜鸟问题，熟练工略过）"></a>问题列表（Swift菜鸟问题，熟练工略过）</h3><p><strong>1. 通过SnapKit，重复更新autolayout时，页面显示位置不正常</strong><br>最初采用<code>public func makeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来添加constraints，但是重复使用会遗留下之前添加的constraints。需要使用<code>public func remakeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来实现删除之前的constraints，并创建新的constraints。</p>
+<p><strong>2. 通过更新视图的constraints来实现视图的动画效果。</strong><br>一开始通过在UIView的animate block中实现constraints更新，但是并没有动画效果<br>正确方法是：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIView</span>.animate(withDuration: <span class="number">0.2</span>, animations: &#123;</span><br><span class="line">      <span class="keyword">self</span>.relocateTags()         <span class="comment">// update autolayout constraints by SnapKit.</span></span><br><span class="line">      <span class="keyword">self</span>.layoutIfNeeded()       <span class="comment">// call layout method if needed to update subviews.</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>需要调用<code>layoutIfNeeded()</code>来更新子页面，不然其实子视图不会更新位置，只更新constraints。</p>
+<p><strong>3. 视图被拖拽时，出现视图因为之前的关联对象的位移，而产生同样的位移</strong><br>考虑是因为之前被拖拽视图设置的与周边子视图相关的constraints导致的。因此可以通过SnapKit中的<code>public func removeConstraints()</code>来直接删除所有的限制。但是因为删除了所有constraints，会导致视图移动到最初左上角的位置。因此采用了个折中的办法，<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">draggingCell!.snp.remakeConstraints &#123; (make) <span class="keyword">in</span></span><br><span class="line">      make.top.equalTo(<span class="keyword">self</span>).offset(draggingCell!.frame.origin.y)</span><br><span class="line">      make.left.equalTo(<span class="keyword">self</span>).offset(draggingCell!.frame.origin.x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>更新他的constraints，删除与周边subviews相关的constraints，设置为与superview的相关关系。这样就不会因为相关的subviews的位置变化而影响自己的视图。</p>
+<h3 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h3>
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Michael LIN">
-      <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Michaelin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/" itemprop="url">
-                  sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-03-20 10:33:46" itemprop="dateCreated datePublished" datetime="2017-03-20T10:33:46+08:00">2017-03-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/" class="leancloud_visitors" data-flag-title="sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          sudo gem install cocoapods更新CocoaPods，或者sudo gem update --system更新gem。却提醒失败，无权限。但是已经加了sudo，考虑是路径问题。
-解决办法用下面的代码指定路径就能安装成功了。sudo gem install -n /usr/bin/pod cocoapods安装CocoaPods或者sudo gem update -n /usr
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
   
   
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/" itemprop="url">
-                  CocoaPods-trunk-push发布成功后无法pod-search到
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/" class="post-title-link" itemprop="url">CocoaPods-trunk-push发布成功后无法pod-search到</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2017-03-20 10:33:46" itemprop="dateCreated datePublished" datetime="2017-03-20T10:33:46+08:00">2017-03-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2020-02-25 14:29:05" itemprop="dateModified" datetime="2020-02-25T14:29:05+08:00">2020-02-25</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-25 14:29:05" itemprop="dateModified" datetime="2020-02-25T14:29:05+08:00">2020-02-25</time>
               </span>
-            
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/" class="leancloud_visitors" data-flag-title="CocoaPods-trunk-push发布成功后无法pod-search到">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/" class="post-meta-item leancloud_visitors" data-flag-title="CocoaPods-trunk-push发布成功后无法pod-search到" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h2 id="现象："><a href="#现象：" class="headerlink" title="现象："></a>现象：</h2><p>按照上一篇文章<a href="http://www.jianshu.com/p/61cc4121a0ee" target="_blank" rel="noopener">《MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记》</a>介绍，实现了新建并编辑podspace，然后通过<code>pod trunk push yourSpaceName.podspec</code>来push我们自己的CocoaPods库到<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">CocoaPods官方git</a>。</p>
+<p>上传成功后，按照之前的文章介绍，可以使用<code>pod search YouUploadCocoaPodsSpaceName</code> 来找到你的工程。理应显示<br><img src="http://upload-images.jianshu.io/upload_images/2312364-deb7ef62c1e4cad3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="预期效果"><br>但是显示的是😂<br><img src="http://upload-images.jianshu.io/upload_images/2312364-0c8d7f7fa5364d69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="实际效果"></p>
+<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>网上介绍这类的解决方法是<code>pod setup</code>来更新我们本地的CocoaPods space库，然后再用<code>pod search</code>便找到我们发布的工程。但是我使用后始终无效。</p>
+<p>怀疑是否会是因为需要审核，可能需要些时间。但是今天发现依然如此，便进到<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">CocoaPods官方git</a>搜索，发现我的库已经被收录。</p>
+<p><strong>于是再次搜索解决方案，发现可能是本地的搜索时的本地缓存有问题。</strong><br>可以在终端中输入<br><code>rm ~/Library/Caches/CocoaPods/search_index.json</code><br>来清除缓存，再通过<br><code>pod search YouUploadCocoaPodsSpaceName</code><br>来搜索<br><img src="http://upload-images.jianshu.io/upload_images/2312364-deb7ef62c1e4cad3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="最终效果"><br>这样就可以搜索到自己发布成功的CocoaPods库了。</p>
+<h3 id="Reference："><a href="#Reference：" class="headerlink" title="Reference："></a>Reference：</h3><p><a href="http://blog.sina.com.cn/s/blog_14d7dd6710102wc1w.html" target="_blank" rel="noopener">解决cocoapods安装完成后不能 pod search的问题</a></p>
 
-      
-        
-          
-          现象：按照上一篇文章《MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记》介绍，实现了新建并编辑podspace，然后通过pod trunk push yourSpaceName.podspec来push我们自己的CocoaPods库到CocoaPods官方git。
-上传成功后，按照之前的文章介绍，可以使用pod search YouUploadCocoaPodsSp
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
+    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
+      <meta itemprop="name" content="Michael LIN">
+      <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Michaelin's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/" class="post-title-link" itemprop="url">sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-03-20 10:33:46" itemprop="dateCreated datePublished" datetime="2017-03-20T10:33:46+08:00">2017-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/" class="post-meta-item leancloud_visitors" data-flag-title="sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
 
     
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
+          <p><code>sudo gem install cocoapods</code>更新CocoaPods，或者<code>sudo gem update --system</code>更新gem。却提醒失败，无权限。<br><img src="http://upload-images.jianshu.io/upload_images/2312364-e9a9907d6bb0e042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="更新失败 提示无权限"><br>但是已经加了sudo，考虑是路径问题。</p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>用下面的代码指定路径就能安装成功了。<br><code>sudo gem install -n /usr/bin/pod cocoapods</code>安装CocoaPods<br>或者<br><code>sudo gem update -n /usr/local/bin --system</code>安装Gem</p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="http://stackoverflow.com/questions/33015875/operation-not-permitted-usr-bin-update-rubygems" target="_blank" rel="noopener">Operation not permitted - /usr/bin/update_rubygems</a></p>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
   
 
+      
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/16/csdn/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/16/csdn/" itemprop="url">
-                  我的CSDN博客地址
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/16/csdn/" class="post-title-link" itemprop="url">我的CSDN博客地址</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2017-03-16 17:06:18" itemprop="dateCreated datePublished" datetime="2017-03-16T17:06:18+08:00">2017-03-16</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Others/" itemprop="url" rel="index"><span itemprop="name">Others</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2017/03/16/csdn/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/16/csdn/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
               </span>
-            
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Others/" itemprop="url" rel="index"><span itemprop="name">Others</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2017/03/16/csdn/" class="leancloud_visitors" data-flag-title="我的CSDN博客地址">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2017/03/16/csdn/" class="post-meta-item leancloud_visitors" data-flag-title="我的CSDN博客地址" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-          
-          原来CSDN博客地址michaelin1208。 懒得一篇篇文章搬运了，记录下方便以后查找😊。
+          <p>原来CSDN博客地址<a href="http://blog.csdn.net/michaelin1208" target="_blank" rel="noopener">michaelin1208</a>。 懒得一篇篇文章搬运了，记录下方便以后查找😊。</p>
 
-          
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/16/iOS/MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/16/iOS/MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记/" itemprop="url">
-                  MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/16/iOS/MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记/" class="post-title-link" itemprop="url">MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2017-03-16 16:33:46" itemprop="dateCreated datePublished" datetime="2017-03-16T16:33:46+08:00">2017-03-16</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2017/03/16/iOS/MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/16/iOS/MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
               </span>
-            
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2017/03/16/iOS/MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记/" class="leancloud_visitors" data-flag-title="MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2017/03/16/iOS/MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记/" class="post-meta-item leancloud_visitors" data-flag-title="MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h2 id="MMNumberScrollView数字滚动动画视图"><a href="#MMNumberScrollView数字滚动动画视图" class="headerlink" title="MMNumberScrollView数字滚动动画视图"></a>MMNumberScrollView数字滚动动画视图</h2><p>之前项目中需要一个动画显示礼物数字增长的视图。最近把它拿来修改下，共享出来。具体的代码可从 <strong><a href="https://github.com/michaelin1208/MMNumberScrollView" target="_blank" rel="noopener">MMNumberScrollView in GitHub</a></strong> 下载。<br>本数字滚动视图可以实现用户自定义滚动图案，滚动速度，和是否动态控制视图大小。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">#import &quot;MMSingleNumberScrollView.h&quot;</span><br><span class="line"></span><br><span class="line">@class MMNumberScrollViewManager;</span><br><span class="line"></span><br><span class="line">@protocol MMNumberScrollViewManagerDelegate &lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">- (void)numberScrollViewManagerFinishedIncreasing:(MMNumberScrollViewManager *)manager;     // delegate method is callbacked when the number scroll view manager finish a increasing operation.</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface MMNumberScrollViewManager:UIView &lt;UIScrollViewDelegate, MMSingleNumberScrollViewDelegate&gt;</span><br><span class="line"></span><br><span class="line">@property (nonatomic,strong) NSMutableArray *numImageArray;  // a mutable array of number images shown in number scroll view.</span><br><span class="line">@property (nonatomic) NSTimeInterval speedDuration;  // roll speed, the duration of each increasing scrolling. The default value is 1 second.</span><br><span class="line">@property (nonatomic) BOOL isShowingFinalSize;  // is it show final size at beginning. Default value is &apos;YES&apos;, the size of scroll view is not increasing during scrolling.</span><br><span class="line"></span><br><span class="line">@property (nonatomic, weak) id&lt;MMNumberScrollViewManagerDelegate&gt; delegate;</span><br><span class="line"></span><br><span class="line">// increase number displayed in the manager&apos;s view from currentCount to targetCount.</span><br><span class="line">// You would better to start another increasing after last increasing operation finished (by &quot;- (void)numberScrollViewManagerFinishedIncreasing:(MMNumberScrollViewManager *)manager;&quot;)</span><br><span class="line">// or remove all existed number scroll views (&quot;- (void)removeAllNumberScrollViews;&quot;).</span><br><span class="line">- (void)increaseNumberFrom:(int)currentCount to:(int)targetCount;</span><br><span class="line"></span><br><span class="line">// init the number scroll view manager to contral all single number scroll views.</span><br><span class="line">- (instancetype)initWithFrame:(CGRect)frame;</span><br><span class="line"></span><br><span class="line">// remove all single number scroll views, if you want to shwo another number increasing.</span><br><span class="line">- (void)removeAllNumberScrollViews;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<h2 id="Cocoapods实践笔记"><a href="#Cocoapods实践笔记" class="headerlink" title="Cocoapods实践笔记"></a>Cocoapods实践笔记</h2><p>此外最近有些迷恋Cocoapods，最近都在尝试如何把自己的工程中自己工程中的三方库交给CocoaPods来管理。今天也顺道实践下怎么创建CocoaPods。方法可以参考下：<br><strong><a href="http://www.jianshu.com/p/98407f0c175b" target="_blank" rel="noopener">创建CocoaPods的制作过程</a></strong><br><strong><a href="http://www.jianshu.com/p/6e5c0f78200a" target="_blank" rel="noopener">CocoaPods的安装使用和常见问题</a></strong></p>
+<p>没有遇到什么特别的问题，除了个别步骤需要翻墙，推荐下<a href="https://github.com/getlantern/lantern" target="_blank" rel="noopener">Lantern</a>，虽然流量有上限，但是从来没超过。创建过程一切顺利，应该成功了，但是暂时在Cocoapods中还搜索不到我的工程。</p>
 
-      
-        
-          
-          MMNumberScrollView数字滚动动画视图之前项目中需要一个动画显示礼物数字增长的视图。最近把它拿来修改下，共享出来。具体的代码可从 MMNumberScrollView in GitHub 下载。本数字滚动视图可以实现用户自定义滚动图案，滚动速度，和是否动态控制视图大小。12345678910111213141516171819202122232425262728293031#impo
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/01/10/iOS/苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
       <meta itemprop="name" content="Michael LIN">
       <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-      <meta itemprop="image" content="/images/avatar.JPG">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Michaelin's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/01/10/iOS/苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案/" itemprop="url">
-                  苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/01/10/iOS/苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案/" class="post-title-link" itemprop="url">苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2017-01-10 16:33:46" itemprop="dateCreated datePublished" datetime="2017-01-10T16:33:46+08:00">2017-01-10</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2017/01/10/iOS/苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/10/iOS/苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
               </span>
-            
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
 
           
-          
-             <span id="/2017/01/10/iOS/苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案/" class="leancloud_visitors" data-flag-title="苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views: </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+            <span id="/2017/01/10/iOS/苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案/" class="post-meta-item leancloud_visitors" data-flag-title="苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h1 id="首先是还算好的好消息"><a href="#首先是还算好的好消息" class="headerlink" title="首先是还算好的好消息"></a>首先是还算好的好消息</h1><p><a href="https://developer.apple.com/news/?id=12212016b" target="_blank" rel="noopener">苹果官方</a>表示：强制使用 HTTPS 的要求将暂时不执行，以便给我们更多的时间来做 HTTPS 的适配工作。具体的执行时间，将在确定后再次发布。因此，我们依然可以在 ‘xxx-Info.plist’ 中设置 ‘App Transport Security Settings’ 的 ‘Allow Arbitrary Loads’ 属性设置为yes，来避开ATS要求。这样我们的应用不再需要任何修改就可访问http的网页。</p>
+<h1 id><a href="#" class="headerlink" title=" "></a> </h1><h1 id="其次是出来混总要还的"><a href="#其次是出来混总要还的" class="headerlink" title="其次是出来混总要还的"></a>其次是出来混总要还的</h1><h3 id="首先我们需要把网站配置成支持HTTPS。"><a href="#首先我们需要把网站配置成支持HTTPS。" class="headerlink" title="首先我们需要把网站配置成支持HTTPS。"></a>首先我们需要把网站配置成支持HTTPS。</h3><h4 id="苹果的-ATS-App-Transport-Security-政策对于HTTPS的要求，包括："><a href="#苹果的-ATS-App-Transport-Security-政策对于HTTPS的要求，包括：" class="headerlink" title="苹果的 ATS (App Transport Security) 政策对于HTTPS的要求，包括："></a>苹果的 ATS (App Transport Security) 政策对于HTTPS的要求，包括：</h4><ol>
+<li><p>X.509证书必须至少满足下面一种条件：</p>
+<p>由根证书是操作系统安装的CA颁发；</p>
+<p>由用户或系统管理员信任并安装的根证书颁发；</p>
+</li>
+<li><p>TLS版本必须为TLS 1.2，不使用TLS或使用老版本TLS的连接，访问会失败，基于TLSTool工程可获取服务器支持的TLS相关参数；</p>
+<p>连接必须使用AES-128或AES-256对称加密算法，TLS协商算法必须通过ECDHE密钥交换保证完全正向保密（Perfect Forward Secrecy, PFS），ECDHE密钥必须属于下面一种：</p>
+</li>
+</ol>
+<blockquote>
+<p>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</p>
+<p>TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</p>
+<p>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384</p>
+<p>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA</p>
+<p>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256</p>
+<p>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA</p>
+<p>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</p>
+<p>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</p>
+<p>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384</p>
+<p>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256</p>
+<p>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</p>
+</blockquote>
+<ol start="3">
+<li><p>服务器叶证书必须使用下列的密钥签名：</p>
+<p>至少2048位的RSA密钥；</p>
+<p>至少256位的ECC密钥；</p>
+</li>
+</ol>
+<h4 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h4><h4 id="验证网站是否支持苹果的-ATS-要求"><a href="#验证网站是否支持苹果的-ATS-要求" class="headerlink" title="验证网站是否支持苹果的 ATS 要求"></a>验证网站是否支持苹果的 ATS 要求</h4><p>对于OS X v10.11及以上系统，用户可以在终端中使用</p>
+<blockquote>
+<p>/usr/bin/nscurl –ats-diagnostics –verbose <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a></p>
+</blockquote>
+<p>来验证目标网站是否符合 ATS 要求，以及是否需要加入白名单。</p>
+<p>此外，腾讯云也提供了验证是否符合ATS要求的验证 SSL 网页。</p>
+<h3 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h3><h3 id="对于无法支持ATS的网站，尤其是第三方网站的适配方案。"><a href="#对于无法支持ATS的网站，尤其是第三方网站的适配方案。" class="headerlink" title="对于无法支持ATS的网站，尤其是第三方网站的适配方案。"></a>对于无法支持ATS的网站，尤其是第三方网站的适配方案。</h3><p><strong>首先配置 ‘xxx-Info.plist’ 对于用户的 API 请求</strong>，苹果要求是必须使用 HTTPS 的，特别是当这个服务器是属于你们自己管理的话。那么这就需要服务器的同事尽快配置证书好让服务器支持 HTTPS 访问。如果使用的是第三方的 API，而他们没有提供 HTTPS 支持的话，需要在 NSExceptionDomains 中进行添加。具体的添加方式可以参考官方的 <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="noopener">App Transport Security Technote</a>，官方对他进行了具体的说明。</p>
+<p>这些都可以在 ‘xxx-Info.plist’ 的 ‘NSAppTransportSecurity’ 中进行配置，具体的内容包括</p>
+<p>NSAllowsArbitraryLoads - Bool类型 - 设置YES即可完全关闭ATS，以便支持所有HTTP请求，默认为NO。</p>
+<p>NSAllowsArbitraryLoadsInWebContent - Bool类型 - 允许应用浏览网页内容时关闭ATS限制。默认为NO，像是 UIWebView 或 WKWebView 需要访问 HTTP 或者不安全的 HTTPS 时，需要设置为YES来允许访问。</p>
+<p>NSAllowsArbitraryLoadsForMedia - Bool类型 - 允许该APP的 AVFoundation 中的 player 可以关闭 ATS 限制。默认为NO，如果媒体内容不支持 HTTPS 可打开该关键字。</p>
+<p>NSAllowsLocalNetworking - Bool类型 - 设置本地网络请求不受 ATS 的限制，默认为NO。</p>
+<p>NSExceptionDomains - Dictionary类型 - 添加白名单域名，对应不同的白名单中的网址设置他们的安全例外内容。需要例外的域名根地址 (不包括 ‘http://‘ 或 ‘https://‘ 的头和 ‘/‘ ) 作为关键字，Dictionary类型，内容为下面的参数。</p>
+<p>NSExceptionMinimumTLSVersion - String类型 - 白名单指定域名支持的TLS版本，苹果要求必须达到TLS 1.2版本，如果你访问的网站仅支持TLS 1.0，那么设置为 ‘TLSv1.0’。</p>
+<p>NSExceptionRequiresForwardSecrecy - Bool类型 - 白名单指定域名是否支持Forward Secrecy，默认值为YES，如果域名不支持完全正向加密，那么设置为NO。具体的加密要求可以阅读上方官方技术文档。</p>
+<p>NSExceptionAllowsInsecureHTTPLoads - Bool类型 - 白名单指定域名禁用ATS，而不仅仅只是允许HTTP访问，默认是NO。</p>
+<p>NSIncludesSubdomains - Bool类型 - 白名单指定该白名单的相关设置是否同样设置它的子域名，默认为NO。</p>
+<p><strong>‘SDWebImage’ 无法下载图片的问题。</strong>在设置了白名单后，出现部分网上的图片无法通过 ‘SDWebImage’ 进行下载的问题。解决方法是在下载图片时，设置 ‘options’ 为 ‘SDWebImageAllowInvalidSSLCertificates’ 来允许SDWebImage类访问无效的SSL认证。</p>
+<blockquote>
+<p>[self.headImageView sd_setImageWithURL:[NSURL URLWithString:headImageStr] placeholderImage:kCLDefaultHeadImage options:SDWebImageAllowInvalidSSLCertificates];</p>
+</blockquote>
+<p><strong>‘AFNetworking’</strong> 在 ATS 打开情况下，对于无效证书 (像是自建证书) 和不匹配域名的证书可能会请求失败，那么我们需要修改请求的安全要求，来允许无效证书和不匹配域名的证书。</p>
+<blockquote>
+<p>AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];</p>
+<p>AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];</p>
+<p>//allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO//如果是需要验证自建证书，需要设置为YES</p>
+<p>securityPolicy.allowInvalidCertificates = YES;</p>
+<p>//validatesDomainName 是否需要验证域名，默认为YES；</p>
+<p>securityPolicy.validatesDomainName = NO;</p>
+<p>manager.securityPolicy  = securityPolicy;</p>
+<p>manager.responseSerializer = [AFHTTPResponseSerializer serializer];</p>
+<p>[manager POST:urlString parameters:dic success:finishedBlock failure:failedBlock];</p>
+</blockquote>
+<h1 id="-3"><a href="#-3" class="headerlink" title=" "></a> </h1><h1 id="Reference-List"><a href="#Reference-List" class="headerlink" title="Reference List:"></a>Reference List:</h1><p>“Supporting App Transport Security”, <a href="https://developer.apple.com/news/?id=12212016b" target="_blank" rel="noopener">https://developer.apple.com/news/?id=12212016b</a></p>
+<p>“Apple’s Information Property List Key Reference”, <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html</a></p>
+<p>“苹果ATS（强制HTTPS）审核新政解码”, <a href="https://yq.aliyun.com/articles/62563" target="_blank" rel="noopener">https://yq.aliyun.com/articles/62563</a></p>
+<p>“iOS 中 AFNetworking HTTPS 的使用”, <a href="http://www.jianshu.com/p/20d5fb4cd76d" target="_blank" rel="noopener">http://www.jianshu.com/p/20d5fb4cd76d</a></p>
+<p>“苹果新『应用通信安全』的理解和使用”, <a href="http://www.cocoachina.com/ios/20150717/12650.html" target="_blank" rel="noopener">http://www.cocoachina.com/ios/20150717/12650.html</a></p>
 
-      
-        
-          
-          首先是还算好的好消息苹果官方表示：强制使用 HTTPS 的要求将暂时不执行，以便给我们更多的时间来做 HTTPS 的适配工作。具体的执行时间，将在确定后再次发布。因此，我们依然可以在 ‘xxx-Info.plist’ 中设置 ‘App Transport Security Settings’ 的 ‘Allow Arbitrary Loads’ 属性设置为yes，来避开ATS要求。这样我们的应用不再
-          ...
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
-  </section>
 
   
   <nav class="pagination">
@@ -1736,868 +870,289 @@
           </div>
           
 
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.JPG" alt="Michael LIN">
-            
-              <p class="site-author-name" itemprop="name">Michael LIN</p>
-              <p class="site-description motion-element" itemprop="description">Programming notes including iOS, Python and so on.</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">17</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">53</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/Michaelin1208" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i></a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:michaelin1208@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i></a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://twitter.com/Michaelin1208" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i></a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.facebook.com/michaelin1208" target="_blank" title="FB Page"><i class="fa fa-fw fa-facebook"></i></a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.jianshu.com/u/91cf4504636a" target="_blank" title="简书"><i class="fa fa-fw fa-book"></i></a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright"> &copy; <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Michael LIN</span>
-
-  
-
-  
-</div>
-
-
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.4.2</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-    
-      
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Michael LIN"
+      src="/images/avatar.JPG">
+  <p class="site-author-name" itemprop="name">Michael LIN</p>
+  <div class="site-description" itemprop="description">Programming notes including iOS, Python and so on.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Michaelin1208" title="GitHub → https://github.com/Michaelin1208" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:michaelin1208@gmail.com" title="E-Mail → mailto:michaelin1208@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Michaelin1208" title="Twitter → https://twitter.com/Michaelin1208" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/michaelin1208" title="FB Page → https://www.facebook.com/michaelin1208" rel="noopener" target="_blank"><i class="facebook fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/91cf4504636a" title="简书 → https://www.jianshu.com/u/91cf4504636a" rel="noopener" target="_blank"><i class="book fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
   
-  <script type="text/javascript" color="0,0,0" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael LIN</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
 
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
-
-
-
-  
-
-  
-    <script id="dsq-count-scr" src="https://michaelin1208.disqus.com/count.js" async></script>
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
     }
 
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
 
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
               });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
           } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-  <script>
-    
-    function showTime(Counter) {
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
-        .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
         });
     }
-    
 
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + "L9uPf3Q0ogQ0AEy30vrlEUEl-gzGzoHsz")
-        .done(function ({ api_server }) {
-          var Counter = function (method, url, data) {
-            return $.ajax({
-              method: method,
-              url: `https://${api_server}/1.1${url}`,
-              headers: {
-                'X-LC-Id': "L9uPf3Q0ogQ0AEy30vrlEUEl-gzGzoHsz",
-                'X-LC-Key': "qR7WlQ64uRSBmFfBAGHxqvwJ",
-                'Content-Type': 'application/json',
-              },
-              data: data,
-            });
-          };
-          
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
           }
-          
         })
-    });
-  </script>
-
-
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
     }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"L9uPf3Q0ogQ0AEy30vrlEUEl-gzGzoHsz","app_key":"qR7WlQ64uRSBmFfBAGHxqvwJ","server_url":null,"security":true,"betterPerformance":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
     }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
 </script>
 
 
-  
+      </div>
+    </footer>
+  </div>
 
   
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
 
   
-  
-  
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
-
   <script>
-    
-      pbOptions = {};
-      
-          pbOptions.iconStyle = "box";
-      
-          pbOptions.boxForm = "horizontal";
-      
-          pbOptions.position = "middleCenter";
-      
-          pbOptions.networks = "Weibo,Wechat,Linkedin,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-    
-    
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
   </script>
 
-  
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
 
   
 
   
 
-  
-
-  
-
-  
 
 </body>
 </html>
