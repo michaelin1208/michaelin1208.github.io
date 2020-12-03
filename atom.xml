@@ -378,37 +378,6 @@
   </entry>
   
   <entry>
-    <title>sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法</title>
-    <link href="https://michaelin1208.github.io/2017/03/20/iOS/sudo-gem-install-cocoapods%E6%9B%B4%E6%96%B0CocoaPods%E5%A4%B1%E8%B4%A5%E3%80%81%E6%97%A0%E6%9D%83%E9%99%90%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
-    <id>https://michaelin1208.github.io/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/</id>
-    <published>2017-03-20T02:33:46.000Z</published>
-    <updated>2018-10-30T07:45:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>sudo gem install cocoapods</code>更新CocoaPods，或者<code>sudo gem update --system</code>更新gem。却提醒失败，无权限。<br><img src="http://upload-images.jianshu.io/upload_images/2312364-e9a9907d6bb0e042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="更新失败 提示无权限"><br>但是已经加了sudo，考虑是路径问题。</p><h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>用下面的代码指定路径就能安装成功了。<br><code>sudo gem install -n /usr/bin/pod cocoapods</code>安装CocoaPods<br>或者<br><code>sudo gem update -n /usr/local/bin --system</code>安装Gem</p><h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="http://stackoverflow.com/questions/33015875/operation-not-permitted-usr-bin-update-rubygems" target="_blank" rel="noopener">Operation not permitted - /usr/bin/update_rubygems</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;code&gt;sudo gem install cocoapods&lt;/code&gt;更新CocoaPods，或者&lt;code&gt;sudo gem update --system&lt;/code&gt;更新gem。却提醒失败，无权限。&lt;br&gt;&lt;img src=&quot;http://upload-ima
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://michaelin1208.github.io/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://michaelin1208.github.io/tags/iOS/"/>
-    
-      <category term="CocoaPods" scheme="https://michaelin1208.github.io/tags/CocoaPods/"/>
-    
-      <category term="sudo-gem-install-cocoapods" scheme="https://michaelin1208.github.io/tags/sudo-gem-install-cocoapods/"/>
-    
-      <category term="无权限" scheme="https://michaelin1208.github.io/tags/%E6%97%A0%E6%9D%83%E9%99%90/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CocoaPods-trunk-push发布成功后无法pod-search到</title>
     <link href="https://michaelin1208.github.io/2017/03/20/iOS/CocoaPods-trunk-push%E5%8F%91%E5%B8%83%E6%88%90%E5%8A%9F%E5%90%8E%E6%97%A0%E6%B3%95pod-search%E5%88%B0/"/>
     <id>https://michaelin1208.github.io/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/</id>
@@ -438,6 +407,37 @@
       <category term="pod" scheme="https://michaelin1208.github.io/tags/pod/"/>
     
       <category term="search" scheme="https://michaelin1208.github.io/tags/search/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法</title>
+    <link href="https://michaelin1208.github.io/2017/03/20/iOS/sudo-gem-install-cocoapods%E6%9B%B4%E6%96%B0CocoaPods%E5%A4%B1%E8%B4%A5%E3%80%81%E6%97%A0%E6%9D%83%E9%99%90%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>https://michaelin1208.github.io/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/</id>
+    <published>2017-03-20T02:33:46.000Z</published>
+    <updated>2018-10-30T07:45:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>sudo gem install cocoapods</code>更新CocoaPods，或者<code>sudo gem update --system</code>更新gem。却提醒失败，无权限。<br><img src="http://upload-images.jianshu.io/upload_images/2312364-e9a9907d6bb0e042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="更新失败 提示无权限"><br>但是已经加了sudo，考虑是路径问题。</p><h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>用下面的代码指定路径就能安装成功了。<br><code>sudo gem install -n /usr/bin/pod cocoapods</code>安装CocoaPods<br>或者<br><code>sudo gem update -n /usr/local/bin --system</code>安装Gem</p><h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="http://stackoverflow.com/questions/33015875/operation-not-permitted-usr-bin-update-rubygems" target="_blank" rel="noopener">Operation not permitted - /usr/bin/update_rubygems</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;code&gt;sudo gem install cocoapods&lt;/code&gt;更新CocoaPods，或者&lt;code&gt;sudo gem update --system&lt;/code&gt;更新gem。却提醒失败，无权限。&lt;br&gt;&lt;img src=&quot;http://upload-ima
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://michaelin1208.github.io/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://michaelin1208.github.io/tags/iOS/"/>
+    
+      <category term="CocoaPods" scheme="https://michaelin1208.github.io/tags/CocoaPods/"/>
+    
+      <category term="sudo-gem-install-cocoapods" scheme="https://michaelin1208.github.io/tags/sudo-gem-install-cocoapods/"/>
+    
+      <category term="无权限" scheme="https://michaelin1208.github.io/tags/%E6%97%A0%E6%9D%83%E9%99%90/"/>
     
   </entry>
   
