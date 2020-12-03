@@ -391,6 +391,89 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
+    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
+      <meta itemprop="name" content="Michael LIN">
+      <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Michaelin's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/" class="post-title-link" itemprop="url">sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-03-20 10:33:46" itemprop="dateCreated datePublished" datetime="2017-03-20T10:33:46+08:00">2017-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/" class="post-meta-item leancloud_visitors" data-flag-title="sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><code>sudo gem install cocoapods</code>更新CocoaPods，或者<code>sudo gem update --system</code>更新gem。却提醒失败，无权限。<br><img src="http://upload-images.jianshu.io/upload_images/2312364-e9a9907d6bb0e042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="更新失败 提示无权限"><br>但是已经加了sudo，考虑是路径问题。</p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>用下面的代码指定路径就能安装成功了。<br><code>sudo gem install -n /usr/bin/pod cocoapods</code>安装CocoaPods<br>或者<br><code>sudo gem update -n /usr/local/bin --system</code>安装Gem</p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="http://stackoverflow.com/questions/33015875/operation-not-permitted-usr-bin-update-rubygems" target="_blank" rel="noopener">Operation not permitted - /usr/bin/update_rubygems</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -462,89 +545,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.JPG">
-      <meta itemprop="name" content="Michael LIN">
-      <meta itemprop="description" content="Programming notes including iOS, Python and so on.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Michaelin's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/" class="post-title-link" itemprop="url">sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2017-03-20 10:33:46" itemprop="dateCreated datePublished" datetime="2017-03-20T10:33:46+08:00">2017-03-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/" class="post-meta-item leancloud_visitors" data-flag-title="sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><code>sudo gem install cocoapods</code>更新CocoaPods，或者<code>sudo gem update --system</code>更新gem。却提醒失败，无权限。<br><img src="http://upload-images.jianshu.io/upload_images/2312364-e9a9907d6bb0e042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="更新失败 提示无权限"><br>但是已经加了sudo，考虑是路径问题。</p>
-<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>用下面的代码指定路径就能安装成功了。<br><code>sudo gem install -n /usr/bin/pod cocoapods</code>安装CocoaPods<br>或者<br><code>sudo gem update -n /usr/local/bin --system</code>安装Gem</p>
-<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="http://stackoverflow.com/questions/33015875/operation-not-permitted-usr-bin-update-rubygems" target="_blank" rel="noopener">Operation not permitted - /usr/bin/update_rubygems</a></p>
-
       
     </div>
 

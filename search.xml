@@ -14,6 +14,23 @@
       </tags>
   </entry>
   <entry>
+    <title>Error-1053--The-service-did-not-respond-to-the-start-or-control-reques</title>
+    <url>/2018/05/02/Python/Error-1053--The-service-did-not-respond-to-the-start-or-control-reques/</url>
+    <content><![CDATA[<p>最近在把Python的定时程序放进Windows服务时遇到了上述的问题‘错误1053：服务没有及时响应启动或控制请求’ 或者 ‘Error 1053: The service did not respond to the start or control request in a timely fashion’。<br>可以正常安装<code>python PythonFileName.py install</code>，<br>不能正常启动<code>python PythonFileName.py start</code>。<br>尝试使用<code>python PythonFileName.py debug</code>检查代码，没有发现代码问题，考虑应该是环境问题。</p>
+<p>最终在StackOverflow的 <a href="https://stackoverflow.com/questions/8943371/cant-start-windows-service-written-in-python-win32serviceutil" target="_blank" rel="noopener">Can’t start Windows service written in Python (win32serviceutil)</a> 中找到了 <a href="https://stackoverflow.com/users/3220983/buvinj" title="2,840 reputation" target="_blank" rel="noopener">BuvinJ</a> 的回答：“It might prove useful in this case to also add these directories to your system path: C:\Python27\Lib\site-packages\win32 and C:\Python27\Lib\site-packages\pywin32_system32. That will let you use pythonservice more easily.  ”</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在cmd中输入<br><code>setx /M PATH &quot;%PATH%;C:\Python27;C:\Users\Administrator\Anaconda2\Scripts;C:\Users\Administrator\Anaconda2\Lib\site-packages\pywin32_system32;C:\Users\Administrator\Anaconda2\Lib\site-packages\win32&quot;</code><br>回车，增加两个路径的引用。然后就能启动服务了。</p>
+<p>具体的Windows服务Python代码：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">import sys</span><br><span class="line">import win32serviceutil</span><br><span class="line">import win32service</span><br><span class="line">import win32event</span><br><span class="line">import servicemanager</span><br><span class="line">import winerror</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> StockRecommendRunLoop(win32serviceutil.ServiceFramework):</span><br><span class="line">    _svc_name_ = <span class="string">"StockRecommendRunLoop"</span></span><br><span class="line">    _svc_display_name_ = <span class="string">"Stock Recommend Run Loop"</span></span><br><span class="line"></span><br><span class="line">    def __init__(<span class="keyword">self</span>, args):</span><br><span class="line">        win32serviceutil.ServiceFramework.__init__(<span class="keyword">self</span>, args)</span><br><span class="line">        <span class="keyword">self</span>.hWaitStop = win32event.CreateEvent(None, <span class="number">0</span>, <span class="number">0</span>, None)</span><br><span class="line"></span><br><span class="line">    def SvcStop(<span class="keyword">self</span>):</span><br><span class="line">        <span class="keyword">self</span>.ReportServiceStatus(win32service.SERVICE_STOP_PENDING)</span><br><span class="line">        win32event.SetEvent(<span class="keyword">self</span>.hWaitStop)</span><br><span class="line"></span><br><span class="line">    def SvcDoRun(<span class="keyword">self</span>):</span><br><span class="line">        <span class="keyword">self</span>.ReportServiceStatus(win32service.SERVICE_RUNNING)</span><br><span class="line">        <span class="keyword">self</span>.start_task()</span><br><span class="line">        win32event.WaitForSingleObject(<span class="keyword">self</span>.hWaitStop, win32event.INFINITE)</span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    <span class="keyword">if</span> len(sys.argv) == <span class="number">1</span>:</span><br><span class="line">        try:</span><br><span class="line">            servicemanager.Initialize()</span><br><span class="line">            servicemanager.PrepareToHostSingle(StockRecommendRunLoop)</span><br><span class="line">            servicemanager.StartServiceCtrlDispatcher()</span><br><span class="line">        except win32service.error, details:</span><br><span class="line">            <span class="keyword">if</span> details[<span class="number">0</span>] == winerror.ERROR_FAILED_SERVICE_CONTROLLER_CONNECT:</span><br><span class="line">                win32serviceutil.usage()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        win32serviceutil.HandleCommandLine(StockRecommendRunLoop)</span><br></pre></td></tr></table></figure></p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h3><p><a href="https://stackoverflow.com/questions/8943371/cant-start-windows-service-written-in-python-win32serviceutil" target="_blank" rel="noopener">Can’t start Windows service written in Python (win32serviceutil)</a><br><a href="https://blog.csdn.net/zhou191954/article/details/8290010" target="_blank" rel="noopener">Python Windows Service的方式运行</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Error-1053</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Apple-Watch-“密码错误”-问题解决-和-还原初始化方式</title>
     <url>/2017/09/19/Apple/Apple-Watch-%E2%80%9C%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF%E2%80%9D-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3-%E5%92%8C-%E8%BF%98%E5%8E%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[<h3 id="最近莫名其妙遇到的Apple-Watch无法解锁的问题"><a href="#最近莫名其妙遇到的Apple-Watch无法解锁的问题" class="headerlink" title="最近莫名其妙遇到的Apple Watch无法解锁的问题"></a>最近莫名其妙遇到的Apple Watch无法解锁的问题</h3><p>这个问题几乎是一个死循环。首先手机的蓝牙无法正常的连接到曾经配对过的Apple Watch，同时手表提示“密码错误 请在 iPhone 打开Apple Watch 应用，前往Passcode，轻按“重启密码”再试。”。<br><img src="http://upload-images.jianshu.io/upload_images/2312364-0bbfab50b8310e78.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="借用下网友的错误图片"><br>很尴尬，手机连不上手表，无法重启密码。手表所有按键都提示这段话。<br><a id="more"></a></p>
@@ -31,20 +48,42 @@
       </tags>
   </entry>
   <entry>
-    <title>Error-1053--The-service-did-not-respond-to-the-start-or-control-reques</title>
-    <url>/2018/05/02/Python/Error-1053--The-service-did-not-respond-to-the-start-or-control-reques/</url>
-    <content><![CDATA[<p>最近在把Python的定时程序放进Windows服务时遇到了上述的问题‘错误1053：服务没有及时响应启动或控制请求’ 或者 ‘Error 1053: The service did not respond to the start or control request in a timely fashion’。<br>可以正常安装<code>python PythonFileName.py install</code>，<br>不能正常启动<code>python PythonFileName.py start</code>。<br>尝试使用<code>python PythonFileName.py debug</code>检查代码，没有发现代码问题，考虑应该是环境问题。</p>
-<p>最终在StackOverflow的 <a href="https://stackoverflow.com/questions/8943371/cant-start-windows-service-written-in-python-win32serviceutil" target="_blank" rel="noopener">Can’t start Windows service written in Python (win32serviceutil)</a> 中找到了 <a href="https://stackoverflow.com/users/3220983/buvinj" title="2,840 reputation" target="_blank" rel="noopener">BuvinJ</a> 的回答：“It might prove useful in this case to also add these directories to your system path: C:\Python27\Lib\site-packages\win32 and C:\Python27\Lib\site-packages\pywin32_system32. That will let you use pythonservice more easily.  ”</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在cmd中输入<br><code>setx /M PATH &quot;%PATH%;C:\Python27;C:\Users\Administrator\Anaconda2\Scripts;C:\Users\Administrator\Anaconda2\Lib\site-packages\pywin32_system32;C:\Users\Administrator\Anaconda2\Lib\site-packages\win32&quot;</code><br>回车，增加两个路径的引用。然后就能启动服务了。</p>
-<p>具体的Windows服务Python代码：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">import sys</span><br><span class="line">import win32serviceutil</span><br><span class="line">import win32service</span><br><span class="line">import win32event</span><br><span class="line">import servicemanager</span><br><span class="line">import winerror</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> StockRecommendRunLoop(win32serviceutil.ServiceFramework):</span><br><span class="line">    _svc_name_ = <span class="string">"StockRecommendRunLoop"</span></span><br><span class="line">    _svc_display_name_ = <span class="string">"Stock Recommend Run Loop"</span></span><br><span class="line"></span><br><span class="line">    def __init__(<span class="keyword">self</span>, args):</span><br><span class="line">        win32serviceutil.ServiceFramework.__init__(<span class="keyword">self</span>, args)</span><br><span class="line">        <span class="keyword">self</span>.hWaitStop = win32event.CreateEvent(None, <span class="number">0</span>, <span class="number">0</span>, None)</span><br><span class="line"></span><br><span class="line">    def SvcStop(<span class="keyword">self</span>):</span><br><span class="line">        <span class="keyword">self</span>.ReportServiceStatus(win32service.SERVICE_STOP_PENDING)</span><br><span class="line">        win32event.SetEvent(<span class="keyword">self</span>.hWaitStop)</span><br><span class="line"></span><br><span class="line">    def SvcDoRun(<span class="keyword">self</span>):</span><br><span class="line">        <span class="keyword">self</span>.ReportServiceStatus(win32service.SERVICE_RUNNING)</span><br><span class="line">        <span class="keyword">self</span>.start_task()</span><br><span class="line">        win32event.WaitForSingleObject(<span class="keyword">self</span>.hWaitStop, win32event.INFINITE)</span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    <span class="keyword">if</span> len(sys.argv) == <span class="number">1</span>:</span><br><span class="line">        try:</span><br><span class="line">            servicemanager.Initialize()</span><br><span class="line">            servicemanager.PrepareToHostSingle(StockRecommendRunLoop)</span><br><span class="line">            servicemanager.StartServiceCtrlDispatcher()</span><br><span class="line">        except win32service.error, details:</span><br><span class="line">            <span class="keyword">if</span> details[<span class="number">0</span>] == winerror.ERROR_FAILED_SERVICE_CONTROLLER_CONNECT:</span><br><span class="line">                win32serviceutil.usage()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        win32serviceutil.HandleCommandLine(StockRecommendRunLoop)</span><br></pre></td></tr></table></figure></p>
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h3><p><a href="https://stackoverflow.com/questions/8943371/cant-start-windows-service-written-in-python-win32serviceutil" target="_blank" rel="noopener">Can’t start Windows service written in Python (win32serviceutil)</a><br><a href="https://blog.csdn.net/zhou191954/article/details/8290010" target="_blank" rel="noopener">Python Windows Service的方式运行</a></p>
+    <title>CocoaPods-trunk-push发布成功后无法pod-search到</title>
+    <url>/2017/03/20/iOS/CocoaPods-trunk-push%E5%8F%91%E5%B8%83%E6%88%90%E5%8A%9F%E5%90%8E%E6%97%A0%E6%B3%95pod-search%E5%88%B0/</url>
+    <content><![CDATA[<h2 id="现象："><a href="#现象：" class="headerlink" title="现象："></a>现象：</h2><p>按照上一篇文章<a href="http://www.jianshu.com/p/61cc4121a0ee" target="_blank" rel="noopener">《MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记》</a>介绍，实现了新建并编辑podspace，然后通过<code>pod trunk push yourSpaceName.podspec</code>来push我们自己的CocoaPods库到<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">CocoaPods官方git</a>。</p>
+<p>上传成功后，按照之前的文章介绍，可以使用<code>pod search YouUploadCocoaPodsSpaceName</code> 来找到你的工程。理应显示<br><img src="http://upload-images.jianshu.io/upload_images/2312364-deb7ef62c1e4cad3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="预期效果"><br>但是显示的是😂<br><img src="http://upload-images.jianshu.io/upload_images/2312364-0c8d7f7fa5364d69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="实际效果"><br><a id="more"></a></p>
+<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>网上介绍这类的解决方法是<code>pod setup</code>来更新我们本地的CocoaPods space库，然后再用<code>pod search</code>便找到我们发布的工程。但是我使用后始终无效。</p>
+<p>怀疑是否会是因为需要审核，可能需要些时间。但是今天发现依然如此，便进到<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">CocoaPods官方git</a>搜索，发现我的库已经被收录。</p>
+<p><strong>于是再次搜索解决方案，发现可能是本地的搜索时的本地缓存有问题。</strong><br>可以在终端中输入<br><code>rm ~/Library/Caches/CocoaPods/search_index.json</code><br>来清除缓存，再通过<br><code>pod search YouUploadCocoaPodsSpaceName</code><br>来搜索<br><img src="http://upload-images.jianshu.io/upload_images/2312364-deb7ef62c1e4cad3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="最终效果"><br>这样就可以搜索到自己发布成功的CocoaPods库了。</p>
+<h3 id="Reference："><a href="#Reference：" class="headerlink" title="Reference："></a>Reference：</h3><p><a href="http://blog.sina.com.cn/s/blog_14d7dd6710102wc1w.html" target="_blank" rel="noopener">解决cocoapods安装完成后不能 pod search的问题</a></p>
 ]]></content>
       <categories>
-        <category>Python</category>
+        <category>iOS</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>Error-1053</tag>
+        <tag>iOS</tag>
+        <tag>CocoaPods</tag>
+        <tag>trunk</tag>
+        <tag>push</tag>
+        <tag>pod</tag>
+        <tag>search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记</title>
+    <url>/2017/03/16/iOS/MMNumberScrollView%E6%95%B0%E5%AD%97%E6%BB%9A%E5%8A%A8%E5%8A%A8%E7%94%BB%E8%A7%86%E5%9B%BE%E5%92%8CCocoapods%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="MMNumberScrollView数字滚动动画视图"><a href="#MMNumberScrollView数字滚动动画视图" class="headerlink" title="MMNumberScrollView数字滚动动画视图"></a>MMNumberScrollView数字滚动动画视图</h2><p>之前项目中需要一个动画显示礼物数字增长的视图。最近把它拿来修改下，共享出来。具体的代码可从 <strong><a href="https://github.com/michaelin1208/MMNumberScrollView" target="_blank" rel="noopener">MMNumberScrollView in GitHub</a></strong> 下载。<br>本数字滚动视图可以实现用户自定义滚动图案，滚动速度，和是否动态控制视图大小。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">#import &quot;MMSingleNumberScrollView.h&quot;</span><br><span class="line"></span><br><span class="line">@class MMNumberScrollViewManager;</span><br><span class="line"></span><br><span class="line">@protocol MMNumberScrollViewManagerDelegate &lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">- (void)numberScrollViewManagerFinishedIncreasing:(MMNumberScrollViewManager *)manager;     // delegate method is callbacked when the number scroll view manager finish a increasing operation.</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface MMNumberScrollViewManager:UIView &lt;UIScrollViewDelegate, MMSingleNumberScrollViewDelegate&gt;</span><br><span class="line"></span><br><span class="line">@property (nonatomic,strong) NSMutableArray *numImageArray;  // a mutable array of number images shown in number scroll view.</span><br><span class="line">@property (nonatomic) NSTimeInterval speedDuration;  // roll speed, the duration of each increasing scrolling. The default value is 1 second.</span><br><span class="line">@property (nonatomic) BOOL isShowingFinalSize;  // is it show final size at beginning. Default value is &apos;YES&apos;, the size of scroll view is not increasing during scrolling.</span><br><span class="line"></span><br><span class="line">@property (nonatomic, weak) id&lt;MMNumberScrollViewManagerDelegate&gt; delegate;</span><br><span class="line"></span><br><span class="line">// increase number displayed in the manager&apos;s view from currentCount to targetCount.</span><br><span class="line">// You would better to start another increasing after last increasing operation finished (by &quot;- (void)numberScrollViewManagerFinishedIncreasing:(MMNumberScrollViewManager *)manager;&quot;)</span><br><span class="line">// or remove all existed number scroll views (&quot;- (void)removeAllNumberScrollViews;&quot;).</span><br><span class="line">- (void)increaseNumberFrom:(int)currentCount to:(int)targetCount;</span><br><span class="line"></span><br><span class="line">// init the number scroll view manager to contral all single number scroll views.</span><br><span class="line">- (instancetype)initWithFrame:(CGRect)frame;</span><br><span class="line"></span><br><span class="line">// remove all single number scroll views, if you want to shwo another number increasing.</span><br><span class="line">- (void)removeAllNumberScrollViews;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<h2 id="Cocoapods实践笔记"><a href="#Cocoapods实践笔记" class="headerlink" title="Cocoapods实践笔记"></a>Cocoapods实践笔记</h2><p>此外最近有些迷恋Cocoapods，最近都在尝试如何把自己的工程中自己工程中的三方库交给CocoaPods来管理。今天也顺道实践下怎么创建CocoaPods。方法可以参考下：<br><strong><a href="http://www.jianshu.com/p/98407f0c175b" target="_blank" rel="noopener">创建CocoaPods的制作过程</a></strong><br><strong><a href="http://www.jianshu.com/p/6e5c0f78200a" target="_blank" rel="noopener">CocoaPods的安装使用和常见问题</a></strong></p>
+<p>没有遇到什么特别的问题，除了个别步骤需要翻墙，推荐下<a href="https://github.com/getlantern/lantern" target="_blank" rel="noopener">Lantern</a>，虽然流量有上限，但是从来没超过。创建过程一切顺利，应该成功了，但是暂时在Cocoapods中还搜索不到我的工程。</p>
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+        <tag>Cocoapods</tag>
+        <tag>数字滚动动画视图</tag>
+        <tag>MMNumberScrollView</tag>
       </tags>
   </entry>
   <entry>
@@ -76,28 +115,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CocoaPods-trunk-push发布成功后无法pod-search到</title>
-    <url>/2017/03/20/iOS/CocoaPods-trunk-push%E5%8F%91%E5%B8%83%E6%88%90%E5%8A%9F%E5%90%8E%E6%97%A0%E6%B3%95pod-search%E5%88%B0/</url>
-    <content><![CDATA[<h2 id="现象："><a href="#现象：" class="headerlink" title="现象："></a>现象：</h2><p>按照上一篇文章<a href="http://www.jianshu.com/p/61cc4121a0ee" target="_blank" rel="noopener">《MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记》</a>介绍，实现了新建并编辑podspace，然后通过<code>pod trunk push yourSpaceName.podspec</code>来push我们自己的CocoaPods库到<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">CocoaPods官方git</a>。</p>
-<p>上传成功后，按照之前的文章介绍，可以使用<code>pod search YouUploadCocoaPodsSpaceName</code> 来找到你的工程。理应显示<br><img src="http://upload-images.jianshu.io/upload_images/2312364-deb7ef62c1e4cad3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="预期效果"><br>但是显示的是😂<br><img src="http://upload-images.jianshu.io/upload_images/2312364-0c8d7f7fa5364d69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="实际效果"><br><a id="more"></a></p>
-<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>网上介绍这类的解决方法是<code>pod setup</code>来更新我们本地的CocoaPods space库，然后再用<code>pod search</code>便找到我们发布的工程。但是我使用后始终无效。</p>
-<p>怀疑是否会是因为需要审核，可能需要些时间。但是今天发现依然如此，便进到<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">CocoaPods官方git</a>搜索，发现我的库已经被收录。</p>
-<p><strong>于是再次搜索解决方案，发现可能是本地的搜索时的本地缓存有问题。</strong><br>可以在终端中输入<br><code>rm ~/Library/Caches/CocoaPods/search_index.json</code><br>来清除缓存，再通过<br><code>pod search YouUploadCocoaPodsSpaceName</code><br>来搜索<br><img src="http://upload-images.jianshu.io/upload_images/2312364-deb7ef62c1e4cad3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="最终效果"><br>这样就可以搜索到自己发布成功的CocoaPods库了。</p>
-<h3 id="Reference："><a href="#Reference：" class="headerlink" title="Reference："></a>Reference：</h3><p><a href="http://blog.sina.com.cn/s/blog_14d7dd6710102wc1w.html" target="_blank" rel="noopener">解决cocoapods安装完成后不能 pod search的问题</a></p>
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-        <tag>CocoaPods</tag>
-        <tag>trunk</tag>
-        <tag>push</tag>
-        <tag>pod</tag>
-        <tag>search</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MMDraggableTagView实现排坑</title>
     <url>/2017/03/27/iOS/MMDraggableTagView%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%9D%91/</url>
     <content><![CDATA[<p>最近需要实现个<a href="https://github.com/michaelin1208/ChargeApp/tree/MMDraggableTagView" target="_blank" rel="noopener">MMDraggableTagView</a>来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 <a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="noopener">SnapKit</a> 来管理autolayout的constraints，这个三方库和 <a href="https://github.com/SnapKit/Masonry" target="_blank" rel="noopener">Masonry</a> 类似，只是 one for ObjC, one for Swift. </p>
@@ -112,47 +129,6 @@
       <tags>
         <tag>iOS</tag>
         <tag>MMDraggableTagView</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记</title>
-    <url>/2017/03/16/iOS/MMNumberScrollView%E6%95%B0%E5%AD%97%E6%BB%9A%E5%8A%A8%E5%8A%A8%E7%94%BB%E8%A7%86%E5%9B%BE%E5%92%8CCocoapods%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="MMNumberScrollView数字滚动动画视图"><a href="#MMNumberScrollView数字滚动动画视图" class="headerlink" title="MMNumberScrollView数字滚动动画视图"></a>MMNumberScrollView数字滚动动画视图</h2><p>之前项目中需要一个动画显示礼物数字增长的视图。最近把它拿来修改下，共享出来。具体的代码可从 <strong><a href="https://github.com/michaelin1208/MMNumberScrollView" target="_blank" rel="noopener">MMNumberScrollView in GitHub</a></strong> 下载。<br>本数字滚动视图可以实现用户自定义滚动图案，滚动速度，和是否动态控制视图大小。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">#import &quot;MMSingleNumberScrollView.h&quot;</span><br><span class="line"></span><br><span class="line">@class MMNumberScrollViewManager;</span><br><span class="line"></span><br><span class="line">@protocol MMNumberScrollViewManagerDelegate &lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">- (void)numberScrollViewManagerFinishedIncreasing:(MMNumberScrollViewManager *)manager;     // delegate method is callbacked when the number scroll view manager finish a increasing operation.</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface MMNumberScrollViewManager:UIView &lt;UIScrollViewDelegate, MMSingleNumberScrollViewDelegate&gt;</span><br><span class="line"></span><br><span class="line">@property (nonatomic,strong) NSMutableArray *numImageArray;  // a mutable array of number images shown in number scroll view.</span><br><span class="line">@property (nonatomic) NSTimeInterval speedDuration;  // roll speed, the duration of each increasing scrolling. The default value is 1 second.</span><br><span class="line">@property (nonatomic) BOOL isShowingFinalSize;  // is it show final size at beginning. Default value is &apos;YES&apos;, the size of scroll view is not increasing during scrolling.</span><br><span class="line"></span><br><span class="line">@property (nonatomic, weak) id&lt;MMNumberScrollViewManagerDelegate&gt; delegate;</span><br><span class="line"></span><br><span class="line">// increase number displayed in the manager&apos;s view from currentCount to targetCount.</span><br><span class="line">// You would better to start another increasing after last increasing operation finished (by &quot;- (void)numberScrollViewManagerFinishedIncreasing:(MMNumberScrollViewManager *)manager;&quot;)</span><br><span class="line">// or remove all existed number scroll views (&quot;- (void)removeAllNumberScrollViews;&quot;).</span><br><span class="line">- (void)increaseNumberFrom:(int)currentCount to:(int)targetCount;</span><br><span class="line"></span><br><span class="line">// init the number scroll view manager to contral all single number scroll views.</span><br><span class="line">- (instancetype)initWithFrame:(CGRect)frame;</span><br><span class="line"></span><br><span class="line">// remove all single number scroll views, if you want to shwo another number increasing.</span><br><span class="line">- (void)removeAllNumberScrollViews;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
-<h2 id="Cocoapods实践笔记"><a href="#Cocoapods实践笔记" class="headerlink" title="Cocoapods实践笔记"></a>Cocoapods实践笔记</h2><p>此外最近有些迷恋Cocoapods，最近都在尝试如何把自己的工程中自己工程中的三方库交给CocoaPods来管理。今天也顺道实践下怎么创建CocoaPods。方法可以参考下：<br><strong><a href="http://www.jianshu.com/p/98407f0c175b" target="_blank" rel="noopener">创建CocoaPods的制作过程</a></strong><br><strong><a href="http://www.jianshu.com/p/6e5c0f78200a" target="_blank" rel="noopener">CocoaPods的安装使用和常见问题</a></strong></p>
-<p>没有遇到什么特别的问题，除了个别步骤需要翻墙，推荐下<a href="https://github.com/getlantern/lantern" target="_blank" rel="noopener">Lantern</a>，虽然流量有上限，但是从来没超过。创建过程一切顺利，应该成功了，但是暂时在Cocoapods中还搜索不到我的工程。</p>
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-        <tag>Cocoapods</tag>
-        <tag>数字滚动动画视图</tag>
-        <tag>MMNumberScrollView</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SourceTree和GitLab配合使用的问题</title>
-    <url>/2019/06/19/iOS/SourceTree%E5%92%8CGitLab%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用SourceTree管理GitLab的时候出现了<strong>无法添加Repository</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">This is not a valid source path / URL</span><br></pre></td></tr></table></figure>
-<p>或者<strong>无法Pull or Push</strong>的情况。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">remote: HTTP Basic: Access denied</span><br><span class="line">fatal: Authentication failed for &apos;https://gitlab.xxx/xxx.git/&apos;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>首先在添加或者pull/push的时候需要使用对应的<strong>Clone with SHH</strong>的地址如：“<a href="mailto:git@gitlab.xxx" target="_blank" rel="noopener">git@gitlab.xxx</a>/xxx.git”，而不是<strong>Clone with HTTPS</strong>的地址。</p>
-<p>如图：<img src="/2019/06/19/iOS/SourceTree和GitLab配合使用的问题/ssh.jpg" title="ssh"></p>
-<p>其次，在MacOS中，SourceTree的Preference中并不提供指定公私钥的配置。我们需要在生成公私钥的时候对私钥进行<strong>ssh-add</strong>，如：<code>ssh-add id_rsa</code></p>
-<p>同时在公司gitlab页面上设置好SSH使用的私钥对应的公钥。</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://blog.csdn.net/lele9096_bk/article/details/54950391" target="_blank" rel="noopener">Mac 下source tree 与 gitlab 添加 ssh 密钥</a></p>
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>MacOS</tag>
-        <tag>SourceTree</tag>
-        <tag>GitLab</tag>
-        <tag>SSH</tag>
       </tags>
   </entry>
   <entry>
@@ -177,28 +153,6 @@
         <tag>scrollView</tag>
         <tag>delegate</tag>
         <tag>闪退</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>WKWebView的坑之图片显示不完全</title>
-    <url>/2018/08/20/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%AE%8C%E5%85%A8/</url>
-    <content><![CDATA[<h3 id="最近在做iPad-Pro适配时遇到了WKWebView图片显示不完全的坑"><a href="#最近在做iPad-Pro适配时遇到了WKWebView图片显示不完全的坑" class="headerlink" title="最近在做iPad Pro适配时遇到了WKWebView图片显示不完全的坑"></a>最近在做iPad Pro适配时遇到了WKWebView图片显示不完全的坑</h3><p>在显示网页中的大尺寸图片时，图片显示不完整，有些是下方不显示，有些是下方和右侧都不显示。流程如下</p>
-<h5 id="第一类情况"><a href="#第一类情况" class="headerlink" title="第一类情况"></a>第一类情况</h5><p><img src="https://upload-images.jianshu.io/upload_images/2312364-5a6e47876e988237.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="1. APP下方题目卡片初始状态"><br>在卡片出现时，显示了<code>WKWebView</code>上部内容。<br><img src="https://upload-images.jianshu.io/upload_images/2312364-58e01f9d020b7ab4.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="2. APP下方题目卡片展开状态"><br>点击卡片下方展开按钮或者上划手势，展开卡片，可以看到更多网页内容，但是下方图片无内容成白色。滑动图片后网页内容图片刷新，显示正常，如下<br><img src="https://upload-images.jianshu.io/upload_images/2312364-d70c883c7f0cf985.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="3. APP下方题目卡片拖动后显示"><br><a id="more"></a></p>
-<h5 id="第二类情况"><a href="#第二类情况" class="headerlink" title="第二类情况"></a>第二类情况</h5><p>如果<code>WKWebView</code>的初始状态为不可见时，如下<br><img src="https://upload-images.jianshu.io/upload_images/2312364-083090e32636521a.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="4. APP下方题目卡片初始状态"><br>点击展开卡片，显示的图片只有左上角一小条，其他内容缺失，如下<br><img src="https://upload-images.jianshu.io/upload_images/2312364-288e0a0459020401.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="5. APP下方题目卡片展开状态"><br>同样滑动后页面会刷新，图片显示恢复正常。<br><img src="https://upload-images.jianshu.io/upload_images/2312364-615209bc1fb73fc7.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="6. APP下方题目卡片拖动后显示"></p>
-<h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><p><code>WKWebView</code>相比<code>UIWebView</code>提高了页面渲染载入速度，其中也包括只对展示给用户可见的内容进行渲染，这样可以大大提高载入速度。如我遇到的图片问题，<code>WKWebView</code>会把图片分割成多块，如下图A-F六块区域。<br><img src="https://upload-images.jianshu.io/upload_images/2312364-ee5da42980f501a9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="WKWebView对图片分割成多块渲染"><br>在第一类情况，由于A/B/C块都是用户可见区域，所以<code>WKWebView</code>对这三块区域进行了渲染，而D/E/F块都没有渲染。所以展开卡片时，他也呈现空白状态，图片缺失。<br>第二类情况则是所有区域都不在用户可视范围内，所以他仅对A块渲染，展开后B/C/D/E/F都为空白，图片缺失。这个可以在<code>XCode</code>的<code>Debug View Hierarchy</code>中得到验证，完整渲染的有六个区域，第一种情况三个区域，第二种状况只有一种区域。</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>填坑办法就是强制让<code>WKWebView</code>重新渲染一次，代码如下</p>
-<p><code>[_webView setNeedsLayout];</code></p>
-<p>我是在展开卡片时增加了<code>WKWebView</code>强制重新渲染的代码实现。而对于网上提到比较多的，在<code>UITableView</code>中添加<code>WKWebView</code>图片载入不全的情况可以在<code>- (void)scrollViewDidScroll:(UIScrollView *)scrollView</code>中增加强制重新渲染的代码来解决。声称这个坑在iOS11中得到了修复，但是我的11.3的iPad Pro还是遇到了这个问题😂，可能是我们的WKWebView操作没有触发重新渲染吧。</p>
-<p>———————————————– 编辑于20180821 ——————————————————-<br>最近出现了在iOS 8.2系统下图片显示过大，超出屏幕的问题。可以通过<code>addUserScript</code>解决，如下<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">NSString *jScript = @&quot;var meta = document.createElement(&apos;meta&apos;); meta.setAttribute(&apos;name&apos;, &apos;viewport&apos;); meta.setAttribute(&apos;content&apos;, &apos;width=device-width&apos;); document.getElementsByTagName(&apos;head&apos;)[0].appendChild(meta);&quot;;</span><br><span class="line">WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];</span><br><span class="line">WKUserContentController *wkUController = [[WKUserContentController alloc] init];</span><br><span class="line">[wkUController addUserScript:wkUScript];</span><br><span class="line">[[_webView configuration].userContentController addUserScript:wkUScript];</span><br></pre></td></tr></table></figure></p>
-<h3 id="Reference-List"><a href="#Reference-List" class="headerlink" title="Reference List"></a>Reference List</h3><p><a href="https://stackoverflow.com/questions/39549103/wkwebview-not-rendering-correctly-in-ios-10" target="_blank" rel="noopener">WKWebView not rendering correctly in iOS 10</a><br><a href="https://www.jianshu.com/p/2338775fd256" target="_blank" rel="noopener">使用WKWebView 适应屏幕尺寸</a></p>
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-        <tag>WKWebView</tag>
-        <tag>图片显示不全</tag>
       </tags>
   </entry>
   <entry>
@@ -237,22 +191,81 @@
       </tags>
   </entry>
   <entry>
-    <title>iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能</title>
-    <url>/2018/07/24/iOS/iOS%E4%B8%AD%E9%80%9A%E8%BF%87CGContext%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E5%9B%B4%E7%BB%95%E4%BB%BB%E6%84%8F%E7%82%B9%E6%97%8B%E8%BD%AC%E4%BB%BB%E6%84%8F%E8%A7%92%E5%BA%A6%E7%9A%84%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>需要围绕任意点旋转若干角度返回和原始图片大小相同的图片。<br><a id="more"></a></p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>代码如下：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">+ (<span class="built_in">UIImage</span> *)getRotationImage:(<span class="built_in">UIImage</span> *)image rotation:(<span class="built_in">CGFloat</span>)rotation point:(<span class="built_in">CGPoint</span>)point &#123;</span><br><span class="line">    <span class="built_in">NSInteger</span> num = (<span class="built_in">NSInteger</span>)(floor(rotation));</span><br><span class="line">    <span class="keyword">if</span> (num == rotation &amp;&amp; num % <span class="number">360</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> image;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> radius = rotation * M_PI / <span class="number">180</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">CGSize</span> rotatedSize = image.size;</span><br><span class="line">    <span class="comment">// Create the bitmap context</span></span><br><span class="line">    <span class="built_in">UIGraphicsBeginImageContext</span>(rotatedSize);</span><br><span class="line">    <span class="built_in">CGContextRef</span> bitmap = <span class="built_in">UIGraphicsGetCurrentContext</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// rotated image view</span></span><br><span class="line">    <span class="built_in">CGContextScaleCTM</span>(bitmap, <span class="number">1.0</span>, <span class="number">-1.0</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// move to the rotation relative point</span></span><br><span class="line">    <span class="built_in">CGContextTranslateCTM</span>(bitmap, point.x, -point.y);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Rotate the image context</span></span><br><span class="line">    <span class="built_in">CGContextRotateCTM</span>(bitmap, radius);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Now, draw the rotated/scaled image into the context</span></span><br><span class="line">    <span class="built_in">CGContextDrawImage</span>(bitmap, <span class="built_in">CGRectMake</span>(-point.x, -image.size.height+point.y, image.size.width, image.size.height), [image <span class="built_in">CGImage</span>]);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">UIImage</span> *newImage = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">    <span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line">    <span class="keyword">return</span> newImage;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>输入：</strong>需要旋转的图片，旋转的角度，和旋转围绕的点。<br><strong>返回：</strong>旋转后同样大小的结果图片。</p>
-<p>调试<code>CGContext</code>的时候需要注意几点，设置的<code>CGContextScaleCTM</code>, <code>CGContextTranslateCTM</code>, <code>CGContextRotateCTM</code>等方法改变的是上下文的坐标系参数；不同的设置顺序返回的最终自定义的坐标系结果也是不尽相同。<br>在调适的时候，由于设计的坐标系调整相对复杂，对已有的方法做调整可能牵一发而动全身，无法知道之间的必然联系。建议先思考自己需要的图片调整结果的理想步骤，再逐步实现并测试每步步骤，一步步达到最终效果。😂不过应该是我不太熟悉，调了好久，期间都快挠破头皮，最终才实现需要的效果。</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.jianshu.com/p/ad8eed568ff4" target="_blank" rel="noopener">CGContext图形上下文详解</a><br><a href="https://www.jianshu.com/p/c32f6a931232" target="_blank" rel="noopener">CGContext-上下文（画布）的应用</a></p>
+    <title>WKWebView的坑之图片显示不完全</title>
+    <url>/2018/08/20/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%AE%8C%E5%85%A8/</url>
+    <content><![CDATA[<h3 id="最近在做iPad-Pro适配时遇到了WKWebView图片显示不完全的坑"><a href="#最近在做iPad-Pro适配时遇到了WKWebView图片显示不完全的坑" class="headerlink" title="最近在做iPad Pro适配时遇到了WKWebView图片显示不完全的坑"></a>最近在做iPad Pro适配时遇到了WKWebView图片显示不完全的坑</h3><p>在显示网页中的大尺寸图片时，图片显示不完整，有些是下方不显示，有些是下方和右侧都不显示。流程如下</p>
+<h5 id="第一类情况"><a href="#第一类情况" class="headerlink" title="第一类情况"></a>第一类情况</h5><p><img src="https://upload-images.jianshu.io/upload_images/2312364-5a6e47876e988237.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="1. APP下方题目卡片初始状态"><br>在卡片出现时，显示了<code>WKWebView</code>上部内容。<br><img src="https://upload-images.jianshu.io/upload_images/2312364-58e01f9d020b7ab4.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="2. APP下方题目卡片展开状态"><br>点击卡片下方展开按钮或者上划手势，展开卡片，可以看到更多网页内容，但是下方图片无内容成白色。滑动图片后网页内容图片刷新，显示正常，如下<br><img src="https://upload-images.jianshu.io/upload_images/2312364-d70c883c7f0cf985.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="3. APP下方题目卡片拖动后显示"><br><a id="more"></a></p>
+<h5 id="第二类情况"><a href="#第二类情况" class="headerlink" title="第二类情况"></a>第二类情况</h5><p>如果<code>WKWebView</code>的初始状态为不可见时，如下<br><img src="https://upload-images.jianshu.io/upload_images/2312364-083090e32636521a.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="4. APP下方题目卡片初始状态"><br>点击展开卡片，显示的图片只有左上角一小条，其他内容缺失，如下<br><img src="https://upload-images.jianshu.io/upload_images/2312364-288e0a0459020401.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="5. APP下方题目卡片展开状态"><br>同样滑动后页面会刷新，图片显示恢复正常。<br><img src="https://upload-images.jianshu.io/upload_images/2312364-615209bc1fb73fc7.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="6. APP下方题目卡片拖动后显示"></p>
+<h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><p><code>WKWebView</code>相比<code>UIWebView</code>提高了页面渲染载入速度，其中也包括只对展示给用户可见的内容进行渲染，这样可以大大提高载入速度。如我遇到的图片问题，<code>WKWebView</code>会把图片分割成多块，如下图A-F六块区域。<br><img src="https://upload-images.jianshu.io/upload_images/2312364-ee5da42980f501a9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="WKWebView对图片分割成多块渲染"><br>在第一类情况，由于A/B/C块都是用户可见区域，所以<code>WKWebView</code>对这三块区域进行了渲染，而D/E/F块都没有渲染。所以展开卡片时，他也呈现空白状态，图片缺失。<br>第二类情况则是所有区域都不在用户可视范围内，所以他仅对A块渲染，展开后B/C/D/E/F都为空白，图片缺失。这个可以在<code>XCode</code>的<code>Debug View Hierarchy</code>中得到验证，完整渲染的有六个区域，第一种情况三个区域，第二种状况只有一种区域。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>填坑办法就是强制让<code>WKWebView</code>重新渲染一次，代码如下</p>
+<p><code>[_webView setNeedsLayout];</code></p>
+<p>我是在展开卡片时增加了<code>WKWebView</code>强制重新渲染的代码实现。而对于网上提到比较多的，在<code>UITableView</code>中添加<code>WKWebView</code>图片载入不全的情况可以在<code>- (void)scrollViewDidScroll:(UIScrollView *)scrollView</code>中增加强制重新渲染的代码来解决。声称这个坑在iOS11中得到了修复，但是我的11.3的iPad Pro还是遇到了这个问题😂，可能是我们的WKWebView操作没有触发重新渲染吧。</p>
+<p>———————————————– 编辑于20180821 ——————————————————-<br>最近出现了在iOS 8.2系统下图片显示过大，超出屏幕的问题。可以通过<code>addUserScript</code>解决，如下<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">NSString *jScript = @&quot;var meta = document.createElement(&apos;meta&apos;); meta.setAttribute(&apos;name&apos;, &apos;viewport&apos;); meta.setAttribute(&apos;content&apos;, &apos;width=device-width&apos;); document.getElementsByTagName(&apos;head&apos;)[0].appendChild(meta);&quot;;</span><br><span class="line">WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];</span><br><span class="line">WKUserContentController *wkUController = [[WKUserContentController alloc] init];</span><br><span class="line">[wkUController addUserScript:wkUScript];</span><br><span class="line">[[_webView configuration].userContentController addUserScript:wkUScript];</span><br></pre></td></tr></table></figure></p>
+<h3 id="Reference-List"><a href="#Reference-List" class="headerlink" title="Reference List"></a>Reference List</h3><p><a href="https://stackoverflow.com/questions/39549103/wkwebview-not-rendering-correctly-in-ios-10" target="_blank" rel="noopener">WKWebView not rendering correctly in iOS 10</a><br><a href="https://www.jianshu.com/p/2338775fd256" target="_blank" rel="noopener">使用WKWebView 适应屏幕尺寸</a></p>
 ]]></content>
       <categories>
         <category>iOS</category>
       </categories>
       <tags>
         <tag>iOS</tag>
-        <tag>CGContext</tag>
-        <tag>围绕任意点</tag>
-        <tag>旋转任意角度</tag>
+        <tag>WKWebView</tag>
+        <tag>图片显示不全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS开发实用工具</title>
+    <url>/2019/04/23/iOS/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<h3 id="iOS开发实用工具"><a href="#iOS开发实用工具" class="headerlink" title="iOS开发实用工具"></a>iOS开发实用工具</h3><h4 id="Chisel"><a href="#Chisel" class="headerlink" title="Chisel"></a>Chisel</h4><p>一款由Facebook分享的丰富LLDB命令的开源工具，<a href="https://github.com/facebook/chisel" target="_blank" rel="noopener">具体的安装方法和介绍参考官方github。</a></p>
+<p>通过该工具我们可以快速定位当前显示的图层层级，展示任意<code>UIImage</code> /<code>CGImageRef</code> /<code>UIView</code>等对象的内容，显示某个对象的响应链等各种功能。大大提高我们在debug时的效率。尤其对于视图相关的问题，相比Xcode提供的<code>Debug View Hierarchy</code>功能，Chisel能提供更快速的响应和更加直观和针对性的显示。而<code>Debug View Hierarchy</code>则更加的形象。</p>
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+        <tag>Utilities</tag>
+        <tag>Chisel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法</title>
+    <url>/2017/03/20/iOS/sudo-gem-install-cocoapods%E6%9B%B4%E6%96%B0CocoaPods%E5%A4%B1%E8%B4%A5%E3%80%81%E6%97%A0%E6%9D%83%E9%99%90%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p><code>sudo gem install cocoapods</code>更新CocoaPods，或者<code>sudo gem update --system</code>更新gem。却提醒失败，无权限。<br><img src="http://upload-images.jianshu.io/upload_images/2312364-e9a9907d6bb0e042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="更新失败 提示无权限"><br>但是已经加了sudo，考虑是路径问题。</p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>用下面的代码指定路径就能安装成功了。<br><code>sudo gem install -n /usr/bin/pod cocoapods</code>安装CocoaPods<br>或者<br><code>sudo gem update -n /usr/local/bin --system</code>安装Gem</p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="http://stackoverflow.com/questions/33015875/operation-not-permitted-usr-bin-update-rubygems" target="_blank" rel="noopener">Operation not permitted - /usr/bin/update_rubygems</a></p>
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+        <tag>CocoaPods</tag>
+        <tag>sudo-gem-install-cocoapods</tag>
+        <tag>无权限</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SourceTree和GitLab配合使用的问题</title>
+    <url>/2019/06/19/iOS/SourceTree%E5%92%8CGitLab%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用SourceTree管理GitLab的时候出现了<strong>无法添加Repository</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">This is not a valid source path / URL</span><br></pre></td></tr></table></figure>
+<p>或者<strong>无法Pull or Push</strong>的情况。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">remote: HTTP Basic: Access denied</span><br><span class="line">fatal: Authentication failed for &apos;https://gitlab.xxx/xxx.git/&apos;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>首先在添加或者pull/push的时候需要使用对应的<strong>Clone with SHH</strong>的地址如：“<a href="mailto:git@gitlab.xxx" target="_blank" rel="noopener">git@gitlab.xxx</a>/xxx.git”，而不是<strong>Clone with HTTPS</strong>的地址。</p>
+<p>如图：<img src="/2019/06/19/iOS/SourceTree和GitLab配合使用的问题/ssh.jpg" title="ssh"></p>
+<p>其次，在MacOS中，SourceTree的Preference中并不提供指定公私钥的配置。我们需要在生成公私钥的时候对私钥进行<strong>ssh-add</strong>，如：<code>ssh-add id_rsa</code></p>
+<p>同时在公司gitlab页面上设置好SSH使用的私钥对应的公钥。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://blog.csdn.net/lele9096_bk/article/details/54950391" target="_blank" rel="noopener">Mac 下source tree 与 gitlab 添加 ssh 密钥</a></p>
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>MacOS</tag>
+        <tag>SourceTree</tag>
+        <tag>GitLab</tag>
+        <tag>SSH</tag>
       </tags>
   </entry>
   <entry>
@@ -287,35 +300,22 @@
       </tags>
   </entry>
   <entry>
-    <title>iOS开发实用工具</title>
-    <url>/2019/04/23/iOS/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/</url>
-    <content><![CDATA[<h3 id="iOS开发实用工具"><a href="#iOS开发实用工具" class="headerlink" title="iOS开发实用工具"></a>iOS开发实用工具</h3><h4 id="Chisel"><a href="#Chisel" class="headerlink" title="Chisel"></a>Chisel</h4><p>一款由Facebook分享的丰富LLDB命令的开源工具，<a href="https://github.com/facebook/chisel" target="_blank" rel="noopener">具体的安装方法和介绍参考官方github。</a></p>
-<p>通过该工具我们可以快速定位当前显示的图层层级，展示任意<code>UIImage</code> /<code>CGImageRef</code> /<code>UIView</code>等对象的内容，显示某个对象的响应链等各种功能。大大提高我们在debug时的效率。尤其对于视图相关的问题，相比Xcode提供的<code>Debug View Hierarchy</code>功能，Chisel能提供更快速的响应和更加直观和针对性的显示。而<code>Debug View Hierarchy</code>则更加的形象。</p>
+    <title>iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能</title>
+    <url>/2018/07/24/iOS/iOS%E4%B8%AD%E9%80%9A%E8%BF%87CGContext%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E5%9B%B4%E7%BB%95%E4%BB%BB%E6%84%8F%E7%82%B9%E6%97%8B%E8%BD%AC%E4%BB%BB%E6%84%8F%E8%A7%92%E5%BA%A6%E7%9A%84%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>需要围绕任意点旋转若干角度返回和原始图片大小相同的图片。<br><a id="more"></a></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>代码如下：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">+ (<span class="built_in">UIImage</span> *)getRotationImage:(<span class="built_in">UIImage</span> *)image rotation:(<span class="built_in">CGFloat</span>)rotation point:(<span class="built_in">CGPoint</span>)point &#123;</span><br><span class="line">    <span class="built_in">NSInteger</span> num = (<span class="built_in">NSInteger</span>)(floor(rotation));</span><br><span class="line">    <span class="keyword">if</span> (num == rotation &amp;&amp; num % <span class="number">360</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> image;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> radius = rotation * M_PI / <span class="number">180</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">CGSize</span> rotatedSize = image.size;</span><br><span class="line">    <span class="comment">// Create the bitmap context</span></span><br><span class="line">    <span class="built_in">UIGraphicsBeginImageContext</span>(rotatedSize);</span><br><span class="line">    <span class="built_in">CGContextRef</span> bitmap = <span class="built_in">UIGraphicsGetCurrentContext</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// rotated image view</span></span><br><span class="line">    <span class="built_in">CGContextScaleCTM</span>(bitmap, <span class="number">1.0</span>, <span class="number">-1.0</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// move to the rotation relative point</span></span><br><span class="line">    <span class="built_in">CGContextTranslateCTM</span>(bitmap, point.x, -point.y);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Rotate the image context</span></span><br><span class="line">    <span class="built_in">CGContextRotateCTM</span>(bitmap, radius);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Now, draw the rotated/scaled image into the context</span></span><br><span class="line">    <span class="built_in">CGContextDrawImage</span>(bitmap, <span class="built_in">CGRectMake</span>(-point.x, -image.size.height+point.y, image.size.width, image.size.height), [image <span class="built_in">CGImage</span>]);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">UIImage</span> *newImage = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">    <span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line">    <span class="keyword">return</span> newImage;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>输入：</strong>需要旋转的图片，旋转的角度，和旋转围绕的点。<br><strong>返回：</strong>旋转后同样大小的结果图片。</p>
+<p>调试<code>CGContext</code>的时候需要注意几点，设置的<code>CGContextScaleCTM</code>, <code>CGContextTranslateCTM</code>, <code>CGContextRotateCTM</code>等方法改变的是上下文的坐标系参数；不同的设置顺序返回的最终自定义的坐标系结果也是不尽相同。<br>在调适的时候，由于设计的坐标系调整相对复杂，对已有的方法做调整可能牵一发而动全身，无法知道之间的必然联系。建议先思考自己需要的图片调整结果的理想步骤，再逐步实现并测试每步步骤，一步步达到最终效果。😂不过应该是我不太熟悉，调了好久，期间都快挠破头皮，最终才实现需要的效果。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.jianshu.com/p/ad8eed568ff4" target="_blank" rel="noopener">CGContext图形上下文详解</a><br><a href="https://www.jianshu.com/p/c32f6a931232" target="_blank" rel="noopener">CGContext-上下文（画布）的应用</a></p>
 ]]></content>
       <categories>
         <category>iOS</category>
       </categories>
       <tags>
         <tag>iOS</tag>
-        <tag>Utilities</tag>
-        <tag>Chisel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法</title>
-    <url>/2017/03/20/iOS/sudo-gem-install-cocoapods%E6%9B%B4%E6%96%B0CocoaPods%E5%A4%B1%E8%B4%A5%E3%80%81%E6%97%A0%E6%9D%83%E9%99%90%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<p><code>sudo gem install cocoapods</code>更新CocoaPods，或者<code>sudo gem update --system</code>更新gem。却提醒失败，无权限。<br><img src="http://upload-images.jianshu.io/upload_images/2312364-e9a9907d6bb0e042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="更新失败 提示无权限"><br>但是已经加了sudo，考虑是路径问题。</p>
-<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>用下面的代码指定路径就能安装成功了。<br><code>sudo gem install -n /usr/bin/pod cocoapods</code>安装CocoaPods<br>或者<br><code>sudo gem update -n /usr/local/bin --system</code>安装Gem</p>
-<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="http://stackoverflow.com/questions/33015875/operation-not-permitted-usr-bin-update-rubygems" target="_blank" rel="noopener">Operation not permitted - /usr/bin/update_rubygems</a></p>
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-        <tag>CocoaPods</tag>
-        <tag>sudo-gem-install-cocoapods</tag>
-        <tag>无权限</tag>
+        <tag>CGContext</tag>
+        <tag>围绕任意点</tag>
+        <tag>旋转任意角度</tag>
       </tags>
   </entry>
   <entry>
