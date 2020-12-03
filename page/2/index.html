@@ -419,7 +419,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-25 14:29:05" itemprop="dateModified" datetime="2020-02-25T14:29:05+08:00">2020-02-25</time>
+                <time title="Modified: 2020-12-03 09:33:47" itemprop="dateModified" datetime="2020-12-03T09:33:47+08:00">2020-12-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -450,12 +450,15 @@
 
       
           <h2 id="现象："><a href="#现象：" class="headerlink" title="现象："></a>现象：</h2><p>按照上一篇文章<a href="http://www.jianshu.com/p/61cc4121a0ee" target="_blank" rel="noopener">《MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记》</a>介绍，实现了新建并编辑podspace，然后通过<code>pod trunk push yourSpaceName.podspec</code>来push我们自己的CocoaPods库到<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">CocoaPods官方git</a>。</p>
-<p>上传成功后，按照之前的文章介绍，可以使用<code>pod search YouUploadCocoaPodsSpaceName</code> 来找到你的工程。理应显示<br><img src="http://upload-images.jianshu.io/upload_images/2312364-deb7ef62c1e4cad3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="预期效果"><br>但是显示的是😂<br><img src="http://upload-images.jianshu.io/upload_images/2312364-0c8d7f7fa5364d69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="实际效果"></p>
-<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>网上介绍这类的解决方法是<code>pod setup</code>来更新我们本地的CocoaPods space库，然后再用<code>pod search</code>便找到我们发布的工程。但是我使用后始终无效。</p>
-<p>怀疑是否会是因为需要审核，可能需要些时间。但是今天发现依然如此，便进到<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">CocoaPods官方git</a>搜索，发现我的库已经被收录。</p>
-<p><strong>于是再次搜索解决方案，发现可能是本地的搜索时的本地缓存有问题。</strong><br>可以在终端中输入<br><code>rm ~/Library/Caches/CocoaPods/search_index.json</code><br>来清除缓存，再通过<br><code>pod search YouUploadCocoaPodsSpaceName</code><br>来搜索<br><img src="http://upload-images.jianshu.io/upload_images/2312364-deb7ef62c1e4cad3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="最终效果"><br>这样就可以搜索到自己发布成功的CocoaPods库了。</p>
-<h3 id="Reference："><a href="#Reference：" class="headerlink" title="Reference："></a>Reference：</h3><p><a href="http://blog.sina.com.cn/s/blog_14d7dd6710102wc1w.html" target="_blank" rel="noopener">解决cocoapods安装完成后不能 pod search的问题</a></p>
-
+<p>上传成功后，按照之前的文章介绍，可以使用<code>pod search YouUploadCocoaPodsSpaceName</code> 来找到你的工程。理应显示<br><img src="http://upload-images.jianshu.io/upload_images/2312364-deb7ef62c1e4cad3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="预期效果"><br>但是显示的是😂<br><img src="http://upload-images.jianshu.io/upload_images/2312364-0c8d7f7fa5364d69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="实际效果"><br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
