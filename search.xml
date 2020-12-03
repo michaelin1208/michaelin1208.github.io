@@ -201,10 +201,22 @@
     <title>WKWebView的坑之图片显示不完全</title>
     <url>/2018/08/20/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%AE%8C%E5%85%A8/</url>
     <content><![CDATA[<h3 id="最近在做iPad-Pro适配时遇到了WKWebView图片显示不完全的坑"><a href="#最近在做iPad-Pro适配时遇到了WKWebView图片显示不完全的坑" class="headerlink" title="最近在做iPad Pro适配时遇到了WKWebView图片显示不完全的坑"></a>最近在做iPad Pro适配时遇到了WKWebView图片显示不完全的坑</h3><p>在显示网页中的大尺寸图片时，图片显示不完整，有些是下方不显示，有些是下方和右侧都不显示。流程如下</p>
-<h5 id="第一类情况"><a href="#第一类情况" class="headerlink" title="第一类情况"></a>第一类情况</h5><p><img src="https://upload-images.jianshu.io/upload_images/2312364-5a6e47876e988237.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="1. APP下方题目卡片初始状态"><br>在卡片出现时，显示了<code>WKWebView</code>上部内容。<br><img src="https://upload-images.jianshu.io/upload_images/2312364-58e01f9d020b7ab4.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="2. APP下方题目卡片展开状态"><br>点击卡片下方展开按钮或者上划手势，展开卡片，可以看到更多网页内容，但是下方图片无内容成白色。滑动图片后网页内容图片刷新，显示正常，如下<br><img src="https://upload-images.jianshu.io/upload_images/2312364-d70c883c7f0cf985.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="3. APP下方题目卡片拖动后显示"></p>
 <a id="more"></a>
-<h5 id="第二类情况"><a href="#第二类情况" class="headerlink" title="第二类情况"></a>第二类情况</h5><p>如果<code>WKWebView</code>的初始状态为不可见时，如下<br><img src="https://upload-images.jianshu.io/upload_images/2312364-083090e32636521a.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="4. APP下方题目卡片初始状态"><br>点击展开卡片，显示的图片只有左上角一小条，其他内容缺失，如下<br><img src="https://upload-images.jianshu.io/upload_images/2312364-288e0a0459020401.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="5. APP下方题目卡片展开状态"><br>同样滑动后页面会刷新，图片显示恢复正常。<br><img src="https://upload-images.jianshu.io/upload_images/2312364-615209bc1fb73fc7.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="6. APP下方题目卡片拖动后显示"></p>
-<h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><p><code>WKWebView</code>相比<code>UIWebView</code>提高了页面渲染载入速度，其中也包括只对展示给用户可见的内容进行渲染，这样可以大大提高载入速度。如我遇到的图片问题，<code>WKWebView</code>会把图片分割成多块，如下图A-F六块区域。<br><img src="https://upload-images.jianshu.io/upload_images/2312364-ee5da42980f501a9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="WKWebView对图片分割成多块渲染"><br>在第一类情况，由于A/B/C块都是用户可见区域，所以<code>WKWebView</code>对这三块区域进行了渲染，而D/E/F块都没有渲染。所以展开卡片时，他也呈现空白状态，图片缺失。<br>第二类情况则是所有区域都不在用户可视范围内，所以他仅对A块渲染，展开后B/C/D/E/F都为空白，图片缺失。这个可以在<code>XCode</code>的<code>Debug View Hierarchy</code>中得到验证，完整渲染的有六个区域，第一种情况三个区域，第二种状况只有一种区域。</p>
+<h5 id="第一类情况"><a href="#第一类情况" class="headerlink" title="第一类情况"></a>第一类情况</h5><img src="/2018/08/20/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%AE%8C%E5%85%A8/img1.png" class="" title="1. APP下方题目卡片初始状态">
+<p>在卡片出现时，显示了<code>WKWebView</code>上部内容。</p>
+<img src="/2018/08/20/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%AE%8C%E5%85%A8/img2.png" class="" title="2. APP下方题目卡片展开状态">
+<p>点击卡片下方展开按钮或者上划手势，展开卡片，可以看到更多网页内容，但是下方图片无内容成白色。滑动图片后网页内容图片刷新，显示正常，如下</p>
+<img src="/2018/08/20/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%AE%8C%E5%85%A8/img3.png" class="" title="APP下方题目卡片拖动后显示">
+<h5 id="第二类情况"><a href="#第二类情况" class="headerlink" title="第二类情况"></a>第二类情况</h5><p>如果<code>WKWebView</code>的初始状态为不可见时，如下</p>
+<img src="/2018/08/20/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%AE%8C%E5%85%A8/img4.png" class="" title="4. APP下方题目卡片初始状态">
+<p>点击展开卡片，显示的图片只有左上角一小条，其他内容缺失，如下</p>
+<img src="/2018/08/20/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%AE%8C%E5%85%A8/img5.png" class="" title="5. APP下方题目卡片展开状态">
+<p>同样滑动后页面会刷新，图片显示恢复正常。</p>
+<img src="/2018/08/20/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%AE%8C%E5%85%A8/img6.png" class="" title="6. APP下方题目卡片拖动后显示">
+
+<h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><p><code>WKWebView</code>相比<code>UIWebView</code>提高了页面渲染载入速度，其中也包括只对展示给用户可见的内容进行渲染，这样可以大大提高载入速度。如我遇到的图片问题，<code>WKWebView</code>会把图片分割成多块，如下图A-F六块区域。</p>
+
+<p>在第一类情况，由于A/B/C块都是用户可见区域，所以<code>WKWebView</code>对这三块区域进行了渲染，而D/E/F块都没有渲染。所以展开卡片时，他也呈现空白状态，图片缺失。<br>第二类情况则是所有区域都不在用户可视范围内，所以他仅对A块渲染，展开后B/C/D/E/F都为空白，图片缺失。这个可以在<code>XCode</code>的<code>Debug View Hierarchy</code>中得到验证，完整渲染的有六个区域，第一种情况三个区域，第二种状况只有一种区域。</p>
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>填坑办法就是强制让<code>WKWebView</code>重新渲染一次，代码如下</p>
 <p><code>[_webView setNeedsLayout];</code></p>
 <p>我是在展开卡片时增加了<code>WKWebView</code>强制重新渲染的代码实现。而对于网上提到比较多的，在<code>UITableView</code>中添加<code>WKWebView</code>图片载入不全的情况可以在<code>- (void)scrollViewDidScroll:(UIScrollView *)scrollView</code>中增加强制重新渲染的代码来解决。声称这个坑在iOS11中得到了修复，但是我的11.3的iPad Pro还是遇到了这个问题😂，可能是我们的WKWebView操作没有触发重新渲染吧。</p>
