@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Michaelin&#39;s Blog">
 <meta property="og:description" content="问题描述最近眼红WKWebView相对UIWebView的高可配置和高效。在最近的代码中选择使用WKWebView来加载JS动态页面。但是需要把WebView嵌入到另一个ScrollView中显示，所以需要拉伸到内容长度且不能被用户拖动。原始代码如下：123456789- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavig">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-30T07:45:13.000Z">
+<meta property="og:updated_time" content="2020-12-03T01:38:48.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081">
 <meta name="twitter:description" content="问题描述最近眼红WKWebView相对UIWebView的高可配置和高效。在最近的代码中选择使用WKWebView来加载JS动态页面。但是需要把WebView嵌入到另一个ScrollView中显示，所以需要拉伸到内容长度且不能被用户拖动。原始代码如下：123456789- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavig">
@@ -246,7 +246,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
+                <time title="Modified: 2020-12-03 09:38:48" itemprop="dateModified" datetime="2020-12-03T09:38:48+08:00">2020-12-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,7 +277,7 @@
 
       
         <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>最近眼红WKWebView相对UIWebView的高可配置和高效。在最近的代码中选择使用WKWebView来加载JS动态页面。但是需要把WebView嵌入到另一个ScrollView中显示，所以需要拉伸到内容长度且不能被用户拖动。原始代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation &#123;</span><br><span class="line">    [webView evaluateJavaScript:@&quot;document.body.scrollHeight&quot; completionHandler:^(NSNumber *height, NSError * _Nullable error) &#123;</span><br><span class="line">        float htmlHeight =[height floatValue];</span><br><span class="line">        CGRect webFrame = webView.frame;</span><br><span class="line">        webFrame.size.height = htmlHeight;</span><br><span class="line">        webView.frame = webFrame;</span><br><span class="line">        [self addFeedBackBtn];</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>通过JS代码得到页面的高度。<br><strong>但是这样的方法对于非静态页面无效，高度并非正确的高度。</strong></p>
+<p>通过JS代码得到页面的高度。<br><strong>但是这样的方法对于非静态页面无效，高度并非正确的高度。</strong><br><a id="more"></a></p>
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><hr>
 <p><strong>编辑于20180813</strong><br>下面的分割线后是最初始的解决办法，但是在部分极端情况下还有用户反应会出现高度持续增长的问题。<br><strong>最终找到的原因</strong>是<code>WKWebView</code>的<code>frame</code>宽度带有小数，而不是整数。猜测<code>WKWebView</code>在计算<code>contentSize</code>的时候是依照<code>frame.width</code>向下取整的宽度来计算最终的<code>contentSize</code>的<code>height</code>的，然后导致KVO观察的contentSize高度在更新frame高度后持续增加。<br><strong>更新的解决办法是</strong>对WKWebView的frame宽度求整。</p>
 <p><strong>代码如下<code>_webView.frame = CGRectMake(HWFrame_IPhonePadX(20, 30), height, (NSInteger)(ScreenWidth - HWFrame_IPhonePadX(60, 80)), 0);</code>。</strong></p>

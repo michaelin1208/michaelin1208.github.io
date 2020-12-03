@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://michaelin1208.github.io/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/SettingMenuWithoutShortcuts.PNG">
 <meta property="og:image" content="https://michaelin1208.github.io/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/SettingMenuWithShortcuts.PNG">
 <meta property="og:image" content="https://michaelin1208.github.io/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/SettingMenuWithShortcutsContent.PNG">
-<meta property="og:updated_time" content="2018-10-30T07:45:13.000Z">
+<meta property="og:updated_time" content="2020-12-03T01:38:31.434Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让App在iOS12中支持Siri Shortcuts(捷径)功能 和 “设置和捷径App内未列出自己App的Shortcut” 的解决办法">
 <meta name="twitter:description" content="最近发现的问题 “设置和捷径App内未列出自己App的Shortcut” 的解决办法在文章末尾 背景介绍WWDC 2018 苹果更新了Siri使其支持Shortcuts功能，中文名“捷径”。支持用户通过自定义把一系列操作合并到一个Shortcut内。苹果官方应用提供了一些接口供Shortcut调用，如Map应用的“获取行程时间”，“显示路线”等。如果我们的应用需要支持，需要自己在App中开放可以被">
@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
+                <time title="Modified: 2020-12-03 09:38:31" itemprop="dateModified" datetime="2020-12-03T09:38:31+08:00">2020-12-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -287,7 +287,7 @@
       
         <p><strong>最近发现的问题 “设置和捷径App内未列出自己App的Shortcut” 的解决办法在文章末尾</strong></p>
 <h3 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h3><p>WWDC 2018 苹果更新了Siri使其支持Shortcuts功能，中文名“捷径”。支持用户通过自定义把一系列操作合并到一个Shortcut内。苹果官方应用提供了一些接口供Shortcut调用，如Map应用的“获取行程时间”，“显示路线”等。如果我们的应用需要支持，需要自己在App中开放可以被Shortcuts访问的接口。同时苹果正在大力推广这个Siri新功能，支持软件可在<a href="https://itunes.apple.com/cn/story/id1436260234" target="_blank" rel="noopener">苹果App Store榜单“用 Siri，走捷径”</a>中列出，有一定推广作用。该功能也有利于增加用户粘度和活跃人数。</p>
-<p>Apple提供了官方关于Shortcuts的<a href="https://developer.apple.com/documentation/sirikit/soup_chef_accelerating_app_interactions_with_shortcuts?language=objc" target="_blank" rel="noopener">demo</a>，但是在苹果大力推广Swift的浪潮下，demo的语言也是Swift版的，无奈公司现在还在使用Objc，下面介绍下Objc下的接入过程。</p>
+<p>Apple提供了官方关于Shortcuts的<a href="https://developer.apple.com/documentation/sirikit/soup_chef_accelerating_app_interactions_with_shortcuts?language=objc" target="_blank" rel="noopener">demo</a>，但是在苹果大力推广Swift的浪潮下，demo的语言也是Swift版的，无奈公司现在还在使用Objc，下面介绍下Objc下的接入过程。<br><a id="more"></a></p>
 <h3 id="创建Custom-Intent"><a href="#创建Custom-Intent" class="headerlink" title="创建Custom Intent"></a>创建Custom Intent</h3><p>在项目中通过“New File…”创建一个<code>Intents.intentdefinition</code>文件。这个文件用来定义自定义<code>intent</code>类型。</p>
 <img src="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/SiriKitIntentDefinitionFile.png" title="新建SiriKit Intent Definition File">
 <img src="/2018/10/10/iOS/让App在iOS12中支持Siri-Shortcuts-捷径-功能/CustomIntents.png" title="设置Custom Intents">

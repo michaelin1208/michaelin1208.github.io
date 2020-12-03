@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Michaelin&#39;s Blog">
 <meta property="og:description" content="问题描述我们项目在语音发送用户评语时，使用了Lame三方库对客户端的pcm录音文件进行压缩，输出MP3文件。具体的Lame接入方法可以参考该文章 “iOS-Lame-Audio-transcoding“. 在iOS13的iPhoneX/iPhoneXS等iPhone机中出现录音边录边压缩时闪退的问题。 问题类型EXC_BAD_ACCESS野指正，对象过早被释放导致。 异常出现的位置在lame_en">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-30T07:23:38.000Z">
+<meta property="og:updated_time" content="2020-12-03T01:39:45.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS13Lame压缩录音文件为MP3格式闪退">
 <meta name="twitter:description" content="问题描述我们项目在语音发送用户评语时，使用了Lame三方库对客户端的pcm录音文件进行压缩，输出MP3文件。具体的Lame接入方法可以参考该文章 “iOS-Lame-Audio-transcoding“. 在iOS13的iPhoneX/iPhoneXS等iPhone机中出现录音边录边压缩时闪退的问题。 问题类型EXC_BAD_ACCESS野指正，对象过早被释放导致。 异常出现的位置在lame_en">
@@ -238,10 +238,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-09-30 14:49:53 / Modified: 15:23:38" itemprop="dateCreated datePublished" datetime="2019-09-30T14:49:53+08:00">2019-09-30</time>
+              <time title="Created: 2019-09-30 14:49:53" itemprop="dateCreated datePublished" datetime="2019-09-30T14:49:53+08:00">2019-09-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-03 09:39:45" itemprop="dateModified" datetime="2020-12-03T09:39:45+08:00">2020-12-03</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -275,6 +281,7 @@
 <p>问题类型<code>EXC_BAD_ACCESS</code>野指正，对象过早被释放导致。</p>
 <p>异常出现的位置在<code>lame_encode_buffer_interleaved</code>方法调用中，该方法为Lame提供的方法，且输入的参数也没有发现野指针存在。Zombie调试没有发现有用的信息。刚开始考虑是Lame库太老了（我们还在使用4年前的库😅），更新了Lame库没有解决问题。</p>
 <p>尝试运行<a href="https://github.com/CivelXu/iOS-Lame-Audio-transcoding" target="_blank" rel="noopener">iOS-Lame-Audio-transcoding</a>中提供的Demo，在我的设备中没有出现闪退现象。基本排除了Lame三方库的问题。</p>
+<a id="more"></a>
 <h2 id="问题根源和解决办法"><a href="#问题根源和解决办法" class="headerlink" title="问题根源和解决办法"></a>问题根源和解决办法</h2><p>对比demo和项目中对Lame库的使用，意外发现了我们在<strong><code>AVAudioRecorder</code></strong>初始化的<strong><code>setting</code></strong>参数有一句差异，项目中多了一句</p>
 <p><strong><code>[settingDictionary setObject:@(YES) forKey:AVLinearPCMIsFloatKey];</code></strong></p>
 <p>用于设置是否使用浮点数采样。</p>

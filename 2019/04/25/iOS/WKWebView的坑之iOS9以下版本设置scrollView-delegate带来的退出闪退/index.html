@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Michaelin&#39;s Blog">
 <meta property="og:description" content="问题描述在iOS9及以下版本中，WKWebView在自定义了他的scrollView.delegate为当前ViewController时，如果退出当前ViewController会闪退。提醒EXC_BAD_ACCESS错误并且闪退， 错误堆栈是-[UIScrollView(AdhocVisualEdit) adhoc_scrollViewSetDelegate:] 上一级是-[WKScrollV">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-25T09:59:48.000Z">
+<meta property="og:updated_time" content="2020-12-03T01:38:58.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WKWebView的坑之iOS9以下版本退出闪退">
 <meta name="twitter:description" content="问题描述在iOS9及以下版本中，WKWebView在自定义了他的scrollView.delegate为当前ViewController时，如果退出当前ViewController会闪退。提醒EXC_BAD_ACCESS错误并且闪退， 错误堆栈是-[UIScrollView(AdhocVisualEdit) adhoc_scrollViewSetDelegate:] 上一级是-[WKScrollV">
@@ -238,10 +238,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-04-25 17:00:46 / Modified: 17:59:48" itemprop="dateCreated datePublished" datetime="2019-04-25T17:00:46+08:00">2019-04-25</time>
+              <time title="Created: 2019-04-25 17:00:46" itemprop="dateCreated datePublished" datetime="2019-04-25T17:00:46+08:00">2019-04-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-03 09:38:58" itemprop="dateModified" datetime="2020-12-03T09:38:58+08:00">2020-12-03</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -272,7 +278,7 @@
       
         <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在iOS9及以下版本中，<code>WKWebView</code>在自定义了他的<code>scrollView.delegate</code>为当前<code>ViewController</code>时，如果退出当前<code>ViewController</code>会闪退。提醒<code>EXC_BAD_ACCESS</code>错误并且闪退，</p>
 <p>错误堆栈是<code>-[UIScrollView(AdhocVisualEdit) adhoc_scrollViewSetDelegate:]</code></p>
-<p>上一级是<code>-[WKScrollView _updateDelegate]</code>。</p>
+<p>上一级是<code>-[WKScrollView _updateDelegate]</code>。<br><a id="more"></a></p>
 <h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><p>考虑是在iOS9及以下版本中，苹果对于<code>delegate</code>的<code>weak</code>的处理没有如预期。导致在退出当前<code>ViewController</code>的时候更新<code>scrollView</code>的<code>delegate</code>还是使用了已经释放的<code>ViewController</code>，从而导致<code>EXC_BAD_ACCESS</code>错误而闪退。</p>
 <p>这个问题在iOS10及以上版本中已经修复，不再闪退。</p>
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在当前<code>ViewController</code>释放的时候，设置<code>WKWebView</code>的<code>scrollView.delegate</code>为nil。</p>

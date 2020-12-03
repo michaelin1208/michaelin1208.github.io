@@ -333,7 +333,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
+                <time title="Modified: 2020-12-03 09:39:26" itemprop="dateModified" datetime="2020-12-03T09:39:26+08:00">2020-12-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -364,12 +364,15 @@
 
       
           <p>最近需要实现个<a href="https://github.com/michaelin1208/ChargeApp/tree/MMDraggableTagView" target="_blank" rel="noopener">MMDraggableTagView</a>来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 <a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="noopener">SnapKit</a> 来管理autolayout的constraints，这个三方库和 <a href="https://github.com/SnapKit/Masonry" target="_blank" rel="noopener">Masonry</a> 类似，只是 one for ObjC, one for Swift. </p>
-<h3 id="问题列表（Swift菜鸟问题，熟练工略过）"><a href="#问题列表（Swift菜鸟问题，熟练工略过）" class="headerlink" title="问题列表（Swift菜鸟问题，熟练工略过）"></a>问题列表（Swift菜鸟问题，熟练工略过）</h3><p><strong>1. 通过SnapKit，重复更新autolayout时，页面显示位置不正常</strong><br>最初采用<code>public func makeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来添加constraints，但是重复使用会遗留下之前添加的constraints。需要使用<code>public func remakeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来实现删除之前的constraints，并创建新的constraints。</p>
-<p><strong>2. 通过更新视图的constraints来实现视图的动画效果。</strong><br>一开始通过在UIView的animate block中实现constraints更新，但是并没有动画效果<br>正确方法是：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIView</span>.animate(withDuration: <span class="number">0.2</span>, animations: &#123;</span><br><span class="line">      <span class="keyword">self</span>.relocateTags()         <span class="comment">// update autolayout constraints by SnapKit.</span></span><br><span class="line">      <span class="keyword">self</span>.layoutIfNeeded()       <span class="comment">// call layout method if needed to update subviews.</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>需要调用<code>layoutIfNeeded()</code>来更新子页面，不然其实子视图不会更新位置，只更新constraints。</p>
-<p><strong>3. 视图被拖拽时，出现视图因为之前的关联对象的位移，而产生同样的位移</strong><br>考虑是因为之前被拖拽视图设置的与周边子视图相关的constraints导致的。因此可以通过SnapKit中的<code>public func removeConstraints()</code>来直接删除所有的限制。但是因为删除了所有constraints，会导致视图移动到最初左上角的位置。因此采用了个折中的办法，<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">draggingCell!.snp.remakeConstraints &#123; (make) <span class="keyword">in</span></span><br><span class="line">      make.top.equalTo(<span class="keyword">self</span>).offset(draggingCell!.frame.origin.y)</span><br><span class="line">      make.left.equalTo(<span class="keyword">self</span>).offset(draggingCell!.frame.origin.x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>更新他的constraints，删除与周边subviews相关的constraints，设置为与superview的相关关系。这样就不会因为相关的subviews的位置变化而影响自己的视图。</p>
-<h3 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h3>
+<h3 id="问题列表（Swift菜鸟问题，熟练工略过）"><a href="#问题列表（Swift菜鸟问题，熟练工略过）" class="headerlink" title="问题列表（Swift菜鸟问题，熟练工略过）"></a>问题列表（Swift菜鸟问题，熟练工略过）</h3><p><strong>1. 通过SnapKit，重复更新autolayout时，页面显示位置不正常</strong><br>最初采用<code>public func makeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来添加constraints，但是重复使用会遗留下之前添加的constraints。需要使用<code>public func remakeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来实现删除之前的constraints，并创建新的constraints。<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/03/27/iOS/MMDraggableTagView实现排坑/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -672,7 +675,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
+                <time title="Modified: 2020-12-03 09:39:19" itemprop="dateModified" datetime="2020-12-03T09:39:19+08:00">2020-12-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -702,10 +705,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="MMNumberScrollView数字滚动动画视图"><a href="#MMNumberScrollView数字滚动动画视图" class="headerlink" title="MMNumberScrollView数字滚动动画视图"></a>MMNumberScrollView数字滚动动画视图</h2><p>之前项目中需要一个动画显示礼物数字增长的视图。最近把它拿来修改下，共享出来。具体的代码可从 <strong><a href="https://github.com/michaelin1208/MMNumberScrollView" target="_blank" rel="noopener">MMNumberScrollView in GitHub</a></strong> 下载。<br>本数字滚动视图可以实现用户自定义滚动图案，滚动速度，和是否动态控制视图大小。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">#import &quot;MMSingleNumberScrollView.h&quot;</span><br><span class="line"></span><br><span class="line">@class MMNumberScrollViewManager;</span><br><span class="line"></span><br><span class="line">@protocol MMNumberScrollViewManagerDelegate &lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">- (void)numberScrollViewManagerFinishedIncreasing:(MMNumberScrollViewManager *)manager;     // delegate method is callbacked when the number scroll view manager finish a increasing operation.</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface MMNumberScrollViewManager:UIView &lt;UIScrollViewDelegate, MMSingleNumberScrollViewDelegate&gt;</span><br><span class="line"></span><br><span class="line">@property (nonatomic,strong) NSMutableArray *numImageArray;  // a mutable array of number images shown in number scroll view.</span><br><span class="line">@property (nonatomic) NSTimeInterval speedDuration;  // roll speed, the duration of each increasing scrolling. The default value is 1 second.</span><br><span class="line">@property (nonatomic) BOOL isShowingFinalSize;  // is it show final size at beginning. Default value is &apos;YES&apos;, the size of scroll view is not increasing during scrolling.</span><br><span class="line"></span><br><span class="line">@property (nonatomic, weak) id&lt;MMNumberScrollViewManagerDelegate&gt; delegate;</span><br><span class="line"></span><br><span class="line">// increase number displayed in the manager&apos;s view from currentCount to targetCount.</span><br><span class="line">// You would better to start another increasing after last increasing operation finished (by &quot;- (void)numberScrollViewManagerFinishedIncreasing:(MMNumberScrollViewManager *)manager;&quot;)</span><br><span class="line">// or remove all existed number scroll views (&quot;- (void)removeAllNumberScrollViews;&quot;).</span><br><span class="line">- (void)increaseNumberFrom:(int)currentCount to:(int)targetCount;</span><br><span class="line"></span><br><span class="line">// init the number scroll view manager to contral all single number scroll views.</span><br><span class="line">- (instancetype)initWithFrame:(CGRect)frame;</span><br><span class="line"></span><br><span class="line">// remove all single number scroll views, if you want to shwo another number increasing.</span><br><span class="line">- (void)removeAllNumberScrollViews;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
-<h2 id="Cocoapods实践笔记"><a href="#Cocoapods实践笔记" class="headerlink" title="Cocoapods实践笔记"></a>Cocoapods实践笔记</h2><p>此外最近有些迷恋Cocoapods，最近都在尝试如何把自己的工程中自己工程中的三方库交给CocoaPods来管理。今天也顺道实践下怎么创建CocoaPods。方法可以参考下：<br><strong><a href="http://www.jianshu.com/p/98407f0c175b" target="_blank" rel="noopener">创建CocoaPods的制作过程</a></strong><br><strong><a href="http://www.jianshu.com/p/6e5c0f78200a" target="_blank" rel="noopener">CocoaPods的安装使用和常见问题</a></strong></p>
-<p>没有遇到什么特别的问题，除了个别步骤需要翻墙，推荐下<a href="https://github.com/getlantern/lantern" target="_blank" rel="noopener">Lantern</a>，虽然流量有上限，但是从来没超过。创建过程一切顺利，应该成功了，但是暂时在Cocoapods中还搜索不到我的工程。</p>
-
+          <h2 id="MMNumberScrollView数字滚动动画视图"><a href="#MMNumberScrollView数字滚动动画视图" class="headerlink" title="MMNumberScrollView数字滚动动画视图"></a>MMNumberScrollView数字滚动动画视图</h2><p>之前项目中需要一个动画显示礼物数字增长的视图。最近把它拿来修改下，共享出来。具体的代码可从 <strong><a href="https://github.com/michaelin1208/MMNumberScrollView" target="_blank" rel="noopener">MMNumberScrollView in GitHub</a></strong> 下载。<br>本数字滚动视图可以实现用户自定义滚动图案，滚动速度，和是否动态控制视图大小。<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/03/16/iOS/MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -755,7 +763,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-10-30 15:45:13" itemprop="dateModified" datetime="2018-10-30T15:45:13+08:00">2018-10-30</time>
+                <time title="Modified: 2020-12-03 09:38:42" itemprop="dateModified" datetime="2020-12-03T09:38:42+08:00">2020-12-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -790,69 +798,14 @@
 <li><p>X.509证书必须至少满足下面一种条件：</p>
 <p>由根证书是操作系统安装的CA颁发；</p>
 <p>由用户或系统管理员信任并安装的根证书颁发；</p>
-</li>
-<li><p>TLS版本必须为TLS 1.2，不使用TLS或使用老版本TLS的连接，访问会失败，基于TLSTool工程可获取服务器支持的TLS相关参数；</p>
-<p>连接必须使用AES-128或AES-256对称加密算法，TLS协商算法必须通过ECDHE密钥交换保证完全正向保密（Perfect Forward Secrecy, PFS），ECDHE密钥必须属于下面一种：</p>
-</li>
-</ol>
-<blockquote>
-<p>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</p>
-<p>TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</p>
-<p>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384</p>
-<p>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA</p>
-<p>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256</p>
-<p>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA</p>
-<p>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</p>
-<p>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</p>
-<p>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384</p>
-<p>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256</p>
-<p>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</p>
-</blockquote>
-<ol start="3">
-<li><p>服务器叶证书必须使用下列的密钥签名：</p>
-<p>至少2048位的RSA密钥；</p>
-<p>至少256位的ECC密钥；</p>
-</li>
-</ol>
-<h4 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h4><h4 id="验证网站是否支持苹果的-ATS-要求"><a href="#验证网站是否支持苹果的-ATS-要求" class="headerlink" title="验证网站是否支持苹果的 ATS 要求"></a>验证网站是否支持苹果的 ATS 要求</h4><p>对于OS X v10.11及以上系统，用户可以在终端中使用</p>
-<blockquote>
-<p>/usr/bin/nscurl –ats-diagnostics –verbose <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a></p>
-</blockquote>
-<p>来验证目标网站是否符合 ATS 要求，以及是否需要加入白名单。</p>
-<p>此外，腾讯云也提供了验证是否符合ATS要求的验证 SSL 网页。</p>
-<h3 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h3><h3 id="对于无法支持ATS的网站，尤其是第三方网站的适配方案。"><a href="#对于无法支持ATS的网站，尤其是第三方网站的适配方案。" class="headerlink" title="对于无法支持ATS的网站，尤其是第三方网站的适配方案。"></a>对于无法支持ATS的网站，尤其是第三方网站的适配方案。</h3><p><strong>首先配置 ‘xxx-Info.plist’ 对于用户的 API 请求</strong>，苹果要求是必须使用 HTTPS 的，特别是当这个服务器是属于你们自己管理的话。那么这就需要服务器的同事尽快配置证书好让服务器支持 HTTPS 访问。如果使用的是第三方的 API，而他们没有提供 HTTPS 支持的话，需要在 NSExceptionDomains 中进行添加。具体的添加方式可以参考官方的 <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="noopener">App Transport Security Technote</a>，官方对他进行了具体的说明。</p>
-<p>这些都可以在 ‘xxx-Info.plist’ 的 ‘NSAppTransportSecurity’ 中进行配置，具体的内容包括</p>
-<p>NSAllowsArbitraryLoads - Bool类型 - 设置YES即可完全关闭ATS，以便支持所有HTTP请求，默认为NO。</p>
-<p>NSAllowsArbitraryLoadsInWebContent - Bool类型 - 允许应用浏览网页内容时关闭ATS限制。默认为NO，像是 UIWebView 或 WKWebView 需要访问 HTTP 或者不安全的 HTTPS 时，需要设置为YES来允许访问。</p>
-<p>NSAllowsArbitraryLoadsForMedia - Bool类型 - 允许该APP的 AVFoundation 中的 player 可以关闭 ATS 限制。默认为NO，如果媒体内容不支持 HTTPS 可打开该关键字。</p>
-<p>NSAllowsLocalNetworking - Bool类型 - 设置本地网络请求不受 ATS 的限制，默认为NO。</p>
-<p>NSExceptionDomains - Dictionary类型 - 添加白名单域名，对应不同的白名单中的网址设置他们的安全例外内容。需要例外的域名根地址 (不包括 ‘http://‘ 或 ‘https://‘ 的头和 ‘/‘ ) 作为关键字，Dictionary类型，内容为下面的参数。</p>
-<p>NSExceptionMinimumTLSVersion - String类型 - 白名单指定域名支持的TLS版本，苹果要求必须达到TLS 1.2版本，如果你访问的网站仅支持TLS 1.0，那么设置为 ‘TLSv1.0’。</p>
-<p>NSExceptionRequiresForwardSecrecy - Bool类型 - 白名单指定域名是否支持Forward Secrecy，默认值为YES，如果域名不支持完全正向加密，那么设置为NO。具体的加密要求可以阅读上方官方技术文档。</p>
-<p>NSExceptionAllowsInsecureHTTPLoads - Bool类型 - 白名单指定域名禁用ATS，而不仅仅只是允许HTTP访问，默认是NO。</p>
-<p>NSIncludesSubdomains - Bool类型 - 白名单指定该白名单的相关设置是否同样设置它的子域名，默认为NO。</p>
-<p><strong>‘SDWebImage’ 无法下载图片的问题。</strong>在设置了白名单后，出现部分网上的图片无法通过 ‘SDWebImage’ 进行下载的问题。解决方法是在下载图片时，设置 ‘options’ 为 ‘SDWebImageAllowInvalidSSLCertificates’ 来允许SDWebImage类访问无效的SSL认证。</p>
-<blockquote>
-<p>[self.headImageView sd_setImageWithURL:[NSURL URLWithString:headImageStr] placeholderImage:kCLDefaultHeadImage options:SDWebImageAllowInvalidSSLCertificates];</p>
-</blockquote>
-<p><strong>‘AFNetworking’</strong> 在 ATS 打开情况下，对于无效证书 (像是自建证书) 和不匹配域名的证书可能会请求失败，那么我们需要修改请求的安全要求，来允许无效证书和不匹配域名的证书。</p>
-<blockquote>
-<p>AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];</p>
-<p>AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];</p>
-<p>//allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO//如果是需要验证自建证书，需要设置为YES</p>
-<p>securityPolicy.allowInvalidCertificates = YES;</p>
-<p>//validatesDomainName 是否需要验证域名，默认为YES；</p>
-<p>securityPolicy.validatesDomainName = NO;</p>
-<p>manager.securityPolicy  = securityPolicy;</p>
-<p>manager.responseSerializer = [AFHTTPResponseSerializer serializer];</p>
-<p>[manager POST:urlString parameters:dic success:finishedBlock failure:failedBlock];</p>
-</blockquote>
-<h1 id="-3"><a href="#-3" class="headerlink" title=" "></a> </h1><h1 id="Reference-List"><a href="#Reference-List" class="headerlink" title="Reference List:"></a>Reference List:</h1><p>“Supporting App Transport Security”, <a href="https://developer.apple.com/news/?id=12212016b" target="_blank" rel="noopener">https://developer.apple.com/news/?id=12212016b</a></p>
-<p>“Apple’s Information Property List Key Reference”, <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html</a></p>
-<p>“苹果ATS（强制HTTPS）审核新政解码”, <a href="https://yq.aliyun.com/articles/62563" target="_blank" rel="noopener">https://yq.aliyun.com/articles/62563</a></p>
-<p>“iOS 中 AFNetworking HTTPS 的使用”, <a href="http://www.jianshu.com/p/20d5fb4cd76d" target="_blank" rel="noopener">http://www.jianshu.com/p/20d5fb4cd76d</a></p>
-<p>“苹果新『应用通信安全』的理解和使用”, <a href="http://www.cocoachina.com/ios/20150717/12650.html" target="_blank" rel="noopener">http://www.cocoachina.com/ios/20150717/12650.html</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/01/10/iOS/苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
