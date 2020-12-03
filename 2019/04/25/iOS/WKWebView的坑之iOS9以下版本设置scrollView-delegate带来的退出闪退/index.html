@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
@@ -25,19 +25,23 @@
   </script>
 
   <meta name="description" content="问题描述在iOS9及以下版本中，WKWebView在自定义了他的scrollView.delegate为当前ViewController时，如果退出当前ViewController会闪退。提醒EXC_BAD_ACCESS错误并且闪退， 错误堆栈是-[UIScrollView(AdhocVisualEdit) adhoc_scrollViewSetDelegate:] 上一级是-[WKScrollV">
-<meta name="keywords" content="iOS,WKWebView,scrollView,delegate,闪退">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WKWebView的坑之iOS9以下版本退出闪退">
-<meta property="og:url" content="https://michaelin1208.github.io/2019/04/25/iOS/WKWebView的坑之iOS9以下版本设置scrollView-delegate带来的退出闪退/index.html">
+<meta property="og:url" content="https://michaelin1208.github.io/2019/04/25/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8BiOS9%E4%BB%A5%E4%B8%8B%E7%89%88%E6%9C%AC%E8%AE%BE%E7%BD%AEscrollView-delegate%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%80%80%E5%87%BA%E9%97%AA%E9%80%80/index.html">
 <meta property="og:site_name" content="Michaelin&#39;s Blog">
 <meta property="og:description" content="问题描述在iOS9及以下版本中，WKWebView在自定义了他的scrollView.delegate为当前ViewController时，如果退出当前ViewController会闪退。提醒EXC_BAD_ACCESS错误并且闪退， 错误堆栈是-[UIScrollView(AdhocVisualEdit) adhoc_scrollViewSetDelegate:] 上一级是-[WKScrollV">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-12-03T01:38:58.398Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-04-25T09:00:46.000Z">
+<meta property="article:modified_time" content="2020-12-03T01:38:58.398Z">
+<meta property="article:author" content="Michael LIN">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="WKWebView">
+<meta property="article:tag" content="scrollView">
+<meta property="article:tag" content="delegate">
+<meta property="article:tag" content="闪退">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WKWebView的坑之iOS9以下版本退出闪退">
-<meta name="twitter:description" content="问题描述在iOS9及以下版本中，WKWebView在自定义了他的scrollView.delegate为当前ViewController时，如果退出当前ViewController会闪退。提醒EXC_BAD_ACCESS错误并且闪退， 错误堆栈是-[UIScrollView(AdhocVisualEdit) adhoc_scrollViewSetDelegate:] 上一级是-[WKScrollV">
 
-<link rel="canonical" href="https://michaelin1208.github.io/2019/04/25/iOS/WKWebView的坑之iOS9以下版本设置scrollView-delegate带来的退出闪退/">
+<link rel="canonical" href="https://michaelin1208.github.io/2019/04/25/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8BiOS9%E4%BB%A5%E4%B8%8B%E7%89%88%E6%9C%AC%E8%AE%BE%E7%BD%AEscrollView-delegate%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%80%80%E5%87%BA%E9%97%AA%E9%80%80/">
 
 
 <script id="page-configurations">
@@ -99,6 +103,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Michaelin's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -216,7 +221,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2019/04/25/iOS/WKWebView的坑之iOS9以下版本设置scrollView-delegate带来的退出闪退/">
+    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2019/04/25/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8BiOS9%E4%BB%A5%E4%B8%8B%E7%89%88%E6%9C%AC%E8%AE%BE%E7%BD%AEscrollView-delegate%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%80%80%E5%87%BA%E9%97%AA%E9%80%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.JPG">
@@ -259,6 +264,13 @@
             </span>
 
           
+            <span id="/2019/04/25/iOS/WKWebView%E7%9A%84%E5%9D%91%E4%B9%8BiOS9%E4%BB%A5%E4%B8%8B%E7%89%88%E6%9C%AC%E8%AE%BE%E7%BD%AEscrollView-delegate%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%80%80%E5%87%BA%E9%97%AA%E9%80%80/" class="post-meta-item leancloud_visitors" data-flag-title="WKWebView的坑之iOS9以下版本退出闪退" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
@@ -271,13 +283,15 @@
       
         <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在iOS9及以下版本中，<code>WKWebView</code>在自定义了他的<code>scrollView.delegate</code>为当前<code>ViewController</code>时，如果退出当前<code>ViewController</code>会闪退。提醒<code>EXC_BAD_ACCESS</code>错误并且闪退，</p>
 <p>错误堆栈是<code>-[UIScrollView(AdhocVisualEdit) adhoc_scrollViewSetDelegate:]</code></p>
-<p>上一级是<code>-[WKScrollView _updateDelegate]</code>。<br><a id="more"></a></p>
+<p>上一级是<code>-[WKScrollView _updateDelegate]</code>。</p>
+<a id="more"></a>
 <h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><p>考虑是在iOS9及以下版本中，苹果对于<code>delegate</code>的<code>weak</code>的处理没有如预期。导致在退出当前<code>ViewController</code>的时候更新<code>scrollView</code>的<code>delegate</code>还是使用了已经释放的<code>ViewController</code>，从而导致<code>EXC_BAD_ACCESS</code>错误而闪退。</p>
 <p>这个问题在iOS10及以上版本中已经修复，不再闪退。</p>
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在当前<code>ViewController</code>释放的时候，设置<code>WKWebView</code>的<code>scrollView.delegate</code>为nil。</p>
 <p>代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// Objective-C</span><br><span class="line">- (void)dealloc</span><br><span class="line">&#123;</span><br><span class="line">    _webView.scrollView.delegate = nil;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Swift</span><br><span class="line">deinit &#123;</span><br><span class="line">    webView.scrollView.delegate = nil</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Reference-List"><a href="#Reference-List" class="headerlink" title="Reference List"></a>Reference List</h3><p><a href="https://stackoverflow.com/questions/38733634/ios-wkwebview-scrollview-delegate-cause-bad-access" target="_blank" rel="noopener">iOS WKWebView.scrollView delegate cause BAD_ACCESS</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Objective-C</span><br><span class="line">- (void)dealloc</span><br><span class="line">&#123;</span><br><span class="line">    _webView.scrollView.delegate &#x3D; nil;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Swift</span><br><span class="line">deinit &#123;</span><br><span class="line">    webView.scrollView.delegate &#x3D; nil</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Reference-List"><a href="#Reference-List" class="headerlink" title="Reference List"></a>Reference List</h3><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/38733634/ios-wkwebview-scrollview-delegate-cause-bad-access">iOS WKWebView.scrollView delegate cause BAD_ACCESS</a></p>
 
     </div>
 
@@ -291,7 +305,7 @@
               <a href="/tags/WKWebView/" rel="tag"># WKWebView</a>
               <a href="/tags/scrollView/" rel="tag"># scrollView</a>
               <a href="/tags/delegate/" rel="tag"># delegate</a>
-              <a href="/tags/闪退/" rel="tag"># 闪退</a>
+              <a href="/tags/%E9%97%AA%E9%80%80/" rel="tag"># 闪退</a>
           </div>
 
         
@@ -300,11 +314,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/04/23/iOS/iOS开发实用工具/" rel="prev" title="iOS开发实用工具">
+    <a href="/2019/04/23/iOS/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="prev" title="iOS开发实用工具">
       <i class="fa fa-chevron-left"></i> iOS开发实用工具
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019/06/19/iOS/SourceTree和GitLab配合使用的问题/" rel="next" title="SourceTree和GitLab配合使用的问题">
+    <a href="/2019/06/19/iOS/SourceTree%E5%92%8CGitLab%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/" rel="next" title="SourceTree和GitLab配合使用的问题">
       SourceTree和GitLab配合使用的问题 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -366,7 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原因分析"><span class="nav-number">2.</span> <span class="nav-text">原因分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法"><span class="nav-number">3.</span> <span class="nav-text">解决办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference-List"><span class="nav-number">4.</span> <span class="nav-text">Reference List</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">原因分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">解决办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference-List"><span class="nav-number">4.</span> <span class="nav-text">Reference List</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -402,19 +416,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Michaelin1208" title="GitHub → https://github.com/Michaelin1208" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/Michaelin1208" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Michaelin1208" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:michaelin1208@gmail.com" title="E-Mail → mailto:michaelin1208@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/Michaelin1208" title="Twitter → https://twitter.com/Michaelin1208" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
+        <a href="https://twitter.com/Michaelin1208" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Michaelin1208" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.facebook.com/michaelin1208" title="FB Page → https://www.facebook.com/michaelin1208" rel="noopener" target="_blank"><i class="facebook fa-fw"></i></a>
+        <a href="https://www.facebook.com/michaelin1208" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;michaelin1208" rel="noopener" target="_blank"><i class="facebook fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.jianshu.com/u/91cf4504636a" title="简书 → https://www.jianshu.com/u/91cf4504636a" rel="noopener" target="_blank"><i class="book fa-fw"></i></a>
+        <a href="https://www.jianshu.com/u/91cf4504636a" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;91cf4504636a" rel="noopener" target="_blank"><i class="book fa-fw"></i></a>
       </span>
   </div>
 
@@ -445,7 +459,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Michael LIN</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
         
@@ -455,6 +469,92 @@
 
 
 
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"L9uPf3Q0ogQ0AEy30vrlEUEl-gzGzoHsz","app_key":"qR7WlQ64uRSBmFfBAGHxqvwJ","server_url":null,"security":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -466,9 +566,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -502,7 +610,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 
@@ -530,7 +640,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'gitalk',
       owner       : 'michaelin1208',
       admin       : ['michaelin1208'],
-      id          : 'f92d2d3c888472776cab7b00702b7b87',
+      id          : '0b007783eb57fe2bfbf36aed733117be',
         language: '',
       distractionFreeMode: true
     });

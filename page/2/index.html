@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
@@ -25,16 +25,15 @@
   </script>
 
   <meta name="description" content="Programming notes including iOS, Python and so on.">
-<meta name="keywords" content="iOS, Python">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Michaelin&#39;s Blog">
 <meta property="og:url" content="https://michaelin1208.github.io/page/2/index.html">
 <meta property="og:site_name" content="Michaelin&#39;s Blog">
 <meta property="og:description" content="Programming notes including iOS, Python and so on.">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
+<meta property="article:author" content="Michael LIN">
+<meta property="article:tag" content="iOS, Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Michaelin&#39;s Blog">
-<meta name="twitter:description" content="Programming notes including iOS, Python and so on.">
 
 <link rel="canonical" href="https://michaelin1208.github.io/page/2/">
 
@@ -98,6 +97,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Michaelin's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -213,8 +213,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/09/19/Apple/Apple-Watch-“密码错误”-问题解决-和-还原初始化方式/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/09/19/Apple/Apple-Watch-%E2%80%9C%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF%E2%80%9D-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3-%E5%92%8C-%E8%BF%98%E5%8E%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.JPG">
@@ -228,7 +228,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2017/09/19/Apple/Apple-Watch-“密码错误”-问题解决-和-还原初始化方式/" class="post-title-link" itemprop="url">Apple-Watch-“密码错误”-问题解决-和-还原初始化方式</a>
+            <a href="/2017/09/19/Apple/Apple-Watch-%E2%80%9C%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF%E2%80%9D-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3-%E5%92%8C-%E8%BF%98%E5%8E%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">Apple-Watch-“密码错误”-问题解决-和-还原初始化方式</a>
         </h2>
 
         <div class="post-meta">
@@ -258,6 +258,13 @@
             </span>
 
           
+            <span id="/2017/09/19/Apple/Apple-Watch-%E2%80%9C%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF%E2%80%9D-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3-%E5%92%8C-%E8%BF%98%E5%8E%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E5%BC%8F/" class="post-meta-item leancloud_visitors" data-flag-title="Apple-Watch-“密码错误”-问题解决-和-还原初始化方式" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
@@ -268,10 +275,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="最近莫名其妙遇到的Apple-Watch无法解锁的问题"><a href="#最近莫名其妙遇到的Apple-Watch无法解锁的问题" class="headerlink" title="最近莫名其妙遇到的Apple Watch无法解锁的问题"></a>最近莫名其妙遇到的Apple Watch无法解锁的问题</h3><p>这个问题几乎是一个死循环。首先手机的蓝牙无法正常的连接到曾经配对过的Apple Watch，同时手表提示“密码错误 请在 iPhone 打开Apple Watch 应用，前往Passcode，轻按“重启密码”再试。”。<br><img src="http://upload-images.jianshu.io/upload_images/2312364-0bbfab50b8310e78.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="借用下网友的错误图片"><br>很尴尬，手机连不上手表，无法重启密码。手表所有按键都提示这段话。<br>
+          <h3 id="最近莫名其妙遇到的Apple-Watch无法解锁的问题"><a href="#最近莫名其妙遇到的Apple-Watch无法解锁的问题" class="headerlink" title="最近莫名其妙遇到的Apple Watch无法解锁的问题"></a>最近莫名其妙遇到的Apple Watch无法解锁的问题</h3><p>这个问题几乎是一个死循环。首先手机的蓝牙无法正常的连接到曾经配对过的Apple Watch，同时手表提示“密码错误 请在 iPhone 打开Apple Watch 应用，前往Passcode，轻按“重启密码”再试。”。<br><img src="http://upload-images.jianshu.io/upload_images/2312364-0bbfab50b8310e78.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="借用下网友的错误图片"><br>很尴尬，手机连不上手表，无法重启密码。手表所有按键都提示这段话。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2017/09/19/Apple/Apple-Watch-“密码错误”-问题解决-和-还原初始化方式/#more" rel="contents">
+              <a class="btn" href="/2017/09/19/Apple/Apple-Watch-%E2%80%9C%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF%E2%80%9D-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3-%E5%92%8C-%E8%BF%98%E5%8E%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E5%BC%8F/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -294,8 +301,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/27/iOS/MMDraggableTagView实现排坑/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/27/iOS/MMDraggableTagView%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%9D%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.JPG">
@@ -309,7 +316,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2017/03/27/iOS/MMDraggableTagView实现排坑/" class="post-title-link" itemprop="url">MMDraggableTagView实现排坑</a>
+            <a href="/2017/03/27/iOS/MMDraggableTagView%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%9D%91/" class="post-title-link" itemprop="url">MMDraggableTagView实现排坑</a>
         </h2>
 
         <div class="post-meta">
@@ -339,6 +346,13 @@
             </span>
 
           
+            <span id="/2017/03/27/iOS/MMDraggableTagView%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%9D%91/" class="post-meta-item leancloud_visitors" data-flag-title="MMDraggableTagView实现排坑" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
@@ -349,11 +363,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>最近需要实现个<a href="https://github.com/michaelin1208/ChargeApp/tree/MMDraggableTagView" target="_blank" rel="noopener">MMDraggableTagView</a>来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 <a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="noopener">SnapKit</a> 来管理autolayout的constraints，这个三方库和 <a href="https://github.com/SnapKit/Masonry" target="_blank" rel="noopener">Masonry</a> 类似，只是 one for ObjC, one for Swift. </p>
-<h3 id="问题列表（Swift菜鸟问题，熟练工略过）"><a href="#问题列表（Swift菜鸟问题，熟练工略过）" class="headerlink" title="问题列表（Swift菜鸟问题，熟练工略过）"></a>问题列表（Swift菜鸟问题，熟练工略过）</h3><p><strong>1. 通过SnapKit，重复更新autolayout时，页面显示位置不正常</strong><br>最初采用<code>public func makeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来添加constraints，但是重复使用会遗留下之前添加的constraints。需要使用<code>public func remakeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来实现删除之前的constraints，并创建新的constraints。<br>
+          <p>最近需要实现个<a target="_blank" rel="noopener" href="https://github.com/michaelin1208/ChargeApp/tree/MMDraggableTagView">MMDraggableTagView</a>来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 <a target="_blank" rel="noopener" href="https://github.com/SnapKit/SnapKit">SnapKit</a> 来管理autolayout的constraints，这个三方库和 <a target="_blank" rel="noopener" href="https://github.com/SnapKit/Masonry">Masonry</a> 类似，只是 one for ObjC, one for Swift. </p>
+<h3 id="问题列表（Swift菜鸟问题，熟练工略过）"><a href="#问题列表（Swift菜鸟问题，熟练工略过）" class="headerlink" title="问题列表（Swift菜鸟问题，熟练工略过）"></a>问题列表（Swift菜鸟问题，熟练工略过）</h3><p><strong>1. 通过SnapKit，重复更新autolayout时，页面显示位置不正常</strong><br>最初采用<code>public func makeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来添加constraints，但是重复使用会遗留下之前添加的constraints。需要使用<code>public func remakeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来实现删除之前的constraints，并创建新的constraints。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2017/03/27/iOS/MMDraggableTagView实现排坑/#more" rel="contents">
+              <a class="btn" href="/2017/03/27/iOS/MMDraggableTagView%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%9D%91/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -376,8 +390,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/20/iOS/CocoaPods-trunk-push%E5%8F%91%E5%B8%83%E6%88%90%E5%8A%9F%E5%90%8E%E6%97%A0%E6%B3%95pod-search%E5%88%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.JPG">
@@ -391,7 +405,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/" class="post-title-link" itemprop="url">CocoaPods-trunk-push发布成功后无法pod-search到</a>
+            <a href="/2017/03/20/iOS/CocoaPods-trunk-push%E5%8F%91%E5%B8%83%E6%88%90%E5%8A%9F%E5%90%8E%E6%97%A0%E6%B3%95pod-search%E5%88%B0/" class="post-title-link" itemprop="url">CocoaPods-trunk-push发布成功后无法pod-search到</a>
         </h2>
 
         <div class="post-meta">
@@ -421,6 +435,13 @@
             </span>
 
           
+            <span id="/2017/03/20/iOS/CocoaPods-trunk-push%E5%8F%91%E5%B8%83%E6%88%90%E5%8A%9F%E5%90%8E%E6%97%A0%E6%B3%95pod-search%E5%88%B0/" class="post-meta-item leancloud_visitors" data-flag-title="CocoaPods-trunk-push发布成功后无法pod-search到" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
@@ -431,11 +452,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="现象："><a href="#现象：" class="headerlink" title="现象："></a>现象：</h2><p>按照上一篇文章<a href="http://www.jianshu.com/p/61cc4121a0ee" target="_blank" rel="noopener">《MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记》</a>介绍，实现了新建并编辑podspace，然后通过<code>pod trunk push yourSpaceName.podspec</code>来push我们自己的CocoaPods库到<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">CocoaPods官方git</a>。</p>
-<p>上传成功后，按照之前的文章介绍，可以使用<code>pod search YouUploadCocoaPodsSpaceName</code> 来找到你的工程。理应显示<br><img src="http://upload-images.jianshu.io/upload_images/2312364-deb7ef62c1e4cad3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="预期效果"><br>但是显示的是😂<br><img src="http://upload-images.jianshu.io/upload_images/2312364-0c8d7f7fa5364d69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="实际效果"><br>
+          <h2 id="现象："><a href="#现象：" class="headerlink" title="现象："></a>现象：</h2><p>按照上一篇文章<a target="_blank" rel="noopener" href="http://www.jianshu.com/p/61cc4121a0ee">《MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记》</a>介绍，实现了新建并编辑podspace，然后通过<code>pod trunk push yourSpaceName.podspec</code>来push我们自己的CocoaPods库到<a target="_blank" rel="noopener" href="https://github.com/CocoaPods/Specs">CocoaPods官方git</a>。</p>
+<p>上传成功后，按照之前的文章介绍，可以使用<code>pod search YouUploadCocoaPodsSpaceName</code> 来找到你的工程。理应显示<br><img src="http://upload-images.jianshu.io/upload_images/2312364-deb7ef62c1e4cad3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="预期效果"><br>但是显示的是😂<br><img src="http://upload-images.jianshu.io/upload_images/2312364-0c8d7f7fa5364d69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="实际效果"></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/#more" rel="contents">
+              <a class="btn" href="/2017/03/20/iOS/CocoaPods-trunk-push%E5%8F%91%E5%B8%83%E6%88%90%E5%8A%9F%E5%90%8E%E6%97%A0%E6%B3%95pod-search%E5%88%B0/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -458,8 +479,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/20/iOS/sudo-gem-install-cocoapods%E6%9B%B4%E6%96%B0CocoaPods%E5%A4%B1%E8%B4%A5%E3%80%81%E6%97%A0%E6%9D%83%E9%99%90%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.JPG">
@@ -473,7 +494,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2017/03/20/iOS/sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法/" class="post-title-link" itemprop="url">sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法</a>
+            <a href="/2017/03/20/iOS/sudo-gem-install-cocoapods%E6%9B%B4%E6%96%B0CocoaPods%E5%A4%B1%E8%B4%A5%E3%80%81%E6%97%A0%E6%9D%83%E9%99%90%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="post-title-link" itemprop="url">sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法</a>
         </h2>
 
         <div class="post-meta">
@@ -503,6 +524,13 @@
             </span>
 
           
+            <span id="/2017/03/20/iOS/sudo-gem-install-cocoapods%E6%9B%B4%E6%96%B0CocoaPods%E5%A4%B1%E8%B4%A5%E3%80%81%E6%97%A0%E6%9D%83%E9%99%90%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="sudo-gem-install-cocoapods更新CocoaPods失败、无权限的解决办法" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
@@ -515,7 +543,7 @@
       
           <p><code>sudo gem install cocoapods</code>更新CocoaPods，或者<code>sudo gem update --system</code>更新gem。却提醒失败，无权限。<br><img src="http://upload-images.jianshu.io/upload_images/2312364-e9a9907d6bb0e042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="更新失败 提示无权限"><br>但是已经加了sudo，考虑是路径问题。</p>
 <h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>用下面的代码指定路径就能安装成功了。<br><code>sudo gem install -n /usr/bin/pod cocoapods</code>安装CocoaPods<br>或者<br><code>sudo gem update -n /usr/local/bin --system</code>安装Gem</p>
-<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="http://stackoverflow.com/questions/33015875/operation-not-permitted-usr-bin-update-rubygems" target="_blank" rel="noopener">Operation not permitted - /usr/bin/update_rubygems</a></p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/33015875/operation-not-permitted-usr-bin-update-rubygems">Operation not permitted - /usr/bin/update_rubygems</a></p>
 
       
     </div>
@@ -534,7 +562,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/16/csdn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -579,6 +607,13 @@
             </span>
 
           
+            <span id="/2017/03/16/csdn/" class="post-meta-item leancloud_visitors" data-flag-title="我的CSDN博客地址" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
@@ -589,7 +624,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>原来CSDN博客地址<a href="http://blog.csdn.net/michaelin1208" target="_blank" rel="noopener">michaelin1208</a>。 懒得一篇篇文章搬运了，记录下方便以后查找😊。</p>
+          <p>原来CSDN博客地址<a target="_blank" rel="noopener" href="http://blog.csdn.net/michaelin1208">michaelin1208</a>。 懒得一篇篇文章搬运了，记录下方便以后查找😊。</p>
 
       
     </div>
@@ -608,8 +643,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/16/iOS/MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/16/iOS/MMNumberScrollView%E6%95%B0%E5%AD%97%E6%BB%9A%E5%8A%A8%E5%8A%A8%E7%94%BB%E8%A7%86%E5%9B%BE%E5%92%8CCocoapods%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.JPG">
@@ -623,7 +658,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2017/03/16/iOS/MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记/" class="post-title-link" itemprop="url">MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记</a>
+            <a href="/2017/03/16/iOS/MMNumberScrollView%E6%95%B0%E5%AD%97%E6%BB%9A%E5%8A%A8%E5%8A%A8%E7%94%BB%E8%A7%86%E5%9B%BE%E5%92%8CCocoapods%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记</a>
         </h2>
 
         <div class="post-meta">
@@ -653,6 +688,13 @@
             </span>
 
           
+            <span id="/2017/03/16/iOS/MMNumberScrollView%E6%95%B0%E5%AD%97%E6%BB%9A%E5%8A%A8%E5%8A%A8%E7%94%BB%E8%A7%86%E5%9B%BE%E5%92%8CCocoapods%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
@@ -663,10 +705,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="MMNumberScrollView数字滚动动画视图"><a href="#MMNumberScrollView数字滚动动画视图" class="headerlink" title="MMNumberScrollView数字滚动动画视图"></a>MMNumberScrollView数字滚动动画视图</h2><p>之前项目中需要一个动画显示礼物数字增长的视图。最近把它拿来修改下，共享出来。具体的代码可从 <strong><a href="https://github.com/michaelin1208/MMNumberScrollView" target="_blank" rel="noopener">MMNumberScrollView in GitHub</a></strong> 下载。<br>本数字滚动视图可以实现用户自定义滚动图案，滚动速度，和是否动态控制视图大小。<br>
+          <h2 id="MMNumberScrollView数字滚动动画视图"><a href="#MMNumberScrollView数字滚动动画视图" class="headerlink" title="MMNumberScrollView数字滚动动画视图"></a>MMNumberScrollView数字滚动动画视图</h2><p>之前项目中需要一个动画显示礼物数字增长的视图。最近把它拿来修改下，共享出来。具体的代码可从 <strong><a target="_blank" rel="noopener" href="https://github.com/michaelin1208/MMNumberScrollView">MMNumberScrollView in GitHub</a></strong> 下载。<br>本数字滚动视图可以实现用户自定义滚动图案，滚动速度，和是否动态控制视图大小。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2017/03/16/iOS/MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记/#more" rel="contents">
+              <a class="btn" href="/2017/03/16/iOS/MMNumberScrollView%E6%95%B0%E5%AD%97%E6%BB%9A%E5%8A%A8%E5%8A%A8%E7%94%BB%E8%A7%86%E5%9B%BE%E5%92%8CCocoapods%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -689,8 +731,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/01/10/iOS/苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/01/10/iOS/%E8%8B%B9%E6%9E%9C%E5%9C%A8WWDC2016%E4%B8%8A%E5%AE%A3%E5%B8%83%E7%9A%84%E5%85%B3%E4%BA%8E%E5%BA%94%E7%94%A8%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8https%E7%9A%84%E8%A7%84%E5%AE%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.JPG">
@@ -704,7 +746,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2017/01/10/iOS/苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案/" class="post-title-link" itemprop="url">苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案</a>
+            <a href="/2017/01/10/iOS/%E8%8B%B9%E6%9E%9C%E5%9C%A8WWDC2016%E4%B8%8A%E5%AE%A3%E5%B8%83%E7%9A%84%E5%85%B3%E4%BA%8E%E5%BA%94%E7%94%A8%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8https%E7%9A%84%E8%A7%84%E5%AE%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案</a>
         </h2>
 
         <div class="post-meta">
@@ -734,6 +776,13 @@
             </span>
 
           
+            <span id="/2017/01/10/iOS/%E8%8B%B9%E6%9E%9C%E5%9C%A8WWDC2016%E4%B8%8A%E5%AE%A3%E5%B8%83%E7%9A%84%E5%85%B3%E4%BA%8E%E5%BA%94%E7%94%A8%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8https%E7%9A%84%E8%A7%84%E5%AE%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-meta-item leancloud_visitors" data-flag-title="苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
@@ -744,14 +793,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="首先是还算好的好消息"><a href="#首先是还算好的好消息" class="headerlink" title="首先是还算好的好消息"></a>首先是还算好的好消息</h1><p><a href="https://developer.apple.com/news/?id=12212016b" target="_blank" rel="noopener">苹果官方</a>表示：强制使用 HTTPS 的要求将暂时不执行，以便给我们更多的时间来做 HTTPS 的适配工作。具体的执行时间，将在确定后再次发布。因此，我们依然可以在 ‘xxx-Info.plist’ 中设置 ‘App Transport Security Settings’ 的 ‘Allow Arbitrary Loads’ 属性设置为yes，来避开ATS要求。这样我们的应用不再需要任何修改就可访问http的网页。</p>
-<h1 id><a href="#" class="headerlink" title=" "></a> </h1><h1 id="其次是出来混总要还的"><a href="#其次是出来混总要还的" class="headerlink" title="其次是出来混总要还的"></a>其次是出来混总要还的</h1><h3 id="首先我们需要把网站配置成支持HTTPS。"><a href="#首先我们需要把网站配置成支持HTTPS。" class="headerlink" title="首先我们需要把网站配置成支持HTTPS。"></a>首先我们需要把网站配置成支持HTTPS。</h3><h4 id="苹果的-ATS-App-Transport-Security-政策对于HTTPS的要求，包括："><a href="#苹果的-ATS-App-Transport-Security-政策对于HTTPS的要求，包括：" class="headerlink" title="苹果的 ATS (App Transport Security) 政策对于HTTPS的要求，包括："></a>苹果的 ATS (App Transport Security) 政策对于HTTPS的要求，包括：</h4><ol>
+          <h1 id="首先是还算好的好消息"><a href="#首先是还算好的好消息" class="headerlink" title="首先是还算好的好消息"></a>首先是还算好的好消息</h1><p><a target="_blank" rel="noopener" href="https://developer.apple.com/news/?id=12212016b">苹果官方</a>表示：强制使用 HTTPS 的要求将暂时不执行，以便给我们更多的时间来做 HTTPS 的适配工作。具体的执行时间，将在确定后再次发布。因此，我们依然可以在 ‘xxx-Info.plist’ 中设置 ‘App Transport Security Settings’ 的 ‘Allow Arbitrary Loads’ 属性设置为yes，来避开ATS要求。这样我们的应用不再需要任何修改就可访问http的网页。</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="其次是出来混总要还的"><a href="#其次是出来混总要还的" class="headerlink" title="其次是出来混总要还的"></a>其次是出来混总要还的</h1><h3 id="首先我们需要把网站配置成支持HTTPS。"><a href="#首先我们需要把网站配置成支持HTTPS。" class="headerlink" title="首先我们需要把网站配置成支持HTTPS。"></a>首先我们需要把网站配置成支持HTTPS。</h3><h4 id="苹果的-ATS-App-Transport-Security-政策对于HTTPS的要求，包括："><a href="#苹果的-ATS-App-Transport-Security-政策对于HTTPS的要求，包括：" class="headerlink" title="苹果的 ATS (App Transport Security) 政策对于HTTPS的要求，包括："></a>苹果的 ATS (App Transport Security) 政策对于HTTPS的要求，包括：</h4><ol>
 <li><p>X.509证书必须至少满足下面一种条件：</p>
 <p>由根证书是操作系统安装的CA颁发；</p>
 <p>由用户或系统管理员信任并安装的根证书颁发；</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2017/01/10/iOS/苹果在WWDC2016上宣布的关于应用强制使用https的规定的解决方案/#more" rel="contents">
+              <a class="btn" href="/2017/01/10/iOS/%E8%8B%B9%E6%9E%9C%E5%9C%A8WWDC2016%E4%B8%8A%E5%AE%A3%E5%B8%83%E7%9A%84%E5%85%B3%E4%BA%8E%E5%BA%94%E7%94%A8%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8https%E7%9A%84%E8%A7%84%E5%AE%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -862,19 +911,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Michaelin1208" title="GitHub → https://github.com/Michaelin1208" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/Michaelin1208" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Michaelin1208" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:michaelin1208@gmail.com" title="E-Mail → mailto:michaelin1208@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/Michaelin1208" title="Twitter → https://twitter.com/Michaelin1208" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
+        <a href="https://twitter.com/Michaelin1208" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Michaelin1208" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.facebook.com/michaelin1208" title="FB Page → https://www.facebook.com/michaelin1208" rel="noopener" target="_blank"><i class="facebook fa-fw"></i></a>
+        <a href="https://www.facebook.com/michaelin1208" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;michaelin1208" rel="noopener" target="_blank"><i class="facebook fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.jianshu.com/u/91cf4504636a" title="简书 → https://www.jianshu.com/u/91cf4504636a" rel="noopener" target="_blank"><i class="book fa-fw"></i></a>
+        <a href="https://www.jianshu.com/u/91cf4504636a" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;91cf4504636a" rel="noopener" target="_blank"><i class="book fa-fw"></i></a>
       </span>
   </div>
 
@@ -905,7 +954,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Michael LIN</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
         
@@ -915,6 +964,92 @@
 
 
 
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"L9uPf3Q0ogQ0AEy30vrlEUEl-gzGzoHsz","app_key":"qR7WlQ64uRSBmFfBAGHxqvwJ","server_url":null,"security":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -926,9 +1061,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -962,7 +1105,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

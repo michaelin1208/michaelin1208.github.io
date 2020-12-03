@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
@@ -25,19 +25,20 @@
   </script>
 
   <meta name="description" content="最近需要实现个MMDraggableTagView来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 SnapKit 来管理autolayout的constraints，这个三方库和 Masonry 类似，只是 one for ObjC, one for Swift.  问题列表（Swift菜鸟问题，熟练工略过）1. 通过">
-<meta name="keywords" content="iOS,MMDraggableTagView">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MMDraggableTagView实现排坑">
-<meta property="og:url" content="https://michaelin1208.github.io/2017/03/27/iOS/MMDraggableTagView实现排坑/index.html">
+<meta property="og:url" content="https://michaelin1208.github.io/2017/03/27/iOS/MMDraggableTagView%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%9D%91/index.html">
 <meta property="og:site_name" content="Michaelin&#39;s Blog">
 <meta property="og:description" content="最近需要实现个MMDraggableTagView来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 SnapKit 来管理autolayout的constraints，这个三方库和 Masonry 类似，只是 one for ObjC, one for Swift.  问题列表（Swift菜鸟问题，熟练工略过）1. 通过">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-12-03T01:39:26.864Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-03-27T02:33:46.000Z">
+<meta property="article:modified_time" content="2020-12-03T01:39:26.864Z">
+<meta property="article:author" content="Michael LIN">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="MMDraggableTagView">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MMDraggableTagView实现排坑">
-<meta name="twitter:description" content="最近需要实现个MMDraggableTagView来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 SnapKit 来管理autolayout的constraints，这个三方库和 Masonry 类似，只是 one for ObjC, one for Swift.  问题列表（Swift菜鸟问题，熟练工略过）1. 通过">
 
-<link rel="canonical" href="https://michaelin1208.github.io/2017/03/27/iOS/MMDraggableTagView实现排坑/">
+<link rel="canonical" href="https://michaelin1208.github.io/2017/03/27/iOS/MMDraggableTagView%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%9D%91/">
 
 
 <script id="page-configurations">
@@ -99,6 +100,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Michaelin's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -216,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/27/iOS/MMDraggableTagView实现排坑/">
+    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2017/03/27/iOS/MMDraggableTagView%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%9D%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.JPG">
@@ -259,6 +261,13 @@
             </span>
 
           
+            <span id="/2017/03/27/iOS/MMDraggableTagView%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%9D%91/" class="post-meta-item leancloud_visitors" data-flag-title="MMDraggableTagView实现排坑" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
@@ -269,10 +278,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>最近需要实现个<a href="https://github.com/michaelin1208/ChargeApp/tree/MMDraggableTagView" target="_blank" rel="noopener">MMDraggableTagView</a>来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 <a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="noopener">SnapKit</a> 来管理autolayout的constraints，这个三方库和 <a href="https://github.com/SnapKit/Masonry" target="_blank" rel="noopener">Masonry</a> 类似，只是 one for ObjC, one for Swift. </p>
-<h3 id="问题列表（Swift菜鸟问题，熟练工略过）"><a href="#问题列表（Swift菜鸟问题，熟练工略过）" class="headerlink" title="问题列表（Swift菜鸟问题，熟练工略过）"></a>问题列表（Swift菜鸟问题，熟练工略过）</h3><p><strong>1. 通过SnapKit，重复更新autolayout时，页面显示位置不正常</strong><br>最初采用<code>public func makeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来添加constraints，但是重复使用会遗留下之前添加的constraints。需要使用<code>public func remakeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来实现删除之前的constraints，并创建新的constraints。<br><a id="more"></a><br><strong>2. 通过更新视图的constraints来实现视图的动画效果。</strong><br>一开始通过在UIView的animate block中实现constraints更新，但是并没有动画效果<br>正确方法是：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIView</span>.animate(withDuration: <span class="number">0.2</span>, animations: &#123;</span><br><span class="line">      <span class="keyword">self</span>.relocateTags()         <span class="comment">// update autolayout constraints by SnapKit.</span></span><br><span class="line">      <span class="keyword">self</span>.layoutIfNeeded()       <span class="comment">// call layout method if needed to update subviews.</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+        <p>最近需要实现个<a target="_blank" rel="noopener" href="https://github.com/michaelin1208/ChargeApp/tree/MMDraggableTagView">MMDraggableTagView</a>来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 <a target="_blank" rel="noopener" href="https://github.com/SnapKit/SnapKit">SnapKit</a> 来管理autolayout的constraints，这个三方库和 <a target="_blank" rel="noopener" href="https://github.com/SnapKit/Masonry">Masonry</a> 类似，只是 one for ObjC, one for Swift. </p>
+<h3 id="问题列表（Swift菜鸟问题，熟练工略过）"><a href="#问题列表（Swift菜鸟问题，熟练工略过）" class="headerlink" title="问题列表（Swift菜鸟问题，熟练工略过）"></a>问题列表（Swift菜鸟问题，熟练工略过）</h3><p><strong>1. 通过SnapKit，重复更新autolayout时，页面显示位置不正常</strong><br>最初采用<code>public func makeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来添加constraints，但是重复使用会遗留下之前添加的constraints。需要使用<code>public func remakeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来实现删除之前的constraints，并创建新的constraints。</p>
+<a id="more"></a>
+<p><strong>2. 通过更新视图的constraints来实现视图的动画效果。</strong><br>一开始通过在UIView的animate block中实现constraints更新，但是并没有动画效果<br>正确方法是：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIView</span>.animate(withDuration: <span class="number">0.2</span>, animations: &#123;</span><br><span class="line">      <span class="keyword">self</span>.relocateTags()         <span class="comment">// update autolayout constraints by SnapKit.</span></span><br><span class="line">      <span class="keyword">self</span>.layoutIfNeeded()       <span class="comment">// call layout method if needed to update subviews.</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>需要调用<code>layoutIfNeeded()</code>来更新子页面，不然其实子视图不会更新位置，只更新constraints。</p>
-<p><strong>3. 视图被拖拽时，出现视图因为之前的关联对象的位移，而产生同样的位移</strong><br>考虑是因为之前被拖拽视图设置的与周边子视图相关的constraints导致的。因此可以通过SnapKit中的<code>public func removeConstraints()</code>来直接删除所有的限制。但是因为删除了所有constraints，会导致视图移动到最初左上角的位置。因此采用了个折中的办法，<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">draggingCell!.snp.remakeConstraints &#123; (make) <span class="keyword">in</span></span><br><span class="line">      make.top.equalTo(<span class="keyword">self</span>).offset(draggingCell!.frame.origin.y)</span><br><span class="line">      make.left.equalTo(<span class="keyword">self</span>).offset(draggingCell!.frame.origin.x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>3. 视图被拖拽时，出现视图因为之前的关联对象的位移，而产生同样的位移</strong><br>考虑是因为之前被拖拽视图设置的与周边子视图相关的constraints导致的。因此可以通过SnapKit中的<code>public func removeConstraints()</code>来直接删除所有的限制。但是因为删除了所有constraints，会导致视图移动到最初左上角的位置。因此采用了个折中的办法， </p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">draggingCell!.snp.remakeConstraints &#123; (make) <span class="keyword">in</span></span><br><span class="line">      make.top.equalTo(<span class="keyword">self</span>).offset(draggingCell!.frame.origin.y)</span><br><span class="line">      make.left.equalTo(<span class="keyword">self</span>).offset(draggingCell!.frame.origin.x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>更新他的constraints，删除与周边subviews相关的constraints，设置为与superview的相关关系。这样就不会因为相关的subviews的位置变化而影响自己的视图。</p>
 <h3 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h3>
     </div>
@@ -293,11 +306,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2017/03/20/iOS/CocoaPods-trunk-push发布成功后无法pod-search到/" rel="prev" title="CocoaPods-trunk-push发布成功后无法pod-search到">
+    <a href="/2017/03/20/iOS/CocoaPods-trunk-push%E5%8F%91%E5%B8%83%E6%88%90%E5%8A%9F%E5%90%8E%E6%97%A0%E6%B3%95pod-search%E5%88%B0/" rel="prev" title="CocoaPods-trunk-push发布成功后无法pod-search到">
       <i class="fa fa-chevron-left"></i> CocoaPods-trunk-push发布成功后无法pod-search到
     </a></div>
       <div class="post-nav-item">
-    <a href="/2017/09/19/Apple/Apple-Watch-“密码错误”-问题解决-和-还原初始化方式/" rel="next" title="Apple-Watch-“密码错误”-问题解决-和-还原初始化方式">
+    <a href="/2017/09/19/Apple/Apple-Watch-%E2%80%9C%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF%E2%80%9D-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3-%E5%92%8C-%E8%BF%98%E5%8E%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E5%BC%8F/" rel="next" title="Apple-Watch-“密码错误”-问题解决-和-还原初始化方式">
       Apple-Watch-“密码错误”-问题解决-和-还原初始化方式 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -359,7 +372,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题列表（Swift菜鸟问题，熟练工略过）"><span class="nav-number">1.</span> <span class="nav-text">问题列表（Swift菜鸟问题，熟练工略过）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未完待续"><span class="nav-number">2.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%97%E8%A1%A8%EF%BC%88Swift%E8%8F%9C%E9%B8%9F%E9%97%AE%E9%A2%98%EF%BC%8C%E7%86%9F%E7%BB%83%E5%B7%A5%E7%95%A5%E8%BF%87%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">问题列表（Swift菜鸟问题，熟练工略过）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD"><span class="nav-number">2.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -395,19 +408,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Michaelin1208" title="GitHub → https://github.com/Michaelin1208" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/Michaelin1208" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Michaelin1208" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:michaelin1208@gmail.com" title="E-Mail → mailto:michaelin1208@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/Michaelin1208" title="Twitter → https://twitter.com/Michaelin1208" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
+        <a href="https://twitter.com/Michaelin1208" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Michaelin1208" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.facebook.com/michaelin1208" title="FB Page → https://www.facebook.com/michaelin1208" rel="noopener" target="_blank"><i class="facebook fa-fw"></i></a>
+        <a href="https://www.facebook.com/michaelin1208" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;michaelin1208" rel="noopener" target="_blank"><i class="facebook fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.jianshu.com/u/91cf4504636a" title="简书 → https://www.jianshu.com/u/91cf4504636a" rel="noopener" target="_blank"><i class="book fa-fw"></i></a>
+        <a href="https://www.jianshu.com/u/91cf4504636a" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;91cf4504636a" rel="noopener" target="_blank"><i class="book fa-fw"></i></a>
       </span>
   </div>
 
@@ -438,7 +451,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Michael LIN</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
         
@@ -448,6 +461,92 @@
 
 
 
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"L9uPf3Q0ogQ0AEy30vrlEUEl-gzGzoHsz","app_key":"qR7WlQ64uRSBmFfBAGHxqvwJ","server_url":null,"security":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -459,9 +558,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -495,7 +602,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 
@@ -523,7 +632,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'gitalk',
       owner       : 'michaelin1208',
       admin       : ['michaelin1208'],
-      id          : 'ae5c2b0d317bebbc4b5b4af2804341ca',
+      id          : '6511cc546b962a44fc06ca099abcfcc6',
         language: '',
       distractionFreeMode: true
     });

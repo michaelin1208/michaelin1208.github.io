@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
@@ -24,20 +24,25 @@
     var CONFIG = {"hostname":"michaelin1208.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="问题描述最近眼红WKWebView相对UIWebView的高可配置和高效。在最近的代码中选择使用WKWebView来加载JS动态页面。但是需要把WebView嵌入到另一个ScrollView中显示，所以需要拉伸到内容长度且不能被用户拖动。原始代码如下：123456789- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavig">
-<meta name="keywords" content="iOS,WKWebView,监听,ContentSize,Height,持续增长">
+  <meta name="description" content="问题描述最近眼红WKWebView相对UIWebView的高可配置和高效。在最近的代码中选择使用WKWebView来加载JS动态页面。但是需要把WebView嵌入到另一个ScrollView中显示，所以需要拉伸到内容长度且不能被用户拖动。原始代码如下： 123456789- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081">
-<meta property="og:url" content="https://michaelin1208.github.io/2018/07/19/iOS/WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081/index.html">
+<meta property="og:url" content="https://michaelin1208.github.io/2018/07/19/iOS/WKWebView%E9%80%9A%E8%BF%87%E7%9B%91%E5%90%ACContentSize%E6%9B%B4%E6%96%B0WebView%E7%9A%84Frame%E5%AF%BC%E8%87%B4Height%E6%8C%81%E7%BB%AD%E5%A2%9E%E9%95%BF%E7%9A%84bug%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%88%E7%BC%96%E8%BE%91%E4%BA%8E2018081/index.html">
 <meta property="og:site_name" content="Michaelin&#39;s Blog">
-<meta property="og:description" content="问题描述最近眼红WKWebView相对UIWebView的高可配置和高效。在最近的代码中选择使用WKWebView来加载JS动态页面。但是需要把WebView嵌入到另一个ScrollView中显示，所以需要拉伸到内容长度且不能被用户拖动。原始代码如下：123456789- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavig">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-12-03T01:38:48.901Z">
+<meta property="og:description" content="问题描述最近眼红WKWebView相对UIWebView的高可配置和高效。在最近的代码中选择使用WKWebView来加载JS动态页面。但是需要把WebView嵌入到另一个ScrollView中显示，所以需要拉伸到内容长度且不能被用户拖动。原始代码如下： 123456789- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavi">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-07-19T13:33:46.000Z">
+<meta property="article:modified_time" content="2020-12-03T01:38:48.901Z">
+<meta property="article:author" content="Michael LIN">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="WKWebView">
+<meta property="article:tag" content="监听">
+<meta property="article:tag" content="ContentSize">
+<meta property="article:tag" content="Height">
+<meta property="article:tag" content="持续增长">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081">
-<meta name="twitter:description" content="问题描述最近眼红WKWebView相对UIWebView的高可配置和高效。在最近的代码中选择使用WKWebView来加载JS动态页面。但是需要把WebView嵌入到另一个ScrollView中显示，所以需要拉伸到内容长度且不能被用户拖动。原始代码如下：123456789- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavig">
 
-<link rel="canonical" href="https://michaelin1208.github.io/2018/07/19/iOS/WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081/">
+<link rel="canonical" href="https://michaelin1208.github.io/2018/07/19/iOS/WKWebView%E9%80%9A%E8%BF%87%E7%9B%91%E5%90%ACContentSize%E6%9B%B4%E6%96%B0WebView%E7%9A%84Frame%E5%AF%BC%E8%87%B4Height%E6%8C%81%E7%BB%AD%E5%A2%9E%E9%95%BF%E7%9A%84bug%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%88%E7%BC%96%E8%BE%91%E4%BA%8E2018081/">
 
 
 <script id="page-configurations">
@@ -99,6 +104,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Michaelin's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -216,7 +222,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2018/07/19/iOS/WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081/">
+    <link itemprop="mainEntityOfPage" href="https://michaelin1208.github.io/2018/07/19/iOS/WKWebView%E9%80%9A%E8%BF%87%E7%9B%91%E5%90%ACContentSize%E6%9B%B4%E6%96%B0WebView%E7%9A%84Frame%E5%AF%BC%E8%87%B4Height%E6%8C%81%E7%BB%AD%E5%A2%9E%E9%95%BF%E7%9A%84bug%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%88%E7%BC%96%E8%BE%91%E4%BA%8E2018081/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.JPG">
@@ -259,6 +265,13 @@
             </span>
 
           
+            <span id="/2018/07/19/iOS/WKWebView%E9%80%9A%E8%BF%87%E7%9B%91%E5%90%ACContentSize%E6%9B%B4%E6%96%B0WebView%E7%9A%84Frame%E5%AF%BC%E8%87%B4Height%E6%8C%81%E7%BB%AD%E5%A2%9E%E9%95%BF%E7%9A%84bug%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%88%E7%BC%96%E8%BE%91%E4%BA%8E2018081/" class="post-meta-item leancloud_visitors" data-flag-title="WKWebView通过监听ContentSize更新WebView的Frame导致Height持续增长的bug解决方案（编辑于2018081" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
         </div>
       </header>
@@ -269,25 +282,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>最近眼红WKWebView相对UIWebView的高可配置和高效。在最近的代码中选择使用WKWebView来加载JS动态页面。但是需要把WebView嵌入到另一个ScrollView中显示，所以需要拉伸到内容长度且不能被用户拖动。原始代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation &#123;</span><br><span class="line">    [webView evaluateJavaScript:@&quot;document.body.scrollHeight&quot; completionHandler:^(NSNumber *height, NSError * _Nullable error) &#123;</span><br><span class="line">        float htmlHeight =[height floatValue];</span><br><span class="line">        CGRect webFrame = webView.frame;</span><br><span class="line">        webFrame.size.height = htmlHeight;</span><br><span class="line">        webView.frame = webFrame;</span><br><span class="line">        [self addFeedBackBtn];</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>通过JS代码得到页面的高度。<br><strong>但是这样的方法对于非静态页面无效，高度并非正确的高度。</strong><br><a id="more"></a></p>
+        <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>最近眼红WKWebView相对UIWebView的高可配置和高效。在最近的代码中选择使用WKWebView来加载JS动态页面。但是需要把WebView嵌入到另一个ScrollView中显示，所以需要拉伸到内容长度且不能被用户拖动。原始代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation &#123;</span><br><span class="line">    [webView evaluateJavaScript:@&quot;document.body.scrollHeight&quot; completionHandler:^(NSNumber *height, NSError * _Nullable error) &#123;</span><br><span class="line">        float htmlHeight &#x3D;[height floatValue];</span><br><span class="line">        CGRect webFrame &#x3D; webView.frame;</span><br><span class="line">        webFrame.size.height &#x3D; htmlHeight;</span><br><span class="line">        webView.frame &#x3D; webFrame;</span><br><span class="line">        [self addFeedBackBtn];</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过JS代码得到页面的高度。<br><strong>但是这样的方法对于非静态页面无效，高度并非正确的高度。</strong></p>
+<a id="more"></a>
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><hr>
 <p><strong>编辑于20180813</strong><br>下面的分割线后是最初始的解决办法，但是在部分极端情况下还有用户反应会出现高度持续增长的问题。<br><strong>最终找到的原因</strong>是<code>WKWebView</code>的<code>frame</code>宽度带有小数，而不是整数。猜测<code>WKWebView</code>在计算<code>contentSize</code>的时候是依照<code>frame.width</code>向下取整的宽度来计算最终的<code>contentSize</code>的<code>height</code>的，然后导致KVO观察的contentSize高度在更新frame高度后持续增加。<br><strong>更新的解决办法是</strong>对WKWebView的frame宽度求整。</p>
 <p><strong>代码如下<code>_webView.frame = CGRectMake(HWFrame_IPhonePadX(20, 30), height, (NSInteger)(ScreenWidth - HWFrame_IPhonePadX(60, 80)), 0);</code>。</strong></p>
-<p>BTW. 之所以我们的<code>WKWebView</code>的<code>frame</code>宽度会带小数是因为我们的<code>HWFrame_IPhonePadX</code>宏会自适应屏幕宽高生成输入数值对应的实际显示数值（这个数字是比例计算而来，会带有小数位）。所以就尴尬了，产生了<code>WKWebView</code>高度持续增加的bug。</p>
+<p>BTW. 之所以我们的<code>WKWebView</code>的<code>frame</code>宽度会带小数是因为我们的<code>HWFrame_IPhonePadX </code>宏会自适应屏幕宽高生成输入数值对应的实际显示数值（这个数字是比例计算而来，会带有小数位）。所以就尴尬了，产生了<code>WKWebView</code>高度持续增加的bug。</p>
 <hr>
 <p><strong>初始解决方案</strong><br>为了监控JS动态页面的当前高度，选择使用KVO监听<code>WKWebView.scrollView</code>的contentSize变化。在收到变化通知是，通过当前的contentSize更新webView的frame。代码如下：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)observeValueForKeyPath:(<span class="built_in">NSString</span> *)keyPath ofObject:(<span class="keyword">id</span>)object change:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSKeyValueChangeKey</span>,<span class="keyword">id</span>&gt; *)change context:(<span class="keyword">void</span> *)context &#123;</span><br><span class="line">    <span class="keyword">if</span> (object == _webView.scrollView &amp;&amp; [keyPath isEqualToString:<span class="string">@"contentSize"</span>]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"_webView.scrollView.contentSize %f %f"</span>, <span class="keyword">self</span>.webView.scrollView.contentSize.width, <span class="keyword">self</span>.webView.scrollView.contentSize.height);</span><br><span class="line">        <span class="built_in">CGRect</span> webFrame = <span class="keyword">self</span>.webView.frame;</span><br><span class="line">        webFrame.size.height = <span class="keyword">self</span>.webView.scrollView.contentSize.height;</span><br><span class="line">        <span class="keyword">self</span>.webView.frame = webFrame;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)observeValueForKeyPath:(<span class="built_in">NSString</span> *)keyPath ofObject:(<span class="keyword">id</span>)object change:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSKeyValueChangeKey</span>,<span class="keyword">id</span>&gt; *)change context:(<span class="keyword">void</span> *)context &#123;</span><br><span class="line">    <span class="keyword">if</span> (object == _webView.scrollView &amp;&amp; [keyPath isEqualToString:<span class="string">@&quot;contentSize&quot;</span>]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@&quot;_webView.scrollView.contentSize %f %f&quot;</span>, <span class="keyword">self</span>.webView.scrollView.contentSize.width, <span class="keyword">self</span>.webView.scrollView.contentSize.height);</span><br><span class="line">        <span class="built_in">CGRect</span> webFrame = <span class="keyword">self</span>.webView.frame;</span><br><span class="line">        webFrame.size.height = <span class="keyword">self</span>.webView.scrollView.contentSize.height;</span><br><span class="line">        <span class="keyword">self</span>.webView.frame = webFrame;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该方法可以基本解决访问动态页面，实时更新页面高度的问题。</p>
-<p><strong>使用KVO记得移除Observer，同时避免过度移除的crash。</strong>可以使用下方代码解决<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeWebViewObserver &#123;</span><br><span class="line">    <span class="keyword">@try</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (_webView) &#123;</span><br><span class="line">            [_webView.scrollView removeObserver:<span class="keyword">self</span> forKeyPath:<span class="string">@"contentSize"</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">@catch</span> (<span class="built_in">NSException</span> *exception) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"多次删除kvo 报错了"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>使用KVO记得移除Observer，同时避免过度移除的crash。</strong>可以使用下方代码解决</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeWebViewObserver &#123;</span><br><span class="line">    <span class="keyword">@try</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (_webView) &#123;</span><br><span class="line">            [_webView.scrollView removeObserver:<span class="keyword">self</span> forKeyPath:<span class="string">@&quot;contentSize&quot;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">@catch</span> (<span class="built_in">NSException</span> *exception) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@&quot;多次删除kvo 报错了&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="偶发问题"><a href="#偶发问题" class="headerlink" title="偶发问题"></a>偶发问题</h4><p>上方方法小概率下会出现监听持续被触发，<code>contentSize.height</code>持续不断增加，从而使得设置的<code>frame</code>的高度也在不断增加，无限循环增高。<br>我当时工程内的表现为高度每次加一。</p>
-<h5 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h5><p>通过<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)observeValueForKeyPath:(<span class="built_in">NSString</span> *)keyPath ofObject:(<span class="keyword">id</span>)object change:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSKeyValueChangeKey</span>,<span class="keyword">id</span>&gt; *)change context:(<span class="keyword">void</span> *)context &#123;</span><br><span class="line">    <span class="keyword">if</span> (object == _webView.scrollView &amp;&amp; [keyPath isEqualToString:<span class="string">@"contentSize"</span>]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"_webView.scrollView.contentSize %f %f"</span>, <span class="keyword">self</span>.webView.scrollView.contentSize.width, <span class="keyword">self</span>.webView.scrollView.contentSize.height);</span><br><span class="line">        <span class="built_in">CGRect</span> webFrame = <span class="keyword">self</span>.webView.frame;</span><br><span class="line">        webFrame.size.height = <span class="keyword">self</span>.webView.scrollView.contentSize.height - <span class="number">1</span>;    <span class="comment">// 每次减一可以结局死循环，持续增加高度。</span></span><br><span class="line">        <span class="keyword">self</span>.webView.frame = webFrame;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h5><p>通过</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)observeValueForKeyPath:(<span class="built_in">NSString</span> *)keyPath ofObject:(<span class="keyword">id</span>)object change:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSKeyValueChangeKey</span>,<span class="keyword">id</span>&gt; *)change context:(<span class="keyword">void</span> *)context &#123;</span><br><span class="line">    <span class="keyword">if</span> (object == _webView.scrollView &amp;&amp; [keyPath isEqualToString:<span class="string">@&quot;contentSize&quot;</span>]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@&quot;_webView.scrollView.contentSize %f %f&quot;</span>, <span class="keyword">self</span>.webView.scrollView.contentSize.width, <span class="keyword">self</span>.webView.scrollView.contentSize.height);</span><br><span class="line">        <span class="built_in">CGRect</span> webFrame = <span class="keyword">self</span>.webView.frame;</span><br><span class="line">        webFrame.size.height = <span class="keyword">self</span>.webView.scrollView.contentSize.height - <span class="number">1</span>;    <span class="comment">// 每次减一可以结局死循环，持续增加高度。</span></span><br><span class="line">        <span class="keyword">self</span>.webView.frame = webFrame;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该办法可以解决持续增加高度的问题。但是没有找到根本原因，无法确定所有页面都是每次加一，还是有其他可能的情况。<strong>所以该方法放弃。</strong></p>
 <h5 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h5><p>把WKWebView更换为UIWebView，同样也通过监听<code>contentSize</code>来动态更新webView高度，没有出现上方的偶发问题，高度不会持续增加。<br>但是WKWebView比UIWebView更加高效和苹果更加推荐，<strong>所以也放弃。</strong></p>
 <h5 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h5><p>测试代码，发现如果不仅仅更新frame的height，取而代之的通过contentSize同时更新webView的frame的宽高，就不会出现高度的持续增高。但是页面内容宽度会失去限制，超过webView页面范围。</p>
-<p><strong>最终解决方案是通过JS代码限制webView的内容宽度。</strong><br>方案是不更改监听代码，也不对监听得到的高度减一。更新WKNavigationDelegate的<code>- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation</code>如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation &#123;</span><br><span class="line">    if (webView == _webView) &#123;</span><br><span class="line">        NSString *meta = [NSString stringWithFormat:@&quot;document.getElementsByName(\&quot;viewport\&quot;)[0].content = \&quot;width=self.webView.frame.size.width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\&quot;&quot;];</span><br><span class="line">        [_webView evaluateJavaScript:meta completionHandler:^(id _Nullable complete, NSError * _Nullable error) &#123;</span><br><span class="line">            if (complete != nil) &#123;</span><br><span class="line">                NSLog(@&quot;complete %@&quot;, complete);</span><br><span class="line">            &#125; else if (error) &#123;</span><br><span class="line">                NSLog(@&quot;error %@&quot;, error);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>最终解决方案是通过JS代码限制webView的内容宽度。</strong><br>方案是不更改监听代码，也不对监听得到的高度减一。更新WKNavigationDelegate的<code>- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation</code>如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation &#123;</span><br><span class="line">    if (webView &#x3D;&#x3D; _webView) &#123;</span><br><span class="line">        NSString *meta &#x3D; [NSString stringWithFormat:@&quot;document.getElementsByName(\&quot;viewport\&quot;)[0].content &#x3D; \&quot;width&#x3D;self.webView.frame.size.width, initial-scale&#x3D;1.0, minimum-scale&#x3D;1.0, maximum-scale&#x3D;1.0, user-scalable&#x3D;no\&quot;&quot;];</span><br><span class="line">        [_webView evaluateJavaScript:meta completionHandler:^(id _Nullable complete, NSError * _Nullable error) &#123;</span><br><span class="line">            if (complete !&#x3D; nil) &#123;</span><br><span class="line">                NSLog(@&quot;complete %@&quot;, complete);</span><br><span class="line">            &#125; else if (error) &#123;</span><br><span class="line">                NSLog(@&quot;error %@&quot;, error);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>通过强制设置页面的宽度为我们当前的webView的宽度。解决偶尔出现的高度持续增加的Bug。</p>
-<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="https://stackoverflow.com/questions/3936041/how-to-determine-the-content-size-of-a-uiwebview" target="_blank" rel="noopener">How to determine the content size of a UIWebView?</a><br><a href="https://blog.csdn.net/yibuyibulai/article/details/43795095" target="_blank" rel="noopener">iOS 修改webView字体大小,设置宽度及缩放效果</a></p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/3936041/how-to-determine-the-content-size-of-a-uiwebview">How to determine the content size of a UIWebView?</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/yibuyibulai/article/details/43795095">iOS 修改webView字体大小,设置宽度及缩放效果</a></p>
 
     </div>
 
@@ -299,10 +317,10 @@
           <div class="post-tags">
               <a href="/tags/iOS/" rel="tag"># iOS</a>
               <a href="/tags/WKWebView/" rel="tag"># WKWebView</a>
-              <a href="/tags/监听/" rel="tag"># 监听</a>
+              <a href="/tags/%E7%9B%91%E5%90%AC/" rel="tag"># 监听</a>
               <a href="/tags/ContentSize/" rel="tag"># ContentSize</a>
               <a href="/tags/Height/" rel="tag"># Height</a>
-              <a href="/tags/持续增长/" rel="tag"># 持续增长</a>
+              <a href="/tags/%E6%8C%81%E7%BB%AD%E5%A2%9E%E9%95%BF/" rel="tag"># 持续增长</a>
           </div>
 
         
@@ -315,7 +333,7 @@
       <i class="fa fa-chevron-left"></i> Error-1053--The-service-did-not-respond-to-the-start-or-control-reques
     </a></div>
       <div class="post-nav-item">
-    <a href="/2018/07/24/iOS/iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能/" rel="next" title="iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能">
+    <a href="/2018/07/24/iOS/iOS%E4%B8%AD%E9%80%9A%E8%BF%87CGContext%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E5%9B%B4%E7%BB%95%E4%BB%BB%E6%84%8F%E7%82%B9%E6%97%8B%E8%BD%AC%E4%BB%BB%E6%84%8F%E8%A7%92%E5%BA%A6%E7%9A%84%E5%8A%9F%E8%83%BD/" rel="next" title="iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能">
       iOS中通过CGContext实现图片围绕任意点旋转任意角度的功能 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -377,7 +395,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法"><span class="nav-number">2.</span> <span class="nav-text">解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#偶发问题"><span class="nav-number">2.1.</span> <span class="nav-text">偶发问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案一"><span class="nav-number">2.1.1.</span> <span class="nav-text">解决方案一</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案二"><span class="nav-number">2.1.2.</span> <span class="nav-text">解决方案二</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案三"><span class="nav-number">2.1.3.</span> <span class="nav-text">解决方案三</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reference"><span class="nav-number">2.2.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%B6%E5%8F%91%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">偶发问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%80"><span class="nav-number">2.1.1.</span> <span class="nav-text">解决方案一</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BA%8C"><span class="nav-number">2.1.2.</span> <span class="nav-text">解决方案二</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%89"><span class="nav-number">2.1.3.</span> <span class="nav-text">解决方案三</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reference"><span class="nav-number">2.2.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -413,19 +431,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Michaelin1208" title="GitHub → https://github.com/Michaelin1208" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/Michaelin1208" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Michaelin1208" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:michaelin1208@gmail.com" title="E-Mail → mailto:michaelin1208@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/Michaelin1208" title="Twitter → https://twitter.com/Michaelin1208" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
+        <a href="https://twitter.com/Michaelin1208" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Michaelin1208" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.facebook.com/michaelin1208" title="FB Page → https://www.facebook.com/michaelin1208" rel="noopener" target="_blank"><i class="facebook fa-fw"></i></a>
+        <a href="https://www.facebook.com/michaelin1208" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;michaelin1208" rel="noopener" target="_blank"><i class="facebook fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.jianshu.com/u/91cf4504636a" title="简书 → https://www.jianshu.com/u/91cf4504636a" rel="noopener" target="_blank"><i class="book fa-fw"></i></a>
+        <a href="https://www.jianshu.com/u/91cf4504636a" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;91cf4504636a" rel="noopener" target="_blank"><i class="book fa-fw"></i></a>
       </span>
   </div>
 
@@ -456,7 +474,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Michael LIN</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
         
@@ -466,6 +484,92 @@
 
 
 
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"L9uPf3Q0ogQ0AEy30vrlEUEl-gzGzoHsz","app_key":"qR7WlQ64uRSBmFfBAGHxqvwJ","server_url":null,"security":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -477,9 +581,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -513,7 +625,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 
@@ -541,7 +655,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'gitalk',
       owner       : 'michaelin1208',
       admin       : ['michaelin1208'],
-      id          : '0b8aabd9e3f3a997941808cdeae49800',
+      id          : '168b33d793995bb746d15ea3445decba',
         language: '',
       distractionFreeMode: true
     });
