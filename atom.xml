@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://michaelin1208.github.io/"/>
-  <updated>2020-12-03T01:34:58.294Z</updated>
+  <updated>2020-12-03T01:35:57.716Z</updated>
   <id>https://michaelin1208.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://michaelin1208.github.io/2020/02/25/iOS/CDN-trunk-Repo-update-failed/"/>
     <id>https://michaelin1208.github.io/2020/02/25/iOS/CDN-trunk-Repo-update-failed/</id>
     <published>2020-02-25T06:25:32.000Z</published>
-    <updated>2020-12-03T01:34:58.294Z</updated>
+    <updated>2020-12-03T01:35:57.716Z</updated>
     
     <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在升级CocoaPods到1.8.X后，CocoaPods添加了CDN为默认的Spec repo源，而非原来以<a href="https://github.com/CocoaPods/Specs.git" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs.git</a>为默认source，来缓解git上的specs过大带来的效率下降问题。这个改动造成了我在家中<code>pod install/update</code>的时候无法正常运行。</p><p>提示错误：<code>[!] CDN: trunk Repo update failed</code>以及失败的pods列表</p><a id="more"></a><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>网上关于这个问题的出现原因多半都是因为在中国大陆GFW的CDN拦截/访问控制等造成的Pods更新中遇到未知错误导致的。解决办法都是强制Podfile使用原来位于git的source地址(<a href="https://github.com/CocoaPods/Specs.git" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs.git</a>)。</p><p>1.方法是在Podfile中添加代码，<code>source &#39;https://github.com/CocoaPods/Specs.git</code></p><p>2.在命令行中运行<code>pod repo remove master</code>来删除Pod中的CDN源。</p><p><strong>但是这样我们将无法享受到CDN带来的<code>pod install/update</code>速度变快的优势。</strong></p><p><strong>此外家里电脑具有“科学上网”能力，理论上不应该会导致该问题的出现。</strong></p><p>####我电脑上该问题的出现原因和解决办法</p><p>原因是我的本地系统的网络配置被之前安装的“科学上网”软件修改了，导致proxy异常而无法正确访问CocoaPods的CDN地址。</p><p>方法是关闭网络配置中当前连接的高级设置中的代理设置。如下图：</p><img src="/2020/02/25/iOS/CDN-trunk-Repo-update-failed/network-preferences.png" title="network preferences"><img src="/2020/02/25/iOS/CDN-trunk-Repo-update-failed/network-advanced-preferences.png" title="network advanced preferences"><p>关闭完代理设置后，就可以正常访问CocoaPods的CDN地址，正常使用<code>pod install/update</code>了。</p><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://www.jianshu.com/p/bf1cbe49cb5d" target="_blank" rel="noopener">[!] CDN: trunk Repo update failed</a></p>]]></content>
     
