@@ -83,27 +83,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MMDraggableTagView实现排坑</title>
-    <url>/2017/03/27/iOS/MMDraggableTagView%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%9D%91/</url>
-    <content><![CDATA[<p>最近需要实现个<a href="https://github.com/michaelin1208/ChargeApp/tree/MMDraggableTagView">MMDraggableTagView</a>来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 <a href="https://github.com/SnapKit/SnapKit">SnapKit</a> 来管理autolayout的constraints，这个三方库和 <a href="https://github.com/SnapKit/Masonry">Masonry</a> 类似，只是 one for ObjC, one for Swift. </p>
-<h3 id="问题列表（Swift菜鸟问题，熟练工略过）"><a href="#问题列表（Swift菜鸟问题，熟练工略过）" class="headerlink" title="问题列表（Swift菜鸟问题，熟练工略过）"></a>问题列表（Swift菜鸟问题，熟练工略过）</h3><p><strong>1. 通过SnapKit，重复更新autolayout时，页面显示位置不正常</strong><br>最初采用<code>public func makeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来添加constraints，但是重复使用会遗留下之前添加的constraints。需要使用<code>public func remakeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来实现删除之前的constraints，并创建新的constraints。</p>
-<a id="more"></a>
-<p><strong>2. 通过更新视图的constraints来实现视图的动画效果。</strong><br>一开始通过在UIView的animate block中实现constraints更新，但是并没有动画效果<br>正确方法是：</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UIView</span>.animate(withDuration: <span class="number">0.2</span>, animations: &#123;</span><br><span class="line">      <span class="keyword">self</span>.relocateTags()         <span class="comment">// update autolayout constraints by SnapKit.</span></span><br><span class="line">      <span class="keyword">self</span>.layoutIfNeeded()       <span class="comment">// call layout method if needed to update subviews.</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>需要调用<code>layoutIfNeeded()</code>来更新子页面，不然其实子视图不会更新位置，只更新constraints。</p>
-<p><strong>3. 视图被拖拽时，出现视图因为之前的关联对象的位移，而产生同样的位移</strong><br>考虑是因为之前被拖拽视图设置的与周边子视图相关的constraints导致的。因此可以通过SnapKit中的<code>public func removeConstraints()</code>来直接删除所有的限制。但是因为删除了所有constraints，会导致视图移动到最初左上角的位置。因此采用了个折中的办法， </p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">draggingCell!.snp.remakeConstraints &#123; (make) <span class="keyword">in</span></span><br><span class="line">      make.top.equalTo(<span class="keyword">self</span>).offset(draggingCell!.frame.origin.y)</span><br><span class="line">      make.left.equalTo(<span class="keyword">self</span>).offset(draggingCell!.frame.origin.x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>更新他的constraints，删除与周边subviews相关的constraints，设置为与superview的相关关系。这样就不会因为相关的subviews的位置变化而影响自己的视图。</p>
-<h3 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h3>]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-        <tag>MMDraggableTagView</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CocoaPods-trunk-push发布成功后无法pod-search到</title>
     <url>/2017/03/20/iOS/CocoaPods-trunk-push%E5%8F%91%E5%B8%83%E6%88%90%E5%8A%9F%E5%90%8E%E6%97%A0%E6%B3%95pod-search%E5%88%B0/</url>
     <content><![CDATA[<h2 id="现象："><a href="#现象：" class="headerlink" title="现象："></a>现象：</h2><p>按照上一篇文章<a href="http://www.jianshu.com/p/61cc4121a0ee">《MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记》</a>介绍，实现了新建并编辑podspace，然后通过<code>pod trunk push yourSpaceName.podspec</code>来push我们自己的CocoaPods库到<a href="https://github.com/CocoaPods/Specs">CocoaPods官方git</a>。</p>
@@ -124,6 +103,27 @@
         <tag>push</tag>
         <tag>pod</tag>
         <tag>search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MMDraggableTagView实现排坑</title>
+    <url>/2017/03/27/iOS/MMDraggableTagView%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%9D%91/</url>
+    <content><![CDATA[<p>最近需要实现个<a href="https://github.com/michaelin1208/ChargeApp/tree/MMDraggableTagView">MMDraggableTagView</a>来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 <a href="https://github.com/SnapKit/SnapKit">SnapKit</a> 来管理autolayout的constraints，这个三方库和 <a href="https://github.com/SnapKit/Masonry">Masonry</a> 类似，只是 one for ObjC, one for Swift. </p>
+<h3 id="问题列表（Swift菜鸟问题，熟练工略过）"><a href="#问题列表（Swift菜鸟问题，熟练工略过）" class="headerlink" title="问题列表（Swift菜鸟问题，熟练工略过）"></a>问题列表（Swift菜鸟问题，熟练工略过）</h3><p><strong>1. 通过SnapKit，重复更新autolayout时，页面显示位置不正常</strong><br>最初采用<code>public func makeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来添加constraints，但是重复使用会遗留下之前添加的constraints。需要使用<code>public func remakeConstraints(_ closure: (_ make: ConstraintMaker) -&gt; Void)</code>来实现删除之前的constraints，并创建新的constraints。</p>
+<a id="more"></a>
+<p><strong>2. 通过更新视图的constraints来实现视图的动画效果。</strong><br>一开始通过在UIView的animate block中实现constraints更新，但是并没有动画效果<br>正确方法是：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UIView</span>.animate(withDuration: <span class="number">0.2</span>, animations: &#123;</span><br><span class="line">      <span class="keyword">self</span>.relocateTags()         <span class="comment">// update autolayout constraints by SnapKit.</span></span><br><span class="line">      <span class="keyword">self</span>.layoutIfNeeded()       <span class="comment">// call layout method if needed to update subviews.</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>需要调用<code>layoutIfNeeded()</code>来更新子页面，不然其实子视图不会更新位置，只更新constraints。</p>
+<p><strong>3. 视图被拖拽时，出现视图因为之前的关联对象的位移，而产生同样的位移</strong><br>考虑是因为之前被拖拽视图设置的与周边子视图相关的constraints导致的。因此可以通过SnapKit中的<code>public func removeConstraints()</code>来直接删除所有的限制。但是因为删除了所有constraints，会导致视图移动到最初左上角的位置。因此采用了个折中的办法， </p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">draggingCell!.snp.remakeConstraints &#123; (make) <span class="keyword">in</span></span><br><span class="line">      make.top.equalTo(<span class="keyword">self</span>).offset(draggingCell!.frame.origin.y)</span><br><span class="line">      make.left.equalTo(<span class="keyword">self</span>).offset(draggingCell!.frame.origin.x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更新他的constraints，删除与周边subviews相关的constraints，设置为与superview的相关关系。这样就不会因为相关的subviews的位置变化而影响自己的视图。</p>
+<h3 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h3>]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+        <tag>MMDraggableTagView</tag>
       </tags>
   </entry>
   <entry>
@@ -155,7 +155,7 @@
 <p>或者<strong>无法Pull or Push</strong>的情况。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">remote: HTTP Basic: Access denied</span><br><span class="line">fatal: Authentication failed for &#39;https:&#x2F;&#x2F;gitlab.xxx&#x2F;xxx.git&#x2F;&#39;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>首先在添加或者pull/push的时候需要使用对应的<strong>Clone with SHH</strong>的地址如：“<a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x6c;&#x61;&#x62;&#46;&#120;&#x78;&#120;">&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x6c;&#x61;&#x62;&#46;&#120;&#x78;&#120;</a>/xxx.git”，而不是<strong>Clone with HTTPS</strong>的地址。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>首先在添加或者pull/push的时候需要使用对应的<strong>Clone with SHH</strong>的地址如：“<a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#x6c;&#x61;&#98;&#x2e;&#x78;&#x78;&#120;">&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#x6c;&#x61;&#98;&#x2e;&#x78;&#x78;&#120;</a>/xxx.git”，而不是<strong>Clone with HTTPS</strong>的地址。</p>
 <p>如图：<img src="/2019/06/19/iOS/SourceTree%E5%92%8CGitLab%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/ssh.jpg" class="" title="ssh"></p>
 <p>其次，在MacOS中，SourceTree的Preference中并不提供指定公私钥的配置。我们需要在生成公私钥的时候对私钥进行<strong>ssh-add</strong>，如：<code>ssh-add id_rsa</code></p>
 <p>同时在公司gitlab页面上设置好SSH使用的私钥对应的公钥。</p>
