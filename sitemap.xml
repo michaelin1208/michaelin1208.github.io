@@ -128,14 +128,14 @@
   </url>
   
   <url>
-    <loc>https://michaelin1208.github.io/categories/index.html</loc>
+    <loc>https://michaelin1208.github.io/tags/index.html</loc>
     
     <lastmod>2018-10-30</lastmod>
     
   </url>
   
   <url>
-    <loc>https://michaelin1208.github.io/tags/index.html</loc>
+    <loc>https://michaelin1208.github.io/categories/index.html</loc>
     
     <lastmod>2018-10-30</lastmod>
     
@@ -256,13 +256,6 @@
   </url>
   
   <url>
-    <loc>https://michaelin1208.github.io/tags/MMDraggableTagView/</loc>
-    <lastmod>2020-12-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://michaelin1208.github.io/tags/Cocoapods/</loc>
     <lastmod>2020-12-31</lastmod>
     <changefreq>daily</changefreq>
@@ -278,6 +271,13 @@
   
   <url>
     <loc>https://michaelin1208.github.io/tags/MMNumberScrollView/</loc>
+    <lastmod>2020-12-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://michaelin1208.github.io/tags/MMDraggableTagView/</loc>
     <lastmod>2020-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

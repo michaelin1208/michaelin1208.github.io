@@ -106,6 +106,26 @@
       </tags>
   </entry>
   <entry>
+    <title>MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记</title>
+    <url>/2017/03/16/iOS/MMNumberScrollView%E6%95%B0%E5%AD%97%E6%BB%9A%E5%8A%A8%E5%8A%A8%E7%94%BB%E8%A7%86%E5%9B%BE%E5%92%8CCocoapods%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="MMNumberScrollView数字滚动动画视图"><a href="#MMNumberScrollView数字滚动动画视图" class="headerlink" title="MMNumberScrollView数字滚动动画视图"></a>MMNumberScrollView数字滚动动画视图</h2><p>之前项目中需要一个动画显示礼物数字增长的视图。最近把它拿来修改下，共享出来。具体的代码可从 <strong><a href="https://github.com/michaelin1208/MMNumberScrollView">MMNumberScrollView in GitHub</a></strong> 下载。<br>本数字滚动视图可以实现用户自定义滚动图案，滚动速度，和是否动态控制视图大小。</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#import &lt;UIKit&#x2F;UIKit.h&gt;</span><br><span class="line">#import &quot;MMSingleNumberScrollView.h&quot;</span><br><span class="line"></span><br><span class="line">@class MMNumberScrollViewManager;</span><br><span class="line"></span><br><span class="line">@protocol MMNumberScrollViewManagerDelegate &lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">- (void)numberScrollViewManagerFinishedIncreasing:(MMNumberScrollViewManager *)manager;     &#x2F;&#x2F; delegate method is callbacked when the number scroll view manager finish a increasing operation.</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface MMNumberScrollViewManager:UIView &lt;UIScrollViewDelegate, MMSingleNumberScrollViewDelegate&gt;</span><br><span class="line"></span><br><span class="line">@property (nonatomic,strong) NSMutableArray *numImageArray;  &#x2F;&#x2F; a mutable array of number images shown in number scroll view.</span><br><span class="line">@property (nonatomic) NSTimeInterval speedDuration;  &#x2F;&#x2F; roll speed, the duration of each increasing scrolling. The default value is 1 second.</span><br><span class="line">@property (nonatomic) BOOL isShowingFinalSize;  &#x2F;&#x2F; is it show final size at beginning. Default value is &#39;YES&#39;, the size of scroll view is not increasing during scrolling.</span><br><span class="line"></span><br><span class="line">@property (nonatomic, weak) id&lt;MMNumberScrollViewManagerDelegate&gt; delegate;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; increase number displayed in the manager&#39;s view from currentCount to targetCount.</span><br><span class="line">&#x2F;&#x2F; You would better to start another increasing after last increasing operation finished (by &quot;- (void)numberScrollViewManagerFinishedIncreasing:(MMNumberScrollViewManager *)manager;&quot;)</span><br><span class="line">&#x2F;&#x2F; or remove all existed number scroll views (&quot;- (void)removeAllNumberScrollViews;&quot;).</span><br><span class="line">- (void)increaseNumberFrom:(int)currentCount to:(int)targetCount;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; init the number scroll view manager to contral all single number scroll views.</span><br><span class="line">- (instancetype)initWithFrame:(CGRect)frame;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; remove all single number scroll views, if you want to shwo another number increasing.</span><br><span class="line">- (void)removeAllNumberScrollViews;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<h2 id="Cocoapods实践笔记"><a href="#Cocoapods实践笔记" class="headerlink" title="Cocoapods实践笔记"></a>Cocoapods实践笔记</h2><p>此外最近有些迷恋Cocoapods，最近都在尝试如何把自己的工程中自己工程中的三方库交给CocoaPods来管理。今天也顺道实践下怎么创建CocoaPods。方法可以参考下：<br><strong><a href="http://www.jianshu.com/p/98407f0c175b">创建CocoaPods的制作过程</a></strong><br><strong><a href="http://www.jianshu.com/p/6e5c0f78200a">CocoaPods的安装使用和常见问题</a></strong></p>
+<p>没有遇到什么特别的问题，除了个别步骤需要翻墙，推荐下<a href="https://github.com/getlantern/lantern">Lantern</a>，虽然流量有上限，但是从来没超过。创建过程一切顺利，应该成功了，但是暂时在Cocoapods中还搜索不到我的工程。</p>
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+        <tag>Cocoapods</tag>
+        <tag>数字滚动动画视图</tag>
+        <tag>MMNumberScrollView</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MMDraggableTagView实现排坑</title>
     <url>/2017/03/27/iOS/MMDraggableTagView%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%9D%91/</url>
     <content><![CDATA[<p>最近需要实现个<a href="https://github.com/michaelin1208/ChargeApp/tree/MMDraggableTagView">MMDraggableTagView</a>来实现类似网易新闻中的新闻类型管理或者其他的应用中标签管理页面，同时需要它最好能够拖拽，同时可以有层级关系。在工程中我们使用了 <a href="https://github.com/SnapKit/SnapKit">SnapKit</a> 来管理autolayout的constraints，这个三方库和 <a href="https://github.com/SnapKit/Masonry">Masonry</a> 类似，只是 one for ObjC, one for Swift. </p>
@@ -127,26 +147,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MMNumberScrollView数字滚动动画视图和Cocoapods实践笔记</title>
-    <url>/2017/03/16/iOS/MMNumberScrollView%E6%95%B0%E5%AD%97%E6%BB%9A%E5%8A%A8%E5%8A%A8%E7%94%BB%E8%A7%86%E5%9B%BE%E5%92%8CCocoapods%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="MMNumberScrollView数字滚动动画视图"><a href="#MMNumberScrollView数字滚动动画视图" class="headerlink" title="MMNumberScrollView数字滚动动画视图"></a>MMNumberScrollView数字滚动动画视图</h2><p>之前项目中需要一个动画显示礼物数字增长的视图。最近把它拿来修改下，共享出来。具体的代码可从 <strong><a href="https://github.com/michaelin1208/MMNumberScrollView">MMNumberScrollView in GitHub</a></strong> 下载。<br>本数字滚动视图可以实现用户自定义滚动图案，滚动速度，和是否动态控制视图大小。</p>
-<a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#import &lt;UIKit&#x2F;UIKit.h&gt;</span><br><span class="line">#import &quot;MMSingleNumberScrollView.h&quot;</span><br><span class="line"></span><br><span class="line">@class MMNumberScrollViewManager;</span><br><span class="line"></span><br><span class="line">@protocol MMNumberScrollViewManagerDelegate &lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">- (void)numberScrollViewManagerFinishedIncreasing:(MMNumberScrollViewManager *)manager;     &#x2F;&#x2F; delegate method is callbacked when the number scroll view manager finish a increasing operation.</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface MMNumberScrollViewManager:UIView &lt;UIScrollViewDelegate, MMSingleNumberScrollViewDelegate&gt;</span><br><span class="line"></span><br><span class="line">@property (nonatomic,strong) NSMutableArray *numImageArray;  &#x2F;&#x2F; a mutable array of number images shown in number scroll view.</span><br><span class="line">@property (nonatomic) NSTimeInterval speedDuration;  &#x2F;&#x2F; roll speed, the duration of each increasing scrolling. The default value is 1 second.</span><br><span class="line">@property (nonatomic) BOOL isShowingFinalSize;  &#x2F;&#x2F; is it show final size at beginning. Default value is &#39;YES&#39;, the size of scroll view is not increasing during scrolling.</span><br><span class="line"></span><br><span class="line">@property (nonatomic, weak) id&lt;MMNumberScrollViewManagerDelegate&gt; delegate;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; increase number displayed in the manager&#39;s view from currentCount to targetCount.</span><br><span class="line">&#x2F;&#x2F; You would better to start another increasing after last increasing operation finished (by &quot;- (void)numberScrollViewManagerFinishedIncreasing:(MMNumberScrollViewManager *)manager;&quot;)</span><br><span class="line">&#x2F;&#x2F; or remove all existed number scroll views (&quot;- (void)removeAllNumberScrollViews;&quot;).</span><br><span class="line">- (void)increaseNumberFrom:(int)currentCount to:(int)targetCount;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; init the number scroll view manager to contral all single number scroll views.</span><br><span class="line">- (instancetype)initWithFrame:(CGRect)frame;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; remove all single number scroll views, if you want to shwo another number increasing.</span><br><span class="line">- (void)removeAllNumberScrollViews;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-
-<h2 id="Cocoapods实践笔记"><a href="#Cocoapods实践笔记" class="headerlink" title="Cocoapods实践笔记"></a>Cocoapods实践笔记</h2><p>此外最近有些迷恋Cocoapods，最近都在尝试如何把自己的工程中自己工程中的三方库交给CocoaPods来管理。今天也顺道实践下怎么创建CocoaPods。方法可以参考下：<br><strong><a href="http://www.jianshu.com/p/98407f0c175b">创建CocoaPods的制作过程</a></strong><br><strong><a href="http://www.jianshu.com/p/6e5c0f78200a">CocoaPods的安装使用和常见问题</a></strong></p>
-<p>没有遇到什么特别的问题，除了个别步骤需要翻墙，推荐下<a href="https://github.com/getlantern/lantern">Lantern</a>，虽然流量有上限，但是从来没超过。创建过程一切顺利，应该成功了，但是暂时在Cocoapods中还搜索不到我的工程。</p>
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-        <tag>Cocoapods</tag>
-        <tag>数字滚动动画视图</tag>
-        <tag>MMNumberScrollView</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SourceTree和GitLab配合使用的问题</title>
     <url>/2019/06/19/iOS/SourceTree%E5%92%8CGitLab%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用SourceTree管理GitLab的时候出现了<strong>无法添加Repository</strong></p>
@@ -155,7 +155,7 @@
 <p>或者<strong>无法Pull or Push</strong>的情况。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">remote: HTTP Basic: Access denied</span><br><span class="line">fatal: Authentication failed for &#39;https:&#x2F;&#x2F;gitlab.xxx&#x2F;xxx.git&#x2F;&#39;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>首先在添加或者pull/push的时候需要使用对应的<strong>Clone with SHH</strong>的地址如：“<a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#x6c;&#x61;&#98;&#46;&#120;&#x78;&#120;">&#103;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#x6c;&#x61;&#98;&#46;&#120;&#x78;&#120;</a>/xxx.git”，而不是<strong>Clone with HTTPS</strong>的地址。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>首先在添加或者pull/push的时候需要使用对应的<strong>Clone with SHH</strong>的地址如：“<a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#116;&#x6c;&#97;&#x62;&#46;&#120;&#120;&#x78;">&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#116;&#x6c;&#97;&#x62;&#46;&#120;&#120;&#x78;</a>/xxx.git”，而不是<strong>Clone with HTTPS</strong>的地址。</p>
 <p>如图：<img src="/2019/06/19/iOS/SourceTree%E5%92%8CGitLab%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/ssh.jpg" class="" title="ssh"></p>
 <p>其次，在MacOS中，SourceTree的Preference中并不提供指定公私钥的配置。我们需要在生成公私钥的时候对私钥进行<strong>ssh-add</strong>，如：<code>ssh-add id_rsa</code></p>
 <p>同时在公司gitlab页面上设置好SSH使用的私钥对应的公钥。</p>

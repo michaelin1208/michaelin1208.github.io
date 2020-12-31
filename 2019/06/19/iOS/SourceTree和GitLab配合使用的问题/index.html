@@ -281,7 +281,7 @@
 <p>或者<strong>无法Pull or Push</strong>的情况。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">remote: HTTP Basic: Access denied</span><br><span class="line">fatal: Authentication failed for &#39;https:&#x2F;&#x2F;gitlab.xxx&#x2F;xxx.git&#x2F;&#39;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>首先在添加或者pull/push的时候需要使用对应的<strong>Clone with SHH</strong>的地址如：“<a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#x6c;&#x61;&#98;&#46;&#120;&#x78;&#120;">&#103;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#x6c;&#x61;&#98;&#46;&#120;&#x78;&#120;</a>/xxx.git”，而不是<strong>Clone with HTTPS</strong>的地址。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>首先在添加或者pull/push的时候需要使用对应的<strong>Clone with SHH</strong>的地址如：“<a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#116;&#x6c;&#97;&#x62;&#46;&#120;&#120;&#x78;">&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#116;&#x6c;&#97;&#x62;&#46;&#120;&#120;&#x78;</a>/xxx.git”，而不是<strong>Clone with HTTPS</strong>的地址。</p>
 <p>如图：<img src="/2019/06/19/iOS/SourceTree%E5%92%8CGitLab%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/ssh.jpg" class="" title="ssh"></p>
 <p>其次，在MacOS中，SourceTree的Preference中并不提供指定公私钥的配置。我们需要在生成公私钥的时候对私钥进行<strong>ssh-add</strong>，如：<code>ssh-add id_rsa</code></p>
 <p>同时在公司gitlab页面上设置好SSH使用的私钥对应的公钥。</p>
@@ -409,7 +409,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Michaelin1208" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Michaelin1208" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+        <a href="https://github.com/Michaelin1208" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Michaelin1208" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:michaelin1208@gmail.com" title="E-Mail → mailto:michaelin1208@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Michaelin1208" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Michaelin1208" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/michaelin1208" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;michaelin1208" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/91cf4504636a" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;91cf4504636a" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i></a>
       </span>
   </div>
 
